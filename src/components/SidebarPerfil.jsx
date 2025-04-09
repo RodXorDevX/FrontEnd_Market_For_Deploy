@@ -59,6 +59,13 @@ function SidebarPerfil() {
           <FaClipboardList />
           <span>Mis Pedidos</span>
         </button>
+        <button 
+          className={`menu-item ${isActive('/compras') ? 'active' : ''}`}
+          onClick={() => navigate('/compras')}
+        >
+          <FaClipboardList />
+          <span>Mis Compras</span>
+        </button>
       </nav>
     </div>
   );
