@@ -1,1 +1,1 @@
-export const API_BACKEND_URL = 'https://caboose.proxy.rlwy.net:16904';
+export const API_BACKEND_URL = import.meta.env.VITE_API_URL;
