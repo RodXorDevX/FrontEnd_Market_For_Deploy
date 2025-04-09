@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import SidebarPerfil from "../components/SidebarPerfil";
 import { AuthContext } from "../context/AuthContext";
 import { API_BACKEND_URL } from "../config";
-import "../../assets/css/pedidos.css";
+import "../assets/css/pedidos.css";
 
 export default function MisPedidos() {
   const [pedidos, setPedidos] = useState([]);
