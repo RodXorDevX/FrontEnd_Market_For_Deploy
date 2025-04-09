@@ -14,6 +14,7 @@ import Pedidos from './pages/Pedidos';
 import ResumenCompra from './components/ResumenCompra';  // Esto se añade en tu versión
 import CardProducto from './components/CardProducto';  // Esto se añade en la versión remota
 import EditarProducto from './components/EditarProducto';  // Esto se añade en la versión remota
+import MisCompras from './pages/MisCompras';
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         />
         <Route path="/productos/:id" element={<CardProducto />} />
         <Route path="/productos/:id/editar" element={<EditarProducto />} />
+        <Route path="/compras" element={<MisCompras />} />
       </Routes>
       <Footer />
     </>
