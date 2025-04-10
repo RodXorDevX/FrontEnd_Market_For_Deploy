@@ -1,18 +1,16 @@
-import "../assets/css/DetallePublicacion.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { CarritoContext } from "../context/CarritoContext";
+import "../assets/css/DetallePublicacion.css";
 import { API_BACKEND_URL } from "../config";
-
-
 function DetallePublicacion() {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
   const [imagenes, setImagenes] = useState([]);
   const [imagenSeleccionada, setImagenSeleccionada] = useState(0);
   const [cantidad, setCantidad] = useState(1);
-  const { agregarAlCarrito, carrito } = useContext(CarritoContext);
+  const { agregarAlCarrito, disminuirCantidad, carrito } = useContext(CarritoContext);
 
   // Mapeo de IDs de categoría a nombres
   const mapCategoriaIdToNombre = {
@@ -24,10 +22,10 @@ function DetallePublicacion() {
 
   // Cargar el producto
   useEffect(() => {
-    const fetchProducto = async () => {
-      try {
-        const response = await axios.get(`${API_BACKEND_URL}/productos/${id}`);
-        const productoData = response.data.data || response.data;
+    axios.get(`${API_BACKEND_URL}/productos/${id}`)
+      .then((res) => {
+        // Manejar ambas estructuras de respuesta posibles
+        const productoData = res.data.data || res.data;
         console.log("Datos del producto recibidos:", productoData);
         setProducto(productoData);
         
@@ -38,13 +36,11 @@ function DetallePublicacion() {
         } else {
           console.error("No se encontró una imagen para el producto");
         }
-      } catch (error) {
-        console.error("Error al obtener el producto:", error);
+      })
+      .catch((err) => {
+        console.error("Error al obtener producto", err);
         // Mostrar un mensaje de error al usuario
-      }
-    };
-
-    fetchProducto();
+      });
   }, [id]);
 
   // Revisar si ya hay productos con este ID en el carrito
@@ -53,29 +49,10 @@ function DetallePublicacion() {
     const cantidadTotal = carrito
       .filter((item) => item.id === producto.id)
       .reduce((sum, item) => sum + item.cantidad, 0);
-    setCantidad(cantidadTotal > 0 ? cantidadTotal : 1);
+    setCantidad(cantidadTotal > 0 ? cantidadTotal : 0);
   }, [producto, carrito]);
 
   console.log("Producto agregado:", producto);
-  const handleAgregar = async () => {
-    try {
-      await axios.post(`${API_BACKEND_URL}/carrito`, {
-        producto_id: producto.id,
-        cantidad: cantidad
-      }, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        }
-      });
-      agregarAlCarrito({
-        producto,
-        cantidad,
-        vendedor_id: producto.usuario_id || producto.vendedor_id // <- aseguramos que venga este campo
-      });
-    } catch (error) {
-      console.error("Error al agregar al carrito:", error);
-    }
-  };
 
   if (!producto) return <p>Cargando producto...</p>;
 
@@ -119,19 +96,23 @@ function DetallePublicacion() {
           <p><strong>Stock:</strong> {stock}</p>       
         </div>
 
-    
-
-
         <div className="detalle-cantidad">
           <p><strong>Cantidad:</strong></p>
           <div className="cantidad-control">
-            <button onClick={() => setCantidad(Math.max(1, cantidad - 1))}>-</button> {/*ok    */}
+            <button 
+              onClick={() => disminuirCantidad(producto.id)}
+              disabled={cantidad === 0}
+            >-</button>
             <span>{cantidad}</span>
-            <button onClick={() => setCantidad(cantidad + 1)}>+</button> {/*ok    */}
+            <button 
+              onClick={() => agregarAlCarrito({
+                ...producto,
+                vendedor_id: producto.usuario_id || producto.vendedor_id
+              })}
+              disabled={cantidad >= (producto.stock || 0)}
+            >+</button>
           </div>
         </div>
-
-        <button className="btn-agregar" onClick={handleAgregar}>AGREGAR AL CARRITO</button> {/*ok   */}
       </div>
     </div>
   );
