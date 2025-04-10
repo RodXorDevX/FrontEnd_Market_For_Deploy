@@ -68,7 +68,7 @@ function DetallePublicacion() {
         }
       });
       agregarAlCarrito({
-        ...producto,
+        producto,
         cantidad,
         vendedor_id: producto.usuario_id || producto.vendedor_id // <- aseguramos que venga este campo
       });
@@ -127,7 +127,7 @@ function DetallePublicacion() {
           <div className="cantidad-control">
             <button onClick={() => setCantidad(Math.max(1, cantidad - 1))}>-</button> {/*ok   */}
             <span>{cantidad}</span>
-            <button onClick={() => setCantidad(cantidad + 1)}>+</button>
+            <button onClick={() => setCantidad(cantidad + 1)}>+</button> {/*ok   */}
           </div>
         </div>
 
