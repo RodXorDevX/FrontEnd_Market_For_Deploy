@@ -1,8 +1,9 @@
 [build]
-command = "npm run build"
-directory = "dist"
+  command = "npm run build"
+  publish = "build"
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/api/*"
+  to = "https://caboose.proxy.rlwy.net:16904/:splat"
+  status = 200
+  force = true
