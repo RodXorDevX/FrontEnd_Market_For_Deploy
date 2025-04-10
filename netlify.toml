@@ -4,6 +4,6 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://caboose.proxy.rlwy.net:16904/:splat"
+  to = "index.html"
   status = 200
   force = true
