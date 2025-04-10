@@ -124,9 +124,9 @@ function DetallePublicacion() {
         <div className="detalle-cantidad">
           <p><strong>Cantidad:</strong></p>
           <div className="cantidad-control">
-            <button onClick={() => setCantidad(Math.max(1, cantidad - 1))}>-</button>
+            <button onClick={() => setCantidad(Math.max(1, cantidad - 1))}>-</button>//ok
             <span>{cantidad}</span>
-            <button onClick={() => setCantidad(cantidad + 1)}>+</button>
+            <button onClick={() => setCantidad(cantidad + 1)}>+</button>//ok
           </div>
         </div>
 
