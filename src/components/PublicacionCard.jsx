@@ -19,12 +19,22 @@ function PublicacionCard({ publicacion }) {
   }, [publicacion]);
 
   const handleDelete = async () => {
+    if (!window.confirm('¿Estás seguro de querer eliminar este producto?')) return;
+    
     try {
-      const res = await axios.delete(`${API_BACKEND_URL}/productos/${publicacion.id}`);
-      alert("Publicación eliminada con éxito");
+      const res = await axios.delete(`${API_BACKEND_URL}/productos/${publicacion.id}`, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (res.status === 200) {
+        alert("Publicación eliminada con éxito");
+        window.location.reload(); // Refresh to update the UI
+      }
     } catch (err) {
-      setError("Error al eliminar la publicación");
-      console.error(err);
+      console.error('Full error details:', err.response || err);
+      setError(`Error al eliminar: ${err.response?.data?.message || err.message}`);
     }
   };
 
