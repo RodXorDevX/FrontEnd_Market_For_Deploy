@@ -42,9 +42,11 @@ const MisCompras = () => {
       
       await axios.post(`${API_BACKEND_URL}/productos/${productoId}/calificacion`, 
         { calificacion: promedio },
-        { 
-          headers: { 'Content-Type': 'application/json' },
-          withCredentials: true 
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
         }
       );
       
@@ -52,12 +54,9 @@ const MisCompras = () => {
         ...prev,
         [productoId]: { calificacion: promedio }
       }));
-      
-      // Mostrar feedback al usuario
-      alert("Calificación guardada correctamente");
     } catch (error) {
-      console.error("Error al calificar producto:", error);
-      alert("Error al guardar la calificación");
+      console.error("Error al calificar producto:", error.response?.data || error.message);
+      alert("Error al calificar el producto");
     }
   };
 
