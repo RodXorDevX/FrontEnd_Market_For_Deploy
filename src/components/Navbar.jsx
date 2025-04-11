@@ -44,6 +44,20 @@ function Navbar() {
         <Link to="/" className="text-0-1-4">TREND'S</Link>
       </div>
 
+      {/* Carrito siempre visible en móvil */}
+      {usuario && (
+        <div className="mobile-cart">
+          <Link to="/carrito" className="container-0-1-3">
+            <FaShoppingCart color="#151c33" size={20} />
+            {carrito && carrito.length > 0 && (
+              <span className="cart-total">
+                ${calcularTotal().toLocaleString("es-CL")}
+              </span>
+            )}
+          </Link>
+        </div>
+      )}
+
       {/* Botón de hamburguesa para móviles */}
       <div className="hamburger-menu" onClick={toggleMenu}>
         {menuOpen ? <FaTimes color="#ffffff" size={24} /> : <FaBars color="#ffffff" size={24} />}
@@ -69,7 +83,7 @@ function Navbar() {
           )}
         </div>
 
-        <div className="user-actions">
+        <div className="user-actions desktop-only">
           {usuario && (
             <>
               <Link to="/carrito" className="container-0-1-3" onClick={closeMenu}>
