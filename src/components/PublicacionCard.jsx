@@ -20,8 +20,17 @@ function PublicacionCard({ publicacion }) {
 
   const handleDelete = async () => {
     try {
+      // Primero verificar si hay pedidos pendientes para este producto
+      const pedidosRes = await axios.get(`${API_BACKEND_URL}/pedidos?productoId=${publicacion.id}&estado=pending`);
+      
+      if (pedidosRes.data.length > 0) {
+        alert("No se puede eliminar el producto porque tiene pedidos pendientes");
+        return;
+      }
+      
       const res = await axios.delete(`${API_BACKEND_URL}/productos/${publicacion.id}`);
       alert("Publicación eliminada con éxito");
+      window.location.reload(); // Recargar para actualizar la lista
     } catch (err) {
       setError("Error al eliminar la publicación");
       console.error(err);
