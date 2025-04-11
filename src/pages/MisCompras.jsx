@@ -40,23 +40,22 @@ const MisCompras = () => {
         ? Math.round((calificacionActual + nuevaCalificacion) / 2)
         : nuevaCalificacion;
       
-        await axios.put(`${API_BACKEND_URL}/productos/${productoId}`, 
-          { calificacion: promedio },
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${localStorage.getItem('token')}`
-            }
-          }
-        );
+      await axios.put(`${API_BACKEND_URL}/productos/${productoId}`, { 
+        calificacion: promedio 
+      }, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
       
       setCalificaciones(prev => ({
         ...prev,
         [productoId]: { calificacion: promedio }
       }));
+      alert("Producto calificado con éxito");
     } catch (error) {
-      console.error("Error al calificar producto:", error.response?.data || error.message);
-      alert("Error al calificar el producto");
+      console.error("Error al calificar producto:", error);
+      alert(error.response?.data?.message || "Error al calificar el producto");
     }
   };
 
