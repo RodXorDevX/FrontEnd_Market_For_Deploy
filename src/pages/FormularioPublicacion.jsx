@@ -80,7 +80,7 @@ function FormularioPublicacion() {
         precio: "",
         categoria: "",
         descripcion: "",
-        stock: 1
+        stock: ""
       });
       setImagenes([]);
     } catch (error) {
