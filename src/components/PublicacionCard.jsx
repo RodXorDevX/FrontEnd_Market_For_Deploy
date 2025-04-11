@@ -24,7 +24,7 @@ function PublicacionCard({ publicacion }) {
       const pedidosRes = await axios.get(`${API_BACKEND_URL}/pedidos?productoId=${publicacion.id}&estado=pending`);
       
       if (pedidosRes.data.length > 0) {
-        alert("No se puede eliminar el producto porque tiene pedidos pendientes");
+        window.alert("No se puede eliminar el producto porque tiene pedidos pendientes");
         return;
       }
       
