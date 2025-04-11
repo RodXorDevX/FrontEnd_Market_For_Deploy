@@ -67,6 +67,34 @@
   color: #ffcc00;
 }
 
+/* Estilo para menú de escritorio en fila */
+.menu-items-desktop {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-items-desktop a, 
+.menu-items-desktop button {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-items-desktop a:hover, 
+.menu-items-desktop button:hover {
+  color: #ffcc00;
+}
+
+/* Estilo para menú móvil en columna */
+.menu-items-mobile {
+  display: none;
+}
+
 .user-actions {
   display: flex;
   align-items: center;
@@ -115,20 +143,6 @@
   border-radius: 10px;
   font-size: 12px;
   font-weight: bold;
-}
-
-.nav-links button {
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 5px 10px;
-}
-
-.nav-links button:hover {
-  color: #ffcc00;
-  background: none
 }
 
 body, html {
@@ -189,22 +203,35 @@ body, html {
     right: 0;
   }
   
-  .menu-items {
+  /* Ocultar menú de escritorio en móvil */
+  .menu-items-desktop {
+    display: none;
+  }
+  
+  /* Mostrar menú móvil en columna */
+  .menu-items-mobile {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 20px;
   }
   
-  .menu-items a, .menu-items button {
+  .menu-items-mobile a, 
+  .menu-items-mobile button {
     font-size: 18px;
     padding: 10px 0;
     width: 100%;
     text-align: left;
+    color: #ffffff;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
   
-  .menu-items span {
-    width: 100%;
+  .menu-items-mobile a:hover, 
+  .menu-items-mobile button:hover {
+    color: #ffcc00;
   }
   
   /* Ocultar carrito en escritorio en móvil */

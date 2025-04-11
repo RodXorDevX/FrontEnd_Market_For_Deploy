@@ -64,29 +64,47 @@ function Navbar() {
       </div>
 
       <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-        <div className="menu-items">
-          {!usuario ? (
-            <>
+        {!usuario ? (
+          <>
+            <div className="menu-items-desktop">
+              <span className="text-0-1-5">
+                <Link to="/registro">REGISTRO</Link>
+              </span>
+              <span className="text-0-1-1">
+                <Link to="/login">INGRESAR</Link>
+              </span>
+            </div>
+            <div className="menu-items-mobile">
               <span className="text-0-1-5">
                 <Link to="/registro" onClick={closeMenu}>REGISTRO</Link>
               </span>
               <span className="text-0-1-1">
                 <Link to="/login" onClick={closeMenu}>INGRESAR</Link>
               </span>
-            </>
-          ) : (
-            <>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Menú de escritorio - fila horizontal */}
+            <div className="menu-items-desktop">
+              <Link to="/perfil">Mi Perfil</Link>
+              <Link to="/publicar">Publicar</Link>
+              <button onClick={logout}>Cerrar sesión</button>
+            </div>
+            
+            {/* Menú móvil - columna vertical */}
+            <div className="menu-items-mobile">
               <Link to="/perfil" onClick={closeMenu}>Mi Perfil</Link>
               <Link to="/publicar" onClick={closeMenu}>Publicar</Link>
               <button onClick={() => { logout(); closeMenu(); }}>Cerrar sesión</button>
-            </>
-          )}
-        </div>
+            </div>
+          </>
+        )}
 
         <div className="user-actions desktop-only">
           {usuario && (
             <>
-              <Link to="/carrito" className="container-0-1-3" onClick={closeMenu}>
+              <Link to="/carrito" className="container-0-1-3">
                 <FaShoppingCart color="#151c33" size={20} />
                 {carrito && carrito.length > 0 && (
                   <span className="cart-total">
