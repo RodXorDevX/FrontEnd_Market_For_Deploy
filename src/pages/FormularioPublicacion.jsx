@@ -168,23 +168,21 @@ function FormularioPublicacion() {
               placeholder="Precio"
               value={formData.precio}
               onChange={handleChange}
+              className="input-texto"
             />
           </div>
 
           <div className="grupo-input">
             <label htmlFor="stock">Cantidad de Productos</label>
-            <select
+            <input
+              type="number"
               id="stock"
               name="stock"
+              min="1"
               value={formData.stock}
               onChange={handleChange}
-            >
-              {[...Array(55).keys()].map((num) => (
-                <option key={num + 1} value={num + 1}>
-                  {num + 1}
-                </option>
-              ))}
-            </select>
+              className="input-texto"
+            />
           </div>
 
           <div className="grupo-input">
