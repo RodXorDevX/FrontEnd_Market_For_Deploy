@@ -20,40 +20,11 @@ function PublicacionCard({ publicacion }) {
 
   const handleDelete = async () => {
     try {
-      // First check if product has pending orders
-      let hasPendingOrders = false;
-      try {
-        const ordersRes = await axios.get(`${API_BACKEND_URL}/productos/${publicacion.id}/pedidos`);
-        hasPendingOrders = ordersRes.data?.length > 0;
-      } catch (err) {
-        if (err.response?.status !== 404) {
-          console.error('Error checking pending orders:', err);
-        }
-      }
-      
-      // Check if product exists in MisPedidos
-      const misPedidosRes = await axios.get(`${API_BACKEND_URL}/pedidos/producto/${publicacion.id}`);
-      
-      if (hasPendingOrders || misPedidosRes.data.length > 0) {
-        alert('No se puede eliminar el producto porque tiene pedidos pendientes o está en Mis Pedidos');
-        return;
-      }
-
-      if (!window.confirm('¿Estás seguro de querer eliminar este producto?')) return;
-      
-      const res = await axios.delete(`${API_BACKEND_URL}/productos/${publicacion.id}`, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      
-      if (res.status === 200) {
-        alert("Publicación eliminada con éxito");
-        window.location.reload(); // Refresh to update the UI
-      }
+      const res = await axios.delete(`${API_BACKEND_URL}/productos/${publicacion.id}`);
+      alert("Publicación eliminada con éxito");
     } catch (err) {
-      console.error('Full error details:', err.response || err);
-      setError(`Error al eliminar: ${err.response?.data?.message || err.message}`);
+      setError("Error al eliminar la publicación");
+      console.error(err);
     }
   };
 
