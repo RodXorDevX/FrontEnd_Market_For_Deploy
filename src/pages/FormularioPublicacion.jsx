@@ -20,8 +20,9 @@ function FormularioPublicacion() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-
- 
+  const handleStockChange = (e) => {
+    setFormData((prev) => ({ ...prev, stock: parseInt(e.target.value) }));
+  };
 
   // Nuevo método para manejar el cambio de URL
   const handleUrlChange = (e) => {
@@ -61,8 +62,8 @@ function FormularioPublicacion() {
         descripcion: formData.descripcion,
         precio: parseFloat(formData.precio),
         categoria_id: mapCategoria[formData.categoria],      
-        stock: parseInt(formData.stock),
-        imagen: imagenes[0] || null,
+        stock: formData.stock,
+        imagenes: imagenes,
         vendedor_id: parseInt(userId),
       };
   
@@ -80,7 +81,7 @@ function FormularioPublicacion() {
         precio: "",
         categoria: "",
         descripcion: "",
-        stock: ""
+        stock: 1
       });
       setImagenes([]);
     } catch (error) {
@@ -177,7 +178,7 @@ function FormularioPublicacion() {
               id="stock"
               name="stock"
               value={formData.stock}
-              onChange={handleChange}
+              onChange={handleStockChange}
             >
               {[...Array(55).keys()].map((num) => (
                 <option key={num + 1} value={num + 1}>
