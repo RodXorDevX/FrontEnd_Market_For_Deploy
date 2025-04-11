@@ -45,7 +45,7 @@ function PublicacionCard({ publicacion }) {
             <Link to={`/productos/${publicacion.id}/editar`} className="edit-btn">
               <FaEdit />
             </Link>
-            <button className="delete-btn" onClick={handleDelete}><FaTrash /></button>
+            <button className="delete-btn" onClick={handleDelete}><FaTrash /> </button>
           </div>
         </div>
         {error && <p className="error">{error}</p>}
