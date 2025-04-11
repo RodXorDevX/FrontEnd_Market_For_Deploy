@@ -57,7 +57,7 @@ const MisCompras = () => {
     <div className="perfil-contenedor">
       <SidebarPerfil />
       <div className="compras-contenido">
-        <h2>Mis Compras</h2>
+        <h2>Mis Compras +</h2>
 
         {loading ? (
           <p>Cargando compras...</p>
