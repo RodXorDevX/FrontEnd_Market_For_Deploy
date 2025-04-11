@@ -49,7 +49,6 @@
   margin-right: 80px;
   box-sizing: border-box;
 }
-
 .text-0-1-5, .text-0-1-1 {
   color: #ffffff;
   font-size: 20px;
@@ -112,7 +111,7 @@
   font-weight: bold;
 }
 
-/* Estilos para el botón de cerrar sesión */
+/* Estilos para el botón de cerrar sesión /
 .nav-links button {
   background: none;
   border: none;
@@ -120,16 +119,16 @@
   cursor: pointer;
   font-size: 16px;
   padding: 5px 10px;
+
 }
 
 .nav-links button:hover {
   color: #ffcc00;
+  background: none
 }
 
-/* Asegúrate de importar las fuentes necesarias */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kantumruy:wght@700&display=swap');
 
-/* Asegúrate de que el body y html no tengan márgenes */
+/ Asegúrate de que el body y html no tengan márgenes */
 body, html {
   margin: 0;
   padding: 0;
