@@ -40,15 +40,15 @@ const MisCompras = () => {
         ? Math.round((calificacionActual + nuevaCalificacion) / 2)
         : nuevaCalificacion;
       
-      await axios.put(`${API_BACKEND_URL}/productos/${productoId}/calificacion`, 
-        { calificacion: promedio },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        await axios.put(`${API_BACKEND_URL}/productos/${productoId}`, 
+          { calificacion: promedio },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
           }
-        }
-      );
+        );
       
       setCalificaciones(prev => ({
         ...prev,
