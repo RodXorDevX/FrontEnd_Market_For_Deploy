@@ -5,11 +5,55 @@ import { AuthContext } from "../context/AuthContext";
 import { API_BACKEND_URL } from "../config";
 import "../assets/css/MisCompras.css";
 
+const EstrellasCalificacion = ({ calificacion, onCalificar, productoId }) => {
+  const [hoverRating, setHoverRating] = useState(0);
+  
+  return (
+    <div className="estrellas-calificacion">
+      {[1, 2, 3, 4, 5].map((estrella) => (
+        <span
+          key={estrella}
+          className={`estrella ${(hoverRating || calificacion) >= estrella ? "activa" : ""}`}
+          onClick={() => onCalificar(productoId, estrella)}
+          onMouseEnter={() => setHoverRating(estrella)}
+          onMouseLeave={() => setHoverRating(0)}
+        >
+          ★
+        </span>
+      ))}
+    </div>
+  );
+};
+
 const MisCompras = () => {
   const { usuario } = useContext(AuthContext);
   const [compras, setCompras] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const [calificaciones, setCalificaciones] = useState({});
+
+  const handleCalificar = async (productoId, nuevaCalificacion) => {
+    try {
+      const calificacionActual = calificaciones[productoId]?.calificacion || 0;
+      const promedio = calificacionActual 
+        ? Math.round((calificacionActual + nuevaCalificacion) / 2)
+        : nuevaCalificacion;
+      
+      // Aquí deberías hacer una llamada a la API para guardar la calificación
+      // await fetch(`${API_BACKEND_URL}/productos/${productoId}/calificar`, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ calificacion: promedio })
+      // });
+      
+      setCalificaciones(prev => ({
+        ...prev,
+        [productoId]: { calificacion: promedio }
+      }));
+    } catch (error) {
+      console.error("Error al calificar producto:", error);
+    }
+  };
 
   useEffect(() => {
     const fetchCompras = async () => {
@@ -39,6 +83,7 @@ const MisCompras = () => {
             imagen: item.imagen,
             cantidad: item.cantidad,
             precio: item.precio_unitario,
+            id: item.producto_id,
           });
         });
 
@@ -100,6 +145,11 @@ const MisCompras = () => {
                       <p><strong>{producto.titulo}</strong></p>
                       <p>Cantidad: {producto.cantidad}</p>
                       <p>Precio: ${Number(producto.precio).toLocaleString("es-CL")}</p>
+                      <EstrellasCalificacion 
+                        calificacion={calificaciones[producto.id]?.calificacion || 0} 
+                        onCalificar={handleCalificar} 
+                        productoId={producto.id} 
+                      />
                     </div>
                   </div>
                 ))}
