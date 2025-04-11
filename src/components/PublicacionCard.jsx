@@ -21,12 +21,20 @@ function PublicacionCard({ publicacion }) {
   const handleDelete = async () => {
     try {
       // First check if product has pending orders
-      const ordersRes = await axios.get(`${API_BACKEND_URL}/productos/${publicacion.id}/pedidos`);
+      let hasPendingOrders = false;
+      try {
+        const ordersRes = await axios.get(`${API_BACKEND_URL}/productos/${publicacion.id}/pedidos`);
+        hasPendingOrders = ordersRes.data?.length > 0;
+      } catch (err) {
+        if (err.response?.status !== 404) {
+          console.error('Error checking pending orders:', err);
+        }
+      }
       
       // Check if product exists in MisPedidos
       const misPedidosRes = await axios.get(`${API_BACKEND_URL}/pedidos/producto/${publicacion.id}`);
       
-      if (ordersRes.data.length > 0 || misPedidosRes.data.length > 0) {
+      if (hasPendingOrders || misPedidosRes.data.length > 0) {
         alert('No se puede eliminar el producto porque tiene pedidos pendientes o está en Mis Pedidos');
         return;
       }
