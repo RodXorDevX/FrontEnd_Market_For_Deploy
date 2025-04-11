@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 import { AuthContext } from "../context/AuthContext";
-import { FaUser, FaShoppingCart, FaStar } from 'react-icons/fa';
+import { FaUser, FaShoppingCart, FaStar, FaBars, FaTimes } from 'react-icons/fa';
 import '../assets/css/Navbar.css';
 
 // Importar imágenes de avatares
@@ -23,6 +23,11 @@ const avatarMap = {
 function Navbar() {
   const { carrito, calcularTotal } = useContext(CarritoContext);
   const { usuario, logout } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <nav className="navbar">
@@ -35,7 +40,11 @@ function Navbar() {
         <Link to="/" className="text-0-1-4">TREND'S</Link>
       </div>
 
-      <div className="nav-links">
+      <div className="hamburger" onClick={toggleMenu}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+      <div className={`nav-links ${isOpen ? "active" : ""}`}>
         {!usuario ? (
           <>
             <span className="text-0-1-5">
@@ -54,8 +63,6 @@ function Navbar() {
         )}
 
         <div className="user-actions">
-     
-
           {usuario && (
             <>
               <Link to="/carrito" className="container-0-1-3">
@@ -67,7 +74,6 @@ function Navbar() {
                 )}
               </Link>
 
-              {/* Mostrar avatar */}
               <div className="avatar-navbar">
                 <img
                   src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
