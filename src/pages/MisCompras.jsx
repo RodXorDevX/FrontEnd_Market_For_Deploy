@@ -40,7 +40,7 @@ const MisCompras = () => {
         : nuevaCalificacion;
       
       // Aquí deberías hacer una llamada a la API para guardar la calificación
-       await fetch(`${API_BACKEND_URL}/productos/${productoId}/calificar`, {
+       await fetch(`${API_BACKEND_URL}/productos/${productoId}/calificacion`, {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({ calificacion: promedio })
