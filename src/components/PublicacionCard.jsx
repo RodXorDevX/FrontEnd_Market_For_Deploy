@@ -21,7 +21,7 @@ function PublicacionCard({ publicacion }) {
   const handleDelete = async () => {
     try {
       // First check if product has pending orders
-      const ordersRes = await axios.get(`${API_BACKEND_URL}/productos/${publicacion.id}/orders`);
+      const ordersRes = await axios.get(`${API_BACKEND_URL}/productos/${publicacion.id}/pedidos`);
       
       if (ordersRes.data.length > 0) {
         alert('No se puede eliminar el producto porque tiene pedidos pendientes');
