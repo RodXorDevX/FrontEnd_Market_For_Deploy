@@ -24,7 +24,7 @@ function PublicacionCard({ publicacion, onDelete }) {
       alert("Publicación eliminada con éxito");
       onDelete(publicacion.id); // Llama a la función para actualizar el estado en MiPerfil
     } catch (err) {
-      setError("Error al eliminar la publicación");
+      setError("Tienes pedidos pendientes antes de borrar la publicación");
       console.error(err);
     }
   };
