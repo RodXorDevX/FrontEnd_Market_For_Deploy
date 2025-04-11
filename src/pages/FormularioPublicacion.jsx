@@ -185,7 +185,10 @@ function FormularioPublicacion() {
               min="1"
               placeholder="Cantidad"
               value={formData.stock}
-              onChange={handleChange}
+              onChange={(e) => {
+                const value = parseInt(e.target.value) || 1;
+                setFormData(prev => ({ ...prev, stock: value }));
+              }}
             />
           </div>
 
