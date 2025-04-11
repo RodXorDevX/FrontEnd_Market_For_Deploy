@@ -50,7 +50,7 @@ const MisCompras = () => {
       
       setCalificaciones(prev => ({
         ...prev,
-        [productoId]: { calificacion: promedio }
+        [productoId]: { calificacion: nuevaCalificacion }
       }));
       alert("Producto calificado con éxito");
     } catch (error) {
