@@ -47,7 +47,7 @@ function Navbar() {
       {/* Carrito siempre visible en móvil */}
       {usuario && (
         <div className="mobile-cart">
-          <Link to="/carrito" className="container-0-1-3">
+          <Link to="/carrito" className="container-0-1-3 desktop-only">
             <FaShoppingCart color="#151c33" size={20} />
             {carrito && carrito.length > 0 && (
               <span className="cart-total">
@@ -104,7 +104,7 @@ function Navbar() {
         <div className="user-actions desktop-only">
           {usuario && (
             <>
-              <Link to="/carrito" className="container-0-1-3">
+              <Link to="/carrito" className="container-0-1-3 desktop-only">
                 <FaShoppingCart color="#151c33" size={20} />
                 {carrito && carrito.length > 0 && (
                   <span className="cart-total">

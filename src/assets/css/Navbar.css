@@ -169,7 +169,8 @@ body, html {
 .hamburger-menu {
   display: none;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1001;  
+  margin: 0 1rem;
 }
 
 /* Ocultar carrito móvil en escritorio */
@@ -242,7 +243,7 @@ body, html {
   /* Mostrar carrito móvil */
   .mobile-cart {
     display: block;
-    margin-right: 20px;
+    
     position: relative;
     z-index: 999;
   }

@@ -52,11 +52,19 @@ function Login() {
     <div className="login-container">
       <div className="box">
         <div className="login-img">
-          <img src={loginImg} alt="Promo login" />
+          <img 
+            src={loginImg} 
+            alt="Promo login" 
+            style={{ 
+              maxWidth: '80%', 
+              height: 'auto',
+              marginBottom: '20px'
+            }} 
+          />
         </div>
 
         <div className="login-form">
-          <h2>INICIO DE SESIÓN</h2>
+          <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)' }}>INICIO DE SESIÓN</h2>
           <form onSubmit={handleSubmit}>
             <input
               type="email"
@@ -64,6 +72,7 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              style={{ width: '100%', padding: '12px', fontSize: '16px' }}
             />
             <input
               type="password"
@@ -71,10 +80,21 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              style={{ width: '100%', padding: '12px', fontSize: '16px' }}
             />
-            <button type="submit">INICIAR SESIÓN</button>
+            <button 
+              type="submit"
+              style={{ 
+                width: '100%', 
+                padding: '12px',
+                fontSize: '16px',
+                marginTop: '15px'
+              }}
+            >
+              INICIAR SESIÓN
+            </button>
           </form>
-          <p className="registro-link">
+          <p className="registro-link" style={{ textAlign: 'center', marginTop: '20px' }}>
             ¿No tienes cuenta? <span onClick={() => navigate("/registro")}>Regístrate aquí</span>
           </p>
         </div>

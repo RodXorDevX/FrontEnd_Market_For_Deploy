@@ -60,10 +60,10 @@ const Register = () => {
     <div className="page-container">
       <div className="box">
         <div className="imagen-izquierda">
-          <img src={registerImg} alt="Promo registro" />
+          <img src={registerImg} alt="Promo registro" loading="lazy" />
         </div>
         <div className="registro">
-          <div className="text-wrapper-2">REGISTRO</div>
+          <h1 className="text-wrapper-2">REGISTRO</h1>
           <input
             type="text"
             name="nombre"
