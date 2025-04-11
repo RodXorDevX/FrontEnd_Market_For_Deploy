@@ -162,35 +162,25 @@ function FormularioPublicacion() {
           <div className="grupo-input">
             <label htmlFor="precio">Precio</label>
             <input
-              type="text"
+              type="number"
               id="precio"
               name="precio"
               placeholder="Precio"
               value={formData.precio}
-              onChange={(e) => {
-                const value = e.target.value;
-                if (value === '' || /^\d*\.?\d*$/.test(value)) {
-                  handleChange(e);
-                }
-              }}
+              onChange={handleChange}
             />
           </div>
 
           <div className="grupo-input">
-            <label htmlFor="stock">Cantidad</label>
+            <label htmlFor="stock">Cantidad de Productos</label>
             <input
-              type="text"
+              type="number"
               id="stock"
               name="stock"
-              placeholder="Cantidad"
               value={formData.stock}
-              onChange={(e) => {
-                const value = e.target.value;
-                if (value === '' || /^\d*\.?\d*$/.test(value)) {
-                  handleChange(e);
-                }
-              }}
+              onChange={handleChange}
             />
+          
           </div>
 
           <div className="grupo-input">
