@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 import { AuthContext } from "../context/AuthContext";
 import { FaUser, FaShoppingCart, FaStar, FaBars, FaTimes } from 'react-icons/fa';
@@ -24,22 +24,6 @@ function Navbar() {
   const { carrito, calcularTotal } = useContext(CarritoContext);
   const { usuario, logout } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  // Detectar scroll para mover el carrito verticalmente
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -60,25 +44,23 @@ function Navbar() {
         <Link to="/" className="text-0-1-4">TREND'S</Link>
       </div>
 
-      <div className="navbar-right">
-        {/* Carrito visible en ambas vistas con scrolling */}
-        {usuario && (
-          <div className={`cart-container ${scrolled ? 'scrolled' : ''}`}>
-            <Link to="/carrito" className="container-0-1-3">
-              <FaShoppingCart color="#151c33" size={20} />
-              {carrito && carrito.length > 0 && (
-                <span className="cart-total">
-                  ${calcularTotal().toLocaleString("es-CL")}
-                </span>
-              )}
-            </Link>
-          </div>
-        )}
-
-        {/* Botón de hamburguesa para móviles */}
-        <div className="hamburger-menu" onClick={toggleMenu}>
-          {menuOpen ? <FaTimes color="#ffffff" size={24} /> : <FaBars color="#ffffff" size={24} />}
+      {/* Carrito siempre visible en móvil */}
+      {usuario && (
+        <div className="mobile-cart">
+          <Link to="/carrito" className="container-0-1-3">
+            <FaShoppingCart color="#151c33" size={20} />
+            {carrito && carrito.length > 0 && (
+              <span className="cart-total">
+                ${calcularTotal().toLocaleString("es-CL")}
+              </span>
+            )}
+          </Link>
         </div>
+      )}
+
+      {/* Botón de hamburguesa para móviles */}
+      <div className="hamburger-menu" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes color="#ffffff" size={24} /> : <FaBars color="#ffffff" size={24} />}
       </div>
 
       <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
@@ -121,13 +103,25 @@ function Navbar() {
 
         <div className="user-actions desktop-only">
           {usuario && (
-            <div className="avatar-navbar">
-              <img
-                src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
-                alt="Avatar"
-                className="avatar-img"
-              />
-            </div>
+            <>
+              <Link to="/carrito" className="container-0-1-3">
+                <FaShoppingCart color="#151c33" size={20} />
+                {carrito && carrito.length > 0 && (
+                  <span className="cart-total">
+                    ${calcularTotal().toLocaleString("es-CL")}
+                  </span>
+                )}
+              </Link>
+
+              {/* Mostrar avatar */}
+              <div className="avatar-navbar">
+                <img
+                  src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
+                  alt="Avatar"
+                  className="avatar-img"
+                />
+              </div>
+            </>
           )}
         </div>
       </div>
