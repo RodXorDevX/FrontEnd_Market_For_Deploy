@@ -4,8 +4,8 @@ import { useState } from "react";
 import { API_BACKEND_URL } from "../config";
 
 function FormularioPublicacion() {
-  const [imagenes, setImagenes] = useState([]);
-  const [urlImagen, setUrlImagen] = useState(""); // Estado para la URL de la imagen
+  const [imagen, setImagen] = useState("");
+  const [urlImagen, setUrlImagen] = useState("");
 
   const [formData, setFormData] = useState({
     titulo: "",
@@ -20,27 +20,18 @@ function FormularioPublicacion() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-
- 
-
-  // Nuevo método para manejar el cambio de URL
   const handleUrlChange = (e) => {
     setUrlImagen(e.target.value);
   };
 
-  // Método para añadir la URL a la lista de imágenes
   const agregarImagen = () => {
     if (!urlImagen.trim()) return;
-    if (imagenes.length >= 4) {
-      alert("Solo puedes añadir hasta 4 imágenes");
-      return;
-    }
-    setImagenes([...imagenes, urlImagen]);
-    setUrlImagen(""); // Reiniciar el campo de entrada
+    setImagen(urlImagen);
+    setUrlImagen("");
   };
 
-  const eliminarImagen = (index) => {
-    setImagenes((prev) => prev.filter((_, i) => i !== index));
+  const eliminarImagen = () => {
+    setImagen("");
   };
 
   const handleSubmit = (e) => {
@@ -62,7 +53,7 @@ function FormularioPublicacion() {
       precio: parseFloat(formData.precio),
       categoria_id: mapCategoria[formData.categoria],      
       stock: parseInt(formData.stock),
-      imagen: imagenes[0] || null,
+      imagen: imagen || null,
       vendedor_id: parseInt(userId),
     };
   
@@ -84,39 +75,23 @@ function FormularioPublicacion() {
       <div className="imagenes-publicacion">
         <div className="imagen-y-miniaturas">
           <div className="zona-principal">
-            {imagenes[0] ? (
+            {imagen ? (
               <>
-                <img src={imagenes[0]} alt="Principal" />
+                <img src={imagen} alt="Principal" />
                 <button
                   className="boton-eliminar"
-                  onClick={() => eliminarImagen(0)}
+                  onClick={eliminarImagen}
                 >
                   ×
                 </button>
               </>
             ) : (
-              <div className="texto-overlay">AÑADIR FOTOS</div>
+              <div className="texto-overlay">AÑADIR FOTO</div>
             )}
-          </div>
-
-          <div className="miniaturas-laterales">
-            {imagenes.slice(1).map((src, index) => (
-              <div key={index} className="miniatura-overlay">
-                <img src={src} alt={`Miniatura ${index + 1}`} />
-                <div className="numero-overlay">+{index + 1}</div>
-                <button
-                  className="boton-eliminar"
-                  onClick={() => eliminarImagen(index + 1)}
-                >
-                  ×
-                </button>
-              </div>
-            ))}
           </div>
         </div>
 
-        <p className="titulo-imagenes">Añadir imágenes mediante URL</p>
-        {/* Campo de entrada para la URL de la imagen */}
+        <p className="titulo-imagenes">Añadir imagen mediante URL</p>
         <div className="url-input-container">
           <input
             type="url"
@@ -130,7 +105,7 @@ function FormularioPublicacion() {
           </button>
         </div>
         <p className="texto-info">
-          Añade hasta 4 imágenes usando URLs de internet
+          Añade 1 imagen usando URL de internet
         </p>
       </div>
 
@@ -193,10 +168,6 @@ function FormularioPublicacion() {
             </select>
           </div>
 
-        
-
-        
-
           <div className="grupo-input">
             <label htmlFor="descripcion">Descripción</label>
             <textarea
@@ -208,7 +179,9 @@ function FormularioPublicacion() {
             ></textarea>
           </div>
 
-          <button type="submit">PUBLICAR</button>
+          <button type="submit" className="boton-publicar">
+            PUBLICAR
+          </button>
         </form>
       </div>
     </div>
