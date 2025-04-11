@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_BACKEND_URL } from "../config";
 
-function PublicacionCard({ publicacion }) {
+function PublicacionCard({ publicacion, onDelete }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -22,6 +22,7 @@ function PublicacionCard({ publicacion }) {
     try {
       const res = await axios.delete(`${API_BACKEND_URL}/productos/${publicacion.id}`);
       alert("Publicación eliminada con éxito");
+      onDelete(publicacion.id); // Llama a la función para actualizar el estado en MiPerfil
     } catch (err) {
       setError("Error al eliminar la publicación");
       console.error(err);

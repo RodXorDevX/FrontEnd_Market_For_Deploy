@@ -59,6 +59,10 @@ function MiPerfil() {
   // Verificamos si hay publicaciones
   const hasPublications = publicaciones.length > 0;
 
+  const handleDeletePublicacion = (deletedId) => {
+    setPublicaciones(prev => prev.filter(pub => pub.id !== deletedId));
+  };
+
   return (
     <div className="perfil-container">
       <SidebarPerfil />
@@ -72,7 +76,11 @@ function MiPerfil() {
           {/* Mapeo de publicaciones si está logueado y tiene publicaciones */}
           {isLoggedIn && hasPublications && (
             publicaciones.map((p) => (
-              <PublicacionCard key={p.id} publicacion={p} />
+              <PublicacionCard 
+                key={p.id} 
+                publicacion={p}
+                onDelete={handleDeletePublicacion}
+              />
             ))
           )}
         </div>
