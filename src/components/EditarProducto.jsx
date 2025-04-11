@@ -53,9 +53,8 @@ function EditarProducto() {
     e.preventDefault();
     try {
       await axios.put(`${API_BACKEND_URL}/productos/${id}`, producto);
-      // console.log("Producto actualizado:", producto);
       alert("Producto actualizado con éxito");
-      navigate(`/productos/${id}`); // Redirigir a la página del producto
+      navigate("/mi-perfil"); // Redirigir a la página MiPerfil
     } catch (error) {
       console.error("Error al actualizar el producto:", error);
     }
