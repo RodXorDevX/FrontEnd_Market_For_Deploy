@@ -20,9 +20,8 @@ function FormularioPublicacion() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleStockChange = (e) => {
-    setFormData((prev) => ({ ...prev, stock: parseInt(e.target.value) }));
-  };
+
+ 
 
   // Nuevo método para manejar el cambio de URL
   const handleUrlChange = (e) => {
@@ -44,50 +43,40 @@ function FormularioPublicacion() {
     setImagenes((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const token = localStorage.getItem("token"); 
-      const userId = localStorage.getItem("userId"); 
   
-      const mapCategoria = {
-        hombre: 1,
-        mujer: 2,
-        accesorios: 3,
-        tecnologia: 4,
-      };
+    const token = localStorage.getItem("token"); 
+    const userId = localStorage.getItem("userId"); 
   
-      const productoFinal = {
-        titulo: formData.titulo,
-        descripcion: formData.descripcion,
-        precio: parseFloat(formData.precio),
-        categoria_id: mapCategoria[formData.categoria],      
-        stock: formData.stock,
-        imagenes: imagenes,
-        vendedor_id: parseInt(userId),
-      };
+    const mapCategoria = {
+      hombre: 1,
+      mujer: 2,
+      accesorios: 3,
+      tecnologia: 4,
+    };
   
-      const response = await axios.post(`${API_BACKEND_URL}/productos`, productoFinal, {
+    const productoFinal = {
+      titulo: formData.titulo,
+      descripcion: formData.descripcion,
+      precio: parseFloat(formData.precio),
+      categoria_id: mapCategoria[formData.categoria],      
+      stock: parseInt(formData.stock),
+      imagen: imagenes[0] || null,
+      vendedor_id: parseInt(userId),
+    };
+  
+    axios
+      .post(`${API_BACKEND_URL}/productos`, productoFinal, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
+      })
+      .then(() => alert("¡Publicación creada!"))
+      .catch((err) => {
+        console.error(err);
+        alert("Error al publicar.");
       });
-
-      console.log("Publicación creada:", response.data);
-      alert("Publicación creada con éxito");
-      // Limpiar el formulario
-      setFormData({
-        titulo: "",
-        precio: "",
-        categoria: "",
-        descripcion: "",
-        stock: 1
-      });
-      setImagenes([]);
-    } catch (error) {
-      console.error("Error al crear la publicación:", error);
-      alert("Error al crear la publicación");
-    }
   };
 
   return (
@@ -178,7 +167,7 @@ function FormularioPublicacion() {
               id="stock"
               name="stock"
               value={formData.stock}
-              onChange={handleStockChange}
+              onChange={handleChange}
             >
               {[...Array(55).keys()].map((num) => (
                 <option key={num + 1} value={num + 1}>
