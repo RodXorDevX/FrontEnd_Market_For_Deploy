@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import SidebarPerfil from "../components/SidebarPerfil";
 import { AuthContext } from "../context/AuthContext";
 import { API_BACKEND_URL } from "../config";
+import axios from "axios";
 import "../assets/css/MisCompras.css";
 
 const EstrellasCalificacion = ({ calificacion, onCalificar, productoId }) => {
@@ -39,19 +40,24 @@ const MisCompras = () => {
         ? Math.round((calificacionActual + nuevaCalificacion) / 2)
         : nuevaCalificacion;
       
-      // Aquí deberías hacer una llamada a la API para guardar la calificación
-       await fetch(`${API_BACKEND_URL}/productos/${productoId}/calificacion`, {
-         method: 'POST',
-         headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify({ calificacion: promedio })
-       });
+      await axios.post(`${API_BACKEND_URL}/productos/${productoId}/calificacion`, 
+        { calificacion: promedio },
+        { 
+          headers: { 'Content-Type': 'application/json' },
+          withCredentials: true 
+        }
+      );
       
       setCalificaciones(prev => ({
         ...prev,
         [productoId]: { calificacion: promedio }
       }));
+      
+      // Mostrar feedback al usuario
+      alert("Calificación guardada correctamente");
     } catch (error) {
       console.error("Error al calificar producto:", error);
+      alert("Error al guardar la calificación");
     }
   };
 
