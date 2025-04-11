@@ -72,7 +72,7 @@ function FormularioPublicacion() {
         },
       });
 
-      // console.log("Publicación creada:", response.data);
+      console.log("Publicación creada:", response.data);
       alert("Publicación creada con éxito");
       // Limpiar el formulario
       setFormData({
@@ -173,14 +173,18 @@ function FormularioPublicacion() {
 
           <div className="grupo-input">
             <label htmlFor="stock">Cantidad de Productos</label>
-            <input
-              type="number"
+            <select
               id="stock"
               name="stock"
               value={formData.stock}
               onChange={handleChange}
-            />
-          
+            >
+              {[...Array(55).keys()].map((num) => (
+                <option key={num + 1} value={num + 1}>
+                  {num + 1}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="grupo-input">
