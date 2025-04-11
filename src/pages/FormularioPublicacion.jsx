@@ -177,17 +177,18 @@ function FormularioPublicacion() {
           </div>
 
           <div className="grupo-input">
-            <label htmlFor="stock">Cantidad de Productos</label>
+            <label htmlFor="stock">Cantidad</label>
             <input
-              type="number"
+              type="text"
               id="stock"
               name="stock"
-              min="1"
               placeholder="Cantidad"
               value={formData.stock}
               onChange={(e) => {
-                const value = parseInt(e.target.value) || 1;
-                setFormData(prev => ({ ...prev, stock: value }));
+                const value = e.target.value;
+                if (value === '' || /^\d*\.?\d*$/.test(value)) {
+                  handleChange(e);
+                }
               }}
             />
           </div>
