@@ -14,7 +14,7 @@ function GaleriaDestacados({ search }) {
         const response = await axios.get(`${API_BACKEND_URL}/productos`);
         const productos = response.data.data || response.data;
 
-        console.log(productos);
+        // console.log(productos);
 
         // Filtrar productos similares
         const productosFiltrados = productos.filter(producto => producto.titulo.toLowerCase().includes(search ? search.toLowerCase() : ''));

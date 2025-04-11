@@ -53,7 +53,7 @@ function EditarProducto() {
     e.preventDefault();
     try {
       await axios.put(`${API_BACKEND_URL}/productos/${id}`, producto);
-      console.log("Producto actualizado:", producto);
+      // console.log("Producto actualizado:", producto);
       alert("Producto actualizado con éxito");
       navigate(`/productos/${id}`); // Redirigir a la página del producto
     } catch (error) {

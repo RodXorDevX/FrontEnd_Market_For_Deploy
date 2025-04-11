@@ -72,7 +72,7 @@ function FormularioPublicacion() {
         },
       });
 
-      console.log("Publicación creada:", response.data);
+      // console.log("Publicación creada:", response.data);
       alert("Publicación creada con éxito");
       // Limpiar el formulario
       setFormData({

@@ -15,7 +15,7 @@ function MiPerfil() {
 
   // Log para ver el valor crudo del contexto cuando cambia (útil para depurar)
   useEffect(() => {
-     console.log("MiPerfil Effect - Valor crudo del contexto:", contextValue);
+     // console.log("MiPerfil Effect - Valor crudo del contexto:", contextValue);
   }, [contextValue]);
 
   useEffect(() => {
@@ -25,9 +25,9 @@ function MiPerfil() {
     if (contextValue && contextValue.usuario && contextValue.usuario.id) {
       // Accedemos al ID desde el objeto anidado 'usuario'
       const userId = contextValue.usuario.id;
-      console.log("MiPerfil Effect - ID de usuario encontrado correctamente:", userId); // <-- Debería mostrar el ID ahora
+      // console.log("MiPerfil Effect - ID de usuario encontrado correctamente:", userId); // <-- Debería mostrar el ID ahora
 
-      console.log(`Buscando publicaciones para el user ID: ${userId}`);
+      // console.log(`Buscando publicaciones para el user ID: ${userId}`);
 
       axios.get(`${API_BACKEND_URL}/productos`, { // Endpoint correcto para obtener productos
         params: {
@@ -37,7 +37,7 @@ function MiPerfil() {
         .then(response => {
           // Adaptamos por si la respuesta usa HATEOAS (datos dentro de 'data') o no
           const fetchedPublicaciones = response.data.data || response.data;
-          console.log("Publicaciones recibidas:", fetchedPublicaciones);
+          // console.log("Publicaciones recibidas:", fetchedPublicaciones);
           // Nos aseguramos de que siempre establezcamos un array en el estado
           setPublicaciones(Array.isArray(fetchedPublicaciones) ? fetchedPublicaciones : []);
         })
@@ -47,7 +47,7 @@ function MiPerfil() {
         });
     } else {
       // Esta condición ahora se cumple correctamente si contextValue, contextValue.usuario, o contextValue.usuario.id faltan
-      console.log("MiPerfil Effect - Datos de usuario o ID no disponibles en el contexto todavía.");
+      // console.log("MiPerfil Effect - Datos de usuario o ID no disponibles en el contexto todavía.");
       setPublicaciones([]); // Limpiamos si no hay usuario
     }
     // El efecto debe depender del valor completo del contexto que estamos usando

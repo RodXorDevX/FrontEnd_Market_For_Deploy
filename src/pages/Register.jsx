@@ -47,7 +47,7 @@ const Register = () => {
       }
 
       const data = await res.json();
-      console.log('Usuario registrado:', data);
+      // console.log('Usuario registrado:', data);
       // Redirigir al login después del registro exitoso
       window.location.href = '/login';
     } catch (error) {
