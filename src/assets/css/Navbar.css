@@ -111,7 +111,7 @@
   font-weight: bold;
 }
 
-/* Estilos para el botón de cerrar sesión /
+
 .nav-links button {
   background: none;
   border: none;
@@ -128,7 +128,7 @@
 }
 
 
-/ Asegúrate de que el body y html no tengan márgenes */
+
 body, html {
   margin: 0;
   padding: 0;
