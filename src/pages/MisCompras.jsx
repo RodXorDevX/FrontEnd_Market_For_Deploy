@@ -40,7 +40,7 @@ const MisCompras = () => {
         ? Math.round((calificacionActual + nuevaCalificacion) / 2)
         : nuevaCalificacion;
       
-      await axios.post(`${API_BACKEND_URL}/productos/${productoId}/calificacion`, 
+      await axios.put(`${API_BACKEND_URL}/productos/${productoId}/calificacion`, 
         { calificacion: promedio },
         {
           headers: {
