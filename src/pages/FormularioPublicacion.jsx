@@ -37,14 +37,14 @@ function FormularioPublicacion() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    console.log('Datos del formulario:', formData);
-    console.log('URL de la imagen:', imagen);
+   // console.log('Datos del formulario:', formData);
+   // console.log('URL de la imagen:', imagen);
   
     const token = localStorage.getItem("token"); 
     const userId = localStorage.getItem("userId"); 
     
-    console.log('Token:', token ? 'Presente' : 'Ausente');
-    console.log('User ID:', userId);
+    //console.log('Token:', token ? 'Presente' : 'Ausente');
+   // console.log('User ID:', userId);
   
     const mapCategoria = {
       hombre: 1,
@@ -63,7 +63,7 @@ function FormularioPublicacion() {
       vendedor_id: parseInt(userId),
     };
     
-    console.log('Producto a enviar:', productoFinal);
+   // console.log('Producto a enviar:', productoFinal);
   
     axios
       .post(`${API_BACKEND_URL}/productos`, productoFinal, {
@@ -72,12 +72,12 @@ function FormularioPublicacion() {
         },
       })
       .then((response) => {
-        console.log('Respuesta del servidor:', response.data);
+      //  console.log('Respuesta del servidor:', response.data);
         alert("¡Publicación creada!");
       })
       .catch((err) => {
-        console.error('Error al publicar:', err);
-        console.error('Detalles del error:', err.response?.data);
+       // console.error('Error al publicar:', err);
+      //  console.error('Detalles del error:', err.response?.data);
         alert("Error al publicar.");
       });
   };
