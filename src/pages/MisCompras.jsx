@@ -103,7 +103,7 @@ const MisCompras = () => {
   }, [usuario?.usuario?.id]);
 
   return (
-    <div className="perfil-contenedor">
+    <div className="perfil-contenidor">
       <SidebarPerfil />
       <div className="compras-contenido">
         <h2>Mis Compras </h2>
@@ -117,7 +117,7 @@ const MisCompras = () => {
               className="btn-ver-productos"
               onClick={() => navigate("/publicaciones")}
             >
-              Revisa nuestros productos aquÃ­
+              Revisa nuestros productos aquí
             </button>
           </div>
         ) : (

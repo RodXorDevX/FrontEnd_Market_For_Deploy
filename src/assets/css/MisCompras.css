@@ -84,6 +84,21 @@
   transform: scale(1.1);
 }
 
+.sin-compras {
+  text-align: center;
+  padding: 1rem;
+}
+
+.btn-ver-productos {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* Media queries para móviles */
 @media (max-width: 768px) {
   .perfil-contenidor {
@@ -112,5 +127,13 @@
   
   .estrellas-calificacion {
     justify-content: center;
+  }
+  
+  .btn-ver-productos {
+    width: 100%;
+  }
+  
+  .sin-compras {
+    padding: 2rem 1rem;
   }
 }
