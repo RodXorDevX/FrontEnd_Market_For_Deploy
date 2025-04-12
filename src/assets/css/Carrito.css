@@ -100,3 +100,42 @@
     }
   }
   
+  /* Estilos responsivos para móviles */
+  @media (max-width: 768px) {
+    .carrito-container {
+      flex-direction: column;
+    }
+    
+    .sidebar-container {
+      width: 100%;
+      display: none;
+    }
+    
+    .sidebar-container.open {
+      display: block;
+    }
+    
+    .mobile-menu-button {
+      display: block;
+      padding: 10px;
+      background: #f0f0f0;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .carrito-content {
+      width: 100%;
+      padding: 10px;
+    }
+    
+    /* Ajustes para elementos del carrito */
+    .producto-carrito {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .cantidad-controls {
+      margin-top: 10px;
+    }
+  }
