@@ -1,7 +1,6 @@
 .sidebar {
-    width: 100%;
-    max-width: 100vw;
-    min-height: auto; 
+    width: 250px;
+    min-height: calc(100vh - 60px); 
     height: auto;
     background-color: #999999;
     color: white;
@@ -107,5 +106,12 @@
 @media (min-width: 768px) {
     .menu-item span {
         display: inline;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      min-height: auto;
     }
 }
