@@ -83,3 +83,34 @@
 .estrellas-calificacion .estrella:hover {
   transform: scale(1.1);
 }
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  .perfil-contenidor {
+    flex-direction: column;
+  }
+  
+  .compras-contenido {
+    padding: 1rem;
+    padding-bottom: 4rem;
+  }
+  
+  .tarjeta-compra {
+    margin: 0.5rem 0;
+  }
+  
+  .producto-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .producto-imagen {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+  
+  .estrellas-calificacion {
+    justify-content: center;
+  }
+}
