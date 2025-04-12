@@ -71,58 +71,8 @@ function Carrito({}) {
     }
   };
 
-  const styles = {
-    container: {
-      padding: '20px',
-      '@media (max-width: 768px)': {
-        padding: '10px'
-      }
-    },
-    item: {
-      display: 'flex',
-      marginBottom: '20px',
-      '@media (max-width: 768px)': {
-        flexDirection: 'column',
-        marginBottom: '15px'
-      }
-    },
-    button: {
-      padding: '12px 24px',
-      '@media (max-width: 768px)': {
-        padding: '15px',
-        fontSize: '16px',
-        width: '100%'
-      }
-    },
-    resumen: {
-      padding: '20px',
-      border: '1px solid #eee',
-      borderRadius: '8px',
-      marginTop: '20px',
-      '@media (max-width: 768px)': {
-        position: 'fixed',
-        bottom: '0',
-        left: '0',
-        right: '0',
-        background: '#fff',
-        boxShadow: '0 -2px 10px rgba(0,0,0,0.1)',
-        padding: '15px',
-        marginTop: '0',
-        zIndex: '100'
-      }
-    },
-    resumenItem: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      marginBottom: '10px',
-      '@media (max-width: 768px)': {
-        fontSize: '14px'
-      }
-    }
-  };
-
   return (
-    <div style={styles.container}>
+    <div className="carrito-container">
       <SidebarPerfil />
       <main className="carrito-main">
         <div className="carrito-productos">
@@ -131,7 +81,7 @@ function Carrito({}) {
             <p>No hay productos en el carrito.</p>
           ) : (
             carrito.map((item) => (
-              <div key={item.id} className="carrito-item" style={styles.item}>
+              <div key={item.id} className="carrito-item">
                 <img
                   src={item.image || item.imagen}
                   alt={item.title || item.titulo}
@@ -162,27 +112,27 @@ function Carrito({}) {
             ))
           )}
         </div>
-        <div style={styles.resumen}>
-          <h3>Resumen del Pedido</h3>
-          <div style={styles.resumenItem}>
-            <span>Productos:</span>
-            <span>{carrito.length}</span>
-          </div>
-          <div style={styles.resumenItem}>
-            <span>Envío:</span>
-            <span>$0</span>
-          </div>
-          <div style={styles.resumenItem}>
-            <strong>Total:</strong>
-            <strong>${calcularTotal().toLocaleString("es-CL")}</strong>
-          </div>
-          <button 
-            onClick={handlePagar} 
-            style={styles.button}
-            disabled={isProcessing}
-          >
-            {isProcessing ? 'Procesando...' : 'Pagar'}
+        <div className="carrito-resumen">
+          <h3>RESUMEN</h3>
+          <ul>
+            {carrito.map((item) => (
+              <li key={item.id}>
+                {item.title || item.titulo}
+                <br />${Number(item.precio).toLocaleString("es-CL")} x{" "}
+                {item.cantidad}
+              </li>
+            ))}
+          </ul>
+          <hr />
+          <p>
+            <strong>TOTAL:</strong> ${calcularTotal().toLocaleString("es-CL")}
+          </p>
+          <button onClick={handlePagar} disabled={isProcessing}>
+            {isProcessing ? "Procesando..." : "PAGAR"}
           </button>
+          {showSuccessMessage && (
+            <div className="success-message">¡Compra realizada con éxito!</div>
+          )}
         </div>
       </main>
     </div>
