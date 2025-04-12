@@ -9,7 +9,9 @@ const ResumenCompra = () => {
     if (!carrito || carrito.length === 0) {
       return (
         <div className="resumen-compra-container">
-          <p>No hay productos en tu compra.</p>
+          <div className="resumen-compra-main">
+            <p>No hay productos en tu compra.</p>
+          </div>
         </div>
       );
     }

@@ -1,70 +1,102 @@
 /* Estilo para el contenedor principal */
-.perfil-contenedor {
+.resumen-compra-container {
     display: flex;
     min-height: 100vh;
-    background-color: #f4f4f4; /* Fondo gris para todo el perfil */
-    padding: 0;
+    background-color: #f4f4f4;
     width: 100%;
-  }
-  
-  /* Estilo del resumen de compra */
-  .resumen-compra-main {
-    margin-left: 0; /* Elimina el margen para que empiece desde el lado del sidebar */
+}
+
+/* Estilo del resumen de compra */
+.resumen-compra-main {
+    margin-left: 250px;
     padding: 2rem;
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
     box-sizing: border-box;
-    width: calc(100% - 250px); /* Esto mantiene el tamaño del sidebar y asegura que el contenido ocupe el resto */
+    width: calc(100% - 250px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
-  
-  .resumen-compra-main h2 {
+}
+
+.resumen-compra-main h2 {
     font-size: 2rem;
     color: #333;
-  }
-  
-  .resumen-compra-main .productos-comprados {
+}
+
+.resumen-mensaje {
+    margin-bottom: 1.5rem;
+}
+
+.productos-comprados {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  
-  .resumen-compra-main .producto-item {
+}
+
+.producto-item {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-  }
-  
-  .resumen-compra-main .producto-item img {
-    width: 150px;
-    height: 150px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.producto-item img {
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-  }
-  
-  .resumen-compra-main .producto-info {
+    border-radius: 4px;
+}
+
+.producto-info {
     flex: 1;
-  }
-  
-  .resumen-compra-main .resumen-total {
+}
+
+.resumen-total {
     font-size: 1.5rem;
     margin-top: 2rem;
-    font-weight: bold;
-  }
-  
-  .success-message {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.success-message {
     background-color: #28a745;
     color: white;
     padding: 1rem;
     margin-top: 2rem;
     text-align: center;
     font-size: 1.2rem;
-  }
-  
-  /* Aseguramos que no haya márgenes innecesarios */
-  .container-fluid {
+}
+
+/* Aseguramos que no haya márgenes innecesarios */
+.container-fluid {
     margin: 0;
     padding: 0;
     width: 100%;
-  }
-  
+}
+
+/* Estilos para móvil */
+@media (max-width: 768px) {
+    .resumen-compra-container {
+        flex-direction: column;
+    }
+    
+    .resumen-compra-main {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .producto-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .producto-item img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+}
