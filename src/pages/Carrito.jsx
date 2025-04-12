@@ -75,6 +75,27 @@ function Carrito({}) {
     <div className="carrito-container">
       <SidebarPerfil />
       <main className="carrito-main">
+        <div className="carrito-resumen-mobile">
+          <h3>RESUMEN</h3>
+          <ul>
+            {carrito.map((item) => (
+              <li key={item.id}>
+                {item.title || item.titulo}
+                <br />${Number(item.precio).toLocaleString("es-CL")} x {item.cantidad}
+              </li>
+            ))}
+          </ul>
+          <hr />
+          <p>
+            <strong>TOTAL:</strong> ${calcularTotal().toLocaleString("es-CL")}
+          </p>
+          <button onClick={handlePagar} disabled={isProcessing}>
+            {isProcessing ? "Procesando..." : "PAGAR"}
+          </button>
+          {showSuccessMessage && (
+            <div className="success-message">¡Compra realizada con éxito!</div>
+          )}
+        </div>
         <div className="carrito-productos">
           <h2>CARRITO DE COMPRAS</h2>
           {carrito.length === 0 ? (
@@ -110,28 +131,6 @@ function Carrito({}) {
                 </p>
               </div>
             ))
-          )}
-        </div>
-        <div className="carrito-resumen">
-          <h3>RESUMEN</h3>
-          <ul>
-            {carrito.map((item) => (
-              <li key={item.id}>
-                {item.title || item.titulo}
-                <br />${Number(item.precio).toLocaleString("es-CL")} x{" "}
-                {item.cantidad}
-              </li>
-            ))}
-          </ul>
-          <hr />
-          <p>
-            <strong>TOTAL:</strong> ${calcularTotal().toLocaleString("es-CL")}
-          </p>
-          <button onClick={handlePagar} disabled={isProcessing}>
-            {isProcessing ? "Procesando..." : "PAGAR"}
-          </button>
-          {showSuccessMessage && (
-            <div className="success-message">¡Compra realizada con éxito!</div>
           )}
         </div>
       </main>

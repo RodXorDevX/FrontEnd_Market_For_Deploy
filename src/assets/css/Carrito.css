@@ -114,4 +114,22 @@
     .sidebar, .carrito-main {
       width: 100%;
     }
+    
+    .carrito-main {
+      flex-direction: column;
+      padding: 1rem;
+    }
+    
+    .carrito-resumen-mobile {
+      order: -1;
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    
+    .carrito-item {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
