@@ -4,18 +4,22 @@ import "../assets/css/ResumenCompra.css"
 
 const ResumenCompra = () => {
     const location = useLocation();
-    const { carrito, total } = location.state || {}; // Obtener los productos y el total desde el estado de la navegación
+    const { carrito, total } = location.state || {};
   
     if (!carrito || carrito.length === 0) {
-      return <p>No hay productos en tu compra.</p>; // Si no hay productos, muestra un mensaje
+      return (
+        <div className="resumen-compra-container">
+          <p>No hay productos en tu compra.</p>
+        </div>
+      );
     }
   
     return (
-      <div className="perfil-contenedor">
-        <SidebarPerfil /> {/* Sidebar del perfil */}
+      <div className="resumen-compra-container">
+        <SidebarPerfil />
         <div className="resumen-compra-main">
           <h2>¡Compra realizada con éxito!</h2>
-          <p>Gracias por tu compra. Aquí están los productos que has adquirido:</p>
+          <p className="resumen-mensaje">Gracias por tu compra. Aquí está tu resumen:</p>
           
           <div className="productos-comprados">
             {carrito.map((item) => (
@@ -23,16 +27,16 @@ const ResumenCompra = () => {
                 <img src={item.imagen || item.image} alt={item.title || item.titulo} />
                 <div className="producto-info">
                   <h4>{item.title || item.titulo}</h4>
-                  <p>TALLA: {item.talla || 'S'}</p>
-                  <p>CANTIDAD: {item.cantidad}</p>
-                  <p>PRECIO: ${item.precio}</p>
+                  <p><strong>Talla:</strong> {item.talla || 'S'}</p>
+                  <p><strong>Cantidad:</strong> {item.cantidad}</p>
+                  <p><strong>Precio:</strong> ${Number(item.precio).toLocaleString("es-CL")}</p>
                 </div>
               </div>
             ))}
           </div>
           
           <div className="resumen-total">
-            <h3>Total de la compra: ${total}</h3>
+            <h3>Total: ${Number(total).toLocaleString("es-CL")}</h3>
           </div>
         </div>
       </div>
