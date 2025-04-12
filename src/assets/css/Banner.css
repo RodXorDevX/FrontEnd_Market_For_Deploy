@@ -106,3 +106,28 @@
 .carousel-item {
   transition: transform .6s ease-in-out;
 }
+
+/* Media queries para móvil */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 300px; /* Reducir altura en móvil */
+  }
+  
+  .carousel-caption {
+    left: 5%;
+    max-width: 90%;
+  }
+  
+  .banner-content h1 {
+    font-size: 28px; /* Reducir tamaño de fuente */
+  }
+  
+  .banner-content p {
+    font-size: 16px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    padding: 10px; /* Iconos más pequeños */
+  }
+}

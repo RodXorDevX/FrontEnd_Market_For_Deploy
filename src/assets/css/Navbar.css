@@ -156,6 +156,15 @@ body, html {
   margin-left: 1rem;
   display: flex;
   align-items: center;
+  margin: 1rem 0;
+}
+
+/* Contenedor del avatar */
+.avatar-container {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  z-index: 100;
 }
 
 .avatar-img {
@@ -163,6 +172,15 @@ body, html {
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid #ffcc00;
+}
+
+/* Contenedor del carrito */
+.cart-container {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  z-index: 100;
 }
 
 /* Hamburger menu styles */
@@ -179,7 +197,7 @@ body, html {
 }
 
 /* Mobile responsive styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 810px) {
   .hamburger-menu {
     display: block;
   }
@@ -240,14 +258,6 @@ body, html {
     display: none;
   }
   
-  /* Mostrar carrito móvil */
-  .mobile-cart {
-    display: block;
-    
-    position: relative;
-    z-index: 999;
-  }
-  
   /* Ajustar espaciado del navbar móvil */
   .navbar {
     justify-content: space-between;
@@ -267,5 +277,18 @@ body, html {
   .logo-icon {
     width: 35px;
     height: 35px;
+  }
+  
+  .avatar-container {
+    margin-right: 0.5rem;
+  }
+  
+  .avatar-img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .cart-container {
+    margin-right: 0.5rem;
   }
 }

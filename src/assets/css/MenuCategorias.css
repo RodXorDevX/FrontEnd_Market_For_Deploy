@@ -37,3 +37,39 @@
     background-color: #072d57;
     color: white;
 }
+
+@media (max-width: 768px) {
+  .menu-categorias {
+    width: 100%;
+    padding: 0.25rem 0;
+    margin: -0.5rem 0 0.5rem 0;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+  }
+  
+  .menu-categorias h3 {
+    display: none;
+  }
+  
+  .menu-categorias ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 95%;
+    padding: 0.2rem 0;
+  }
+  
+  .menu-categorias li {
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    border: 1px solid #f0f0f0;
+  }
+}

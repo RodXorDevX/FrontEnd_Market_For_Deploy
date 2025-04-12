@@ -142,10 +142,42 @@
     background-color: white !important;
 }
 
-
-
 .gallery-title {
     margin-top: 10px;
     text-align: center;
     color: #555;
+}
+
+/* Media queries para móvil */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 10px;
+  }
+  
+  .banner {
+    flex-direction: column;
+  }
+  
+  .banner-content, .banner-image {
+    width: 100%;
+  }
+  
+  .banner-title {
+    font-size: 32px;
+  }
+  
+  .search-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .gallery-icon {
+    width: 100%;
+    height: 120px;
+    margin-right: 0;
+  }
+  
+  .search-input {
+    padding: 10px 15px;
+  }
 }

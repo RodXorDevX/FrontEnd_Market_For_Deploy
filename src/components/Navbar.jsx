@@ -44,10 +44,21 @@ function Navbar() {
         <Link to="/" className="text-0-1-4">TREND'S</Link>
       </div>
 
-      {/* Carrito siempre visible en móvil */}
+      {/* Avatar fuera del menú */}
       {usuario && (
-        <div className="mobile-cart">
-          <Link to="/carrito" className="container-0-1-3 desktop-only">
+        <div className="avatar-container">
+          <img
+            src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
+            alt="Avatar"
+            className="avatar-img"
+          />
+        </div>
+      )}
+
+      {/* Carrito siempre visible */}
+      {usuario && (
+        <div className="cart-container">
+          <Link to="/carrito" className="container-0-1-3">
             <FaShoppingCart color="#151c33" size={20} />
             {carrito && carrito.length > 0 && (
               <span className="cart-total">
@@ -100,30 +111,6 @@ function Navbar() {
             </div>
           </>
         )}
-
-        <div className="user-actions desktop-only">
-          {usuario && (
-            <>
-              <Link to="/carrito" className="container-0-1-3 desktop-only">
-                <FaShoppingCart color="#151c33" size={20} />
-                {carrito && carrito.length > 0 && (
-                  <span className="cart-total">
-                    ${calcularTotal().toLocaleString("es-CL")}
-                  </span>
-                )}
-              </Link>
-
-              {/* Mostrar avatar */}
-              <div className="avatar-navbar">
-                <img
-                  src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
-                  alt="Avatar"
-                  className="avatar-img"
-                />
-              </div>
-            </>
-          )}
-        </div>
       </div>
     </nav>
   );
