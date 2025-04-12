@@ -72,69 +72,71 @@ function Carrito({}) {
   };
 
   return (
-    <div className="carrito-container">
-      <SidebarPerfil />
-      <main className="carrito-main">
-        <div className="carrito-productos">
-          <h2>CARRITO DE COMPRAS</h2>
-          {carrito.length === 0 ? (
-            <p>No hay productos en el carrito.</p>
-          ) : (
-            carrito.map((item) => (
-              <div key={item.id} className="carrito-item">
-                <img
-                  src={item.image || item.imagen}
-                  alt={item.title || item.titulo}
-                />
-                <div className="carrito-item-info">
-                  <h4>{item.title || item.titulo}</h4>
-                  <p>
-                    TALLA {item.talla || "S"} - {item.color || "BLANCO"}
+    <div className="carrito-container" style={{ width: '100vw', overflowX: 'hidden' }}>
+      <div className="carrito-layout">
+        <SidebarPerfil />
+        <main className="carrito-main">
+          <div className="carrito-productos">
+            <h2>CARRITO DE COMPRAS</h2>
+            {carrito.length === 0 ? (
+              <p>No hay productos en el carrito.</p>
+            ) : (
+              carrito.map((item) => (
+                <div key={item.id} className="carrito-item">
+                  <img
+                    src={item.image || item.imagen}
+                    alt={item.title || item.titulo}
+                  />
+                  <div className="carrito-item-info">
+                    <h4>{item.title || item.titulo}</h4>
+                    <p>
+                      TALLA {item.talla || "S"} - {item.color || "BLANCO"}
+                    </p>
+                  </div>
+                  <div className="carrito-cantidad">
+                    <button onClick={() => disminuirCantidad(item.id)}>-</button>
+                    <span>{item.cantidad}</span>
+                    <button
+                      onClick={() => agregarAlCarrito(item)}
+                      disabled={
+                        item.cantidad >=
+                        (item.stock || item.cantidad_disponible || Infinity)
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p className="carrito-precio">
+                    ${Number(item.precio).toLocaleString("es-CL")}
                   </p>
                 </div>
-                <div className="carrito-cantidad">
-                  <button onClick={() => disminuirCantidad(item.id)}>-</button>
-                  <span>{item.cantidad}</span>
-                  <button
-                    onClick={() => agregarAlCarrito(item)}
-                    disabled={
-                      item.cantidad >=
-                      (item.stock || item.cantidad_disponible || Infinity)
-                    }
-                  >
-                    +
-                  </button>
-                </div>
-                <p className="carrito-precio">
-                  ${Number(item.precio).toLocaleString("es-CL")}
-                </p>
-              </div>
-            ))
-          )}
-        </div>
-        <div className="carrito-resumen">
-          <h3>RESUMEN</h3>
-          <ul>
-            {carrito.map((item) => (
-              <li key={item.id}>
-                {item.title || item.titulo}
-                <br />${Number(item.precio).toLocaleString("es-CL")} x{" "}
-                {item.cantidad}
-              </li>
-            ))}
-          </ul>
-          <hr />
-          <p>
-            <strong>TOTAL:</strong> ${calcularTotal().toLocaleString("es-CL")}
-          </p>
-          <button onClick={handlePagar} disabled={isProcessing}>
-            {isProcessing ? "Procesando..." : "PAGAR"}
-          </button>
-          {showSuccessMessage && (
-            <div className="success-message">¡Compra realizada con éxito!</div>
-          )}
-        </div>
-      </main>
+              ))
+            )}
+          </div>
+          <div className="carrito-resumen">
+            <h3>RESUMEN</h3>
+            <ul>
+              {carrito.map((item) => (
+                <li key={item.id}>
+                  {item.title || item.titulo}
+                  <br />${Number(item.precio).toLocaleString("es-CL")} x{" "}
+                  {item.cantidad}
+                </li>
+              ))}
+            </ul>
+            <hr />
+            <p>
+              <strong>TOTAL:</strong> ${calcularTotal().toLocaleString("es-CL")}
+            </p>
+            <button onClick={handlePagar} disabled={isProcessing}>
+              {isProcessing ? "Procesando..." : "PAGAR"}
+            </button>
+            {showSuccessMessage && (
+              <div className="success-message">¡Compra realizada con éxito!</div>
+            )}
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
