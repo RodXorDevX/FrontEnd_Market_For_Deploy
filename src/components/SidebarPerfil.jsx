@@ -43,7 +43,7 @@ function SidebarPerfil() {
           onClick={() => navigate('/perfil')}
         >
           <FaUser />
-          <span>Mis Publicaciones</span>
+          <span>Publicaciones</span>
         </button>
         <button 
           className={`menu-item ${isActive('/carrito') ? 'active' : ''}`}

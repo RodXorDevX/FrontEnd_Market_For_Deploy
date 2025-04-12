@@ -74,6 +74,31 @@
     display: block;
 }
 
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 0.5rem;
+  }
+  
+  .menu-item {
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .menu-item span {
+    display: inline !important; /* Forzar mostrar texto */
+  }
+  
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 @media (max-width: 767px) {
     .sidebar {
         width: 100%;
