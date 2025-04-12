@@ -1,8 +1,30 @@
-# React + Vite
+# Marketplace App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma completa de comercio electrónico donde puedes:
+- Publicar productos para vender
+- Comprar artículos de otros vendedores
+- Gestionar tu inventario y ventas
 
-Currently, two official plugins are available:
+Desarrollada con:
+- JavaScript
+- React
+- CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
+Puedes probar la aplicación en: [marketplace-trends.netlify.app](https://marketplace-trends.netlify.app/)
+
+## Características
+- Publicación de productos
+- Sistema de compra/venta
+- Búsqueda y filtrado básico
+- Perfiles de usuario
+- Diseño responsive
+
+## Instalación
+```bash
+npm install
+npm run dev
+```
+
+## Despliegue
+El proyecto se despliega automáticamente en Netlify cuando se actualiza la rama main.
