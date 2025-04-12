@@ -163,3 +163,36 @@
     background-color: #0056b3;
   }
   
+  /* Media queries para móviles */
+@media (max-width: 768px) {
+  .detalle-container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .detalle-imagenes, .detalle-info {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .detalle-imagenes {
+    flex-direction: column;
+  }
+  
+  .miniaturas {
+    flex-direction: row;
+    order: 1;
+    margin-top: 1rem;
+  }
+  
+  .imagen-principal img {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .miniaturas img {
+    width: 50px;
+    height: 50px;
+  }
+}
