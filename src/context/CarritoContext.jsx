@@ -1,10 +1,17 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 // Creamos el contexto
 export const CarritoContext = createContext();
 
 export const CarritoProvider = ({ children }) => {
-  const [carrito, setCarrito] = useState([]);
+  const [carrito, setCarrito] = useState(() => {
+    const carritoGuardado = localStorage.getItem('carrito');
+    return carritoGuardado ? JSON.parse(carritoGuardado) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }, [carrito]);
 
   // Función para agregar productos al carrito
   const agregarAlCarrito = (producto) => {
@@ -46,6 +53,7 @@ export const CarritoProvider = ({ children }) => {
   // Función para vaciar el carrito
   const vaciarCarrito = () => {
     setCarrito([]);  // Vacía el carrito
+    localStorage.removeItem('carrito'); // Limpia el localStorage
   };
 
   // Función para calcular el total del carrito
