@@ -46,7 +46,6 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-right: 80px;
   box-sizing: border-box;
 }
 
@@ -156,18 +155,18 @@ body, html {
   overflow-x: hidden;
 }
 
-.avatar-navbar {
-  margin-left: 1rem;
+/* Avatar en escritorio (dentro del menú) */
+.avatar-container-desktop {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  z-index: 100;
 }
 
-/* Contenedor del avatar */
-.avatar-container {
-  display: flex;
+/* Avatar en móvil (separado) */
+.avatar-container-mobile {
+  display: none; /* Oculto por defecto, se muestra solo en móvil */
   align-items: center;
-  margin-right: 1rem;
+  margin-right: 65px; /* Espacio para el carrito flotante */
   z-index: 100;
 }
 
@@ -191,6 +190,12 @@ body, html {
 @media screen and (max-width: 810px) {
   .hamburger-menu {
     display: block;
+    order: -1; /* Mover al inicio (izquierda) */
+  }
+  
+  .navbar {
+    justify-content: space-between;
+    padding: 0 1rem;
   }
   
   .nav-links {
@@ -213,17 +218,21 @@ body, html {
     right: 0;
   }
   
-  /* Ocultar menú de escritorio en móvil */
-  .menu-items-desktop {
+  /* Ocultar menú de escritorio y avatar de escritorio en móvil */
+  .menu-items-desktop, .avatar-container-desktop {
     display: none;
   }
   
-  /* Mostrar menú móvil en columna */
+  /* Mostrar menú móvil en columna y avatar móvil */
   .menu-items-mobile {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 20px;
+  }
+  
+  .avatar-container-mobile {
+    display: flex;
   }
   
   .menu-items-mobile a, 
@@ -244,12 +253,6 @@ body, html {
     color: #ffcc00;
   }
   
-  /* Ajustar espaciado del navbar móvil */
-  .navbar {
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-  
   /* Ajustar el logo para que sea más pequeño en móvil */
   .text-0-1-4 {
     font-size: 28px;
@@ -263,10 +266,6 @@ body, html {
   .logo-icon {
     width: 35px;
     height: 35px;
-  }
-  
-  .avatar-container {
-    margin-right: 0.5rem;
   }
   
   .avatar-img {
