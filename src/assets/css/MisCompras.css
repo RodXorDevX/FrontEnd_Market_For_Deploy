@@ -12,6 +12,8 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .producto-item {
@@ -47,7 +49,8 @@
   padding-top: 3rem;
   flex-wrap: wrap;
   padding-bottom: 7rem;
-
+  max-width: 800px; /* Ancho máximo para vista escritorio */
+  width: 100%;
 }
 
 .compras-contenido	h2{
