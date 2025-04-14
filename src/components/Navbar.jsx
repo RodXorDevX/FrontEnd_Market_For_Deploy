@@ -35,6 +35,11 @@ function Navbar() {
 
   return (
     <nav className="navbar">
+      {/* Botón de hamburguesa para móviles (ahora a la izquierda) */}
+      <div className="hamburger-menu" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes color="#ffffff" size={24} /> : <FaBars color="#ffffff" size={24} />}
+      </div>
+      
       <div className="logo-section">
         <div className="container-0-1-6">
           <div className="logo-icon">
@@ -42,11 +47,6 @@ function Navbar() {
           </div>
         </div>
         <Link to="/" className="text-0-1-4">TREND'S</Link>
-      </div>
-
-      {/* Botón de hamburguesa para móviles */}
-      <div className="hamburger-menu" onClick={toggleMenu}>
-        {menuOpen ? <FaTimes color="#ffffff" size={24} /> : <FaBars color="#ffffff" size={24} />}
       </div>
 
       <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
@@ -76,6 +76,15 @@ function Navbar() {
               <Link to="/perfil">Mi Perfil</Link>
               <Link to="/publicar">Publicar</Link>
               <button onClick={logout}>Cerrar sesión</button>
+              
+              {/* Avatar integrado en el menú de escritorio */}
+              <div className="avatar-container-desktop">
+                <img
+                  src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
+                  alt="Avatar"
+                  className="avatar-img"
+                />
+              </div>
             </div>
             
             {/* Menú móvil - columna vertical */}
@@ -88,9 +97,9 @@ function Navbar() {
         )}
       </div>
 
-      {/* Avatar visible en la barra de navegación */}
+      {/* Avatar visible solo en móvil */}
       {usuario && (
-        <div className="avatar-container">
+        <div className="avatar-container-mobile">
           <img
             src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
             alt="Avatar"

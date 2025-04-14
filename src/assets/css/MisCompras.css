@@ -65,7 +65,7 @@
   flex-direction: column;
   gap: 0.3rem;
   background-color: white;
-  padding: 0.8rem;
+  padding: 0.8rem 0.8rem 0.5rem;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
   margin: 0.5rem 0;
@@ -105,6 +105,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.resumen-total {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
 }
 
 /* Media queries para móviles */
