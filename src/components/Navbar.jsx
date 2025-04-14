@@ -44,31 +44,6 @@ function Navbar() {
         <Link to="/" className="text-0-1-4">TREND'S</Link>
       </div>
 
-      {/* Avatar fuera del menú */}
-      {usuario && (
-        <div className="avatar-container">
-          <img
-            src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
-            alt="Avatar"
-            className="avatar-img"
-          />
-        </div>
-      )}
-
-      {/* Carrito siempre visible */}
-      {usuario && (
-        <div className="cart-container">
-          <Link to="/carrito" className="container-0-1-3">
-            <FaShoppingCart color="#151c33" size={20} />
-            {carrito && carrito.length > 0 && (
-              <span className="cart-total">
-                ${calcularTotal().toLocaleString("es-CL")}
-              </span>
-            )}
-          </Link>
-        </div>
-      )}
-
       {/* Botón de hamburguesa para móviles */}
       <div className="hamburger-menu" onClick={toggleMenu}>
         {menuOpen ? <FaTimes color="#ffffff" size={24} /> : <FaBars color="#ffffff" size={24} />}
@@ -112,6 +87,31 @@ function Navbar() {
           </>
         )}
       </div>
+
+      {/* Avatar visible en la barra de navegación */}
+      {usuario && (
+        <div className="avatar-container">
+          <img
+            src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
+            alt="Avatar"
+            className="avatar-img"
+          />
+        </div>
+      )}
+
+      {/* Carrito flotante */}
+      {usuario && (
+        <div className="floating-cart">
+          <Link to="/carrito" className="container-0-1-3">
+            <FaShoppingCart color="#151c33" size={20} />
+            {carrito && carrito.length > 0 && (
+              <span className="cart-total">
+                ${calcularTotal().toLocaleString("es-CL")}
+              </span>
+            )}
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
