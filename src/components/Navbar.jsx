@@ -35,11 +35,12 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      {/* Botón de hamburguesa para móviles (ahora a la izquierda) */}
-      <div className="hamburger-menu" onClick={toggleMenu}>
+      {/* Menú hamburguesa móvil (izquierda) */}
+      <div className="mobile-only hamburger-menu" onClick={toggleMenu}>
         {menuOpen ? <FaTimes color="#ffffff" size={24} /> : <FaBars color="#ffffff" size={24} />}
       </div>
       
+      {/* Logo (izquierda) */}
       <div className="logo-section">
         <div className="container-0-1-6">
           <div className="logo-icon">
@@ -49,78 +50,87 @@ function Navbar() {
         <Link to="/" className="text-0-1-4">TREND'S</Link>
       </div>
 
-      <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
+      {/* Menú desplegable móvil */}
+      <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
         {!usuario ? (
-          <>
-            <div className="menu-items-desktop">
-              <span className="text-0-1-5">
-                <Link to="/registro">REGISTRO</Link>
-              </span>
-              <span className="text-0-1-1">
-                <Link to="/login">INGRESAR</Link>
-              </span>
-            </div>
-            <div className="menu-items-mobile">
-              <span className="text-0-1-5">
-                <Link to="/registro" onClick={closeMenu}>REGISTRO</Link>
-              </span>
-              <span className="text-0-1-1">
-                <Link to="/login" onClick={closeMenu}>INGRESAR</Link>
-              </span>
-            </div>
-          </>
+          <div className="menu-items-mobile">
+            <Link to="/registro" onClick={closeMenu}>REGISTRO</Link>
+            <Link to="/login" onClick={closeMenu}>INGRESAR</Link>
+          </div>
+        ) : (
+          <div className="menu-items-mobile">
+            <Link to="/perfil" onClick={closeMenu}>Mi Perfil</Link>
+            <Link to="/publicar" onClick={closeMenu}>Publicar</Link>
+            <button onClick={() => { logout(); closeMenu(); }}>Cerrar sesión</button>
+          </div>
+        )}
+      </div>
+
+      {/* Contenedor derecho con todos los elementos juntos (escritorio) */}
+      <div className="desktop-nav-right">
+        {!usuario ? (
+          <div className="auth-links">
+            <Link to="/registro">REGISTRO</Link>
+            <Link to="/login">INGRESAR</Link>
+          </div>
         ) : (
           <>
             {/* Menú de escritorio - fila horizontal */}
-            <div className="menu-items-desktop">
+            <div className="user-nav">
               <Link to="/perfil">Mi Perfil</Link>
               <Link to="/publicar">Publicar</Link>
               <button onClick={logout}>Cerrar sesión</button>
               
-              {/* Avatar integrado en el menú de escritorio */}
-              <div className="avatar-container-desktop">
+              {/* Avatar en escritorio */}
+              <div className="avatar-container">
                 <img
                   src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
                   alt="Avatar"
                   className="avatar-img"
                 />
               </div>
-            </div>
-            
-            {/* Menú móvil - columna vertical */}
-            <div className="menu-items-mobile">
-              <Link to="/perfil" onClick={closeMenu}>Mi Perfil</Link>
-              <Link to="/publicar" onClick={closeMenu}>Publicar</Link>
-              <button onClick={() => { logout(); closeMenu(); }}>Cerrar sesión</button>
+              
+              {/* Carrito en escritorio (integrado con el menú) */}
+              <Link to="/carrito" className="cart-container">
+                <div className="cart-icon">
+                  <FaShoppingCart color="#151c33" size={20} />
+                  {carrito && carrito.length > 0 && (
+                    <span className="cart-total">
+                      ${calcularTotal().toLocaleString("es-CL")}
+                    </span>
+                  )}
+                </div>
+              </Link>
             </div>
           </>
         )}
       </div>
 
-      {/* Avatar visible solo en móvil */}
-      {usuario && (
-        <div className="avatar-container-mobile">
-          <img
-            src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
-            alt="Avatar"
-            className="avatar-img"
-          />
-        </div>
-      )}
-
-      {/* Carrito flotante */}
-      {usuario && (
-        <div className="floating-cart">
-          <Link to="/carrito" className="container-0-1-3">
-            <FaShoppingCart color="#151c33" size={20} />
-            {carrito && carrito.length > 0 && (
-              <span className="cart-total">
-                ${calcularTotal().toLocaleString("es-CL")}
-              </span>
-            )}
-          </Link>
-        </div>
-      )}
+      {/* Avatar y carrito móvil (separados) */}
+      <div className="mobile-only mobile-user-actions">
+        {usuario && (
+          <>
+            <div className="avatar-container-mobile">
+              <img
+                src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
+                alt="Avatar"
+                className="avatar-img"
+              />
+            </div>
+            
+            <Link to="/carrito" className="cart-container-mobile">
+              <div className="cart-icon">
+                <FaShoppingCart color="#151c33" size={20} />
+                {carrito && carrito.length > 0 && (
+                  <span className="cart-total">
+                    ${calcularTotal().toLocaleString("es-CL")}
+                  </span>
+                )}
+              </div>
+            </Link>
+          </>
+        )}
+      </div>
     </nav>
   );
 }
