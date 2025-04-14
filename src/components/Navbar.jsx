@@ -71,23 +71,10 @@ function Navbar() {
           </>
         ) : (
           <>
-            {/* Menú de escritorio - fila horizontal */}
             <div className="menu-items-desktop">
-              <Link to="/perfil">Mi Perfil</Link>
-              <Link to="/publicar">Publicar</Link>
-              <button onClick={logout}>Cerrar sesión</button>
-              
-              {/* Avatar integrado en el menú de escritorio */}
-              <div className="avatar-container-desktop">
-                <img
-                  src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
-                  alt="Avatar"
-                  className="avatar-img"
-                />
-              </div>
+              {/* Elementos movidos al lado derecho */}
             </div>
             
-            {/* Menú móvil - columna vertical */}
             <div className="menu-items-mobile">
               <Link to="/perfil" onClick={closeMenu}>Mi Perfil</Link>
               <Link to="/publicar" onClick={closeMenu}>Publicar</Link>
@@ -97,6 +84,37 @@ function Navbar() {
         )}
       </div>
 
+      {/* Grupo de elementos del lado derecho */}
+      {usuario && (
+        <div className="right-section">
+          <div className="profile-section">
+            <Link to="/perfil">Mi Perfil</Link>
+            <Link to="/publicar">Publicar</Link>
+            <button onClick={logout}>Cerrar sesión</button>
+            
+            <div className="avatar-container-desktop">
+              <img
+                src={avatarMap[usuario.usuario.avatar] || defaultAvatar}
+                alt="Avatar"
+                className="avatar-img"
+              />
+            </div>
+          </div>
+          
+          {/* Carrito flotante */}
+          <div className="floating-cart">
+            <Link to="/carrito" className="container-0-1-3">
+              <FaShoppingCart color="#151c33" size={20} />
+              {carrito && carrito.length > 0 && (
+                <span className="cart-total">
+                  ${calcularTotal().toLocaleString("es-CL")}
+                </span>
+              )}
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* Avatar visible solo en móvil */}
       {usuario && (
         <div className="avatar-container-mobile">
@@ -105,20 +123,6 @@ function Navbar() {
             alt="Avatar"
             className="avatar-img"
           />
-        </div>
-      )}
-
-      {/* Carrito flotante */}
-      {usuario && (
-        <div className="floating-cart">
-          <Link to="/carrito" className="container-0-1-3">
-            <FaShoppingCart color="#151c33" size={20} />
-            {carrito && carrito.length > 0 && (
-              <span className="cart-total">
-                ${calcularTotal().toLocaleString("es-CL")}
-              </span>
-            )}
-          </Link>
         </div>
       )}
     </nav>
