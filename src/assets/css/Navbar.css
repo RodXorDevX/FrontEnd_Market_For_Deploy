@@ -60,16 +60,19 @@
   color: #ffffff;
   text-decoration: none;
   white-space: nowrap;
-}
+  }
 
 .nav-links a:hover {
   color: #ffcc00;
+
+  
 }
 
 /* Estilo para menú de escritorio en fila */
 .menu-items-desktop {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -87,6 +90,7 @@
 .menu-items-desktop a:hover, 
 .menu-items-desktop button:hover {
   color: #ffcc00;
+  background: none;
 }
 
 /* Estilo para menú móvil en columna */
@@ -268,4 +272,5 @@ body, html {
     width: 36px;
     height: 36px;
   }
+
 }
