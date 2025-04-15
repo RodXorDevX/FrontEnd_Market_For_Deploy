@@ -109,9 +109,7 @@ function Carrito({}) {
                 />
                 <div className="carrito-item-info">
                   <h4>{item.title || item.titulo}</h4>
-                  <p>
-                    TALLA {item.talla || "S"} - {item.color || "BLANCO"}
-                  </p>
+                  
                 </div>
                 <div className="carrito-cantidad">
                   <button onClick={() => disminuirCantidad(item.id)}>-</button>

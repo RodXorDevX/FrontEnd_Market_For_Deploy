@@ -81,7 +81,7 @@ export default function MisPedidos() {
                 <div className="pedido-info">
                   <div className="pedido-texto">
                     <h4>{pedido.titulo}</h4>
-                    {pedido.size && <p className="talla">Talla {pedido.size}</p>}
+                    
                     <p>Comprado por: {pedido.usuario_nombre}</p>
                     <p>{pedido.cantidad} unidades</p>
                     <p>{new Date(pedido.created_at).toLocaleDateString("es-CL")}</p>

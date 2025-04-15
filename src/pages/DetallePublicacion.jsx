@@ -4,7 +4,6 @@ import axios from "axios";
 import { CarritoContext } from "../context/CarritoContext";
 import "../assets/css/DetallePublicacion.css";
 import { API_BACKEND_URL } from "../config";
-
 function DetallePublicacion() {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
@@ -74,17 +73,7 @@ function DetallePublicacion() {
             <div className="no-imagen">Imagen no disponible</div>
           )}
         </div>
-        <div className="miniaturas">
-          {imagenes.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`mini ${index}`}
-              onClick={() => setImagenSeleccionada(index)}
-              className={index === imagenSeleccionada ? "miniatura activa" : "miniatura"}
-            />
-          ))}
-        </div>
+        
       </div>
 
       <div className="detalle-info">
@@ -120,4 +109,3 @@ function DetallePublicacion() {
 }
 
 export default DetallePublicacion;
-
