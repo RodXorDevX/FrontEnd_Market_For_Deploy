@@ -6,6 +6,9 @@ import avatar1 from '../assets/img/Register/icon1.png';
 import avatar2 from '../assets/img/Register/icon2.png';
 import avatar3 from '../assets/img/Register/icon3.png';
 import avatar4 from '../assets/img/Register/icon4.png';
+import avatar5 from '../assets/img/Register/icon5.png';
+import avatar6 from '../assets/img/Register/icon6.png';
+
 import { API_BACKEND_URL } from "../config";
 
 const Register = () => {
@@ -163,6 +166,20 @@ const Register = () => {
                 alt="Avatar 4"
                 className={`avatar-option ${form.avatar === 'avatar4' ? 'selected' : ''}`}
                 onClick={() => handleAvatarSelect('avatar4')}
+              />
+
+  <img
+                src={avatar5}
+                alt="Avatar 5"
+                className={`avatar-option ${form.avatar === 'avatar5' ? 'selected' : ''}`}
+                onClick={() => handleAvatarSelect('avatar5')}
+              />
+
+<img
+                src={avatar6}
+                alt="Avatar 6"
+                className={`avatar-option ${form.avatar === 'avatar6' ? 'selected' : ''}`}
+                onClick={() => handleAvatarSelect('avatar6')}
               />
             </div>
           </div>

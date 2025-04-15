@@ -6,16 +6,17 @@
     padding: 2rem;
     background-color: #e5e5e5;
     padding-bottom: 6rem; /* <- nuevo */
+    height: 90vh; 
   }
   
   .detalle-imagenes {
     display: flex;
     flex-direction: row;
-    gap: 1rem; /* Añadido para separar imagen principal de miniaturas */
     align-items: center;
     width: 50%;
     background-color: white;
-    padding: 2rem;
+    
+   
   }
   
   .imagen-principal img {
