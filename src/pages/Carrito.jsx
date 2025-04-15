@@ -107,10 +107,13 @@ function Carrito({}) {
                   src={item.image || item.imagen}
                   alt={item.title || item.titulo}
                 />
-                <div className="carrito-item-info">
-                  <h4>{item.title || item.titulo}</h4>
+                <div className="Info">
+                  <div className="carrito-item-info">
+                  <h5>{item.title || item.titulo}</h5>
                   
                 </div>
+
+                <div className="cant-precio">
                 <div className="carrito-cantidad">
                   <button onClick={() => disminuirCantidad(item.id)}>-</button>
                   <span>{item.cantidad}</span>
@@ -127,6 +130,8 @@ function Carrito({}) {
                 <p className="carrito-precio">
                   ${Number(item.precio).toLocaleString("es-CL")}
                 </p>
+              </div>
+              </div>
               </div>
             ))
           )}

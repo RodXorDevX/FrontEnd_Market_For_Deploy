@@ -120,9 +120,7 @@ function FormularioPublicacion() {
             Añadir
           </button>
         </div>
-        <p className="texto-info">
-          Añade 1 imagen usando URL de internet
-        </p>
+        
       </div>
 
       <div className="formulario-container">
