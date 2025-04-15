@@ -29,7 +29,7 @@ const ResumenCompra = () => {
                 <img src={item.imagen || item.image} alt={item.title || item.titulo} />
                 <div className="producto-info">
                   <h4>{item.title || item.titulo}</h4>
-                  <p><strong>Talla:</strong> {item.talla || 'S'}</p>
+                  
                   <p><strong>Cantidad:</strong> {item.cantidad}</p>
                   <p><strong>Precio:</strong> ${Number(item.precio).toLocaleString("es-CL")}</p>
                 </div>
