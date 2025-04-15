@@ -204,21 +204,27 @@
   display: flex;
   align-items: center;
   gap: 20px; /* Separación entre avatar y carrito */
-  
 }
 
-.avatar-container-mobile,
-.cart-container-mobile {
+.avatar-container-mobile {
   display: flex;
   align-items: center;
-  padding-right: 1em;
+}
+
+/* Estilo flotante para el carrito en móvil - similar al de escritorio */
+.cart-container-mobile {
+  position: fixed;
+  top: 25px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
 /* Mobile responsive styles */
 @media screen and (max-width: 810px) {
   .navbar {
     padding: 0 1rem;
-    
   }
   
   /* Mostrar elementos móviles */
@@ -228,7 +234,6 @@
 
   .hamburger-menu {
     padding-left: 1rem;
-    
   }
   
   /* Ocultar elementos de escritorio */
@@ -261,8 +266,6 @@
     width: 36px;
     height: 36px;
   }
-
- 
 }
 
 /* Asegurarse de resetear márgenes y padding */
