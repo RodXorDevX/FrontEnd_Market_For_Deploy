@@ -4,13 +4,13 @@ import { useState } from "react";
 import { API_BACKEND_URL } from "../config";
 
 function FormularioPublicacion() {
-  const [imagen, setImagen] = useState("");
+  const [imagenes, setImagenes] = useState([]);
   const [urlImagen, setUrlImagen] = useState("");
 
   const [formData, setFormData] = useState({
     titulo: "",
     precio: "",
-    categoria: "",     
+    categoria: "",
     descripcion: "",
     stock: 1,
   });
@@ -26,45 +26,37 @@ function FormularioPublicacion() {
 
   const agregarImagen = () => {
     if (!urlImagen.trim()) return;
-    setImagen(urlImagen);
+    if (imagenes.length >= 4) return alert("Solo puedes subir hasta 4 imágenes");
+    setImagenes((prev) => [...prev, urlImagen.trim()]);
     setUrlImagen("");
   };
 
-  const eliminarImagen = () => {
-    setImagen("");
+  const eliminarImagen = (index) => {
+    setImagenes((prev) => prev.filter((_, i) => i !== index));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-   // console.log('Datos del formulario:', formData);
-   // console.log('URL de la imagen:', imagen);
-  
-    const token = localStorage.getItem("token"); 
-    const userId = localStorage.getItem("userId"); 
-    
-    //console.log('Token:', token ? 'Presente' : 'Ausente');
-   // console.log('User ID:', userId);
-  
+    const token = localStorage.getItem("token");
+    const userId = localStorage.getItem("userId");
+
     const mapCategoria = {
       hombre: 1,
       mujer: 2,
       accesorios: 3,
       tecnologia: 4,
     };
-  
+
     const productoFinal = {
       titulo: formData.titulo,
       descripcion: formData.descripcion,
       precio: parseFloat(formData.precio),
-      categoria_id: mapCategoria[formData.categoria],      
+      categoria_id: mapCategoria[formData.categoria],
       stock: parseInt(formData.stock),
-      imagen: imagen || null,
+      imagen: imagenes[0] || null,
       vendedor_id: parseInt(userId),
     };
-    
-   // console.log('Producto a enviar:', productoFinal);
-  
+
     axios
       .post(`${API_BACKEND_URL}/productos`, productoFinal, {
         headers: {
@@ -72,12 +64,18 @@ function FormularioPublicacion() {
         },
       })
       .then((response) => {
-      //  console.log('Respuesta del servidor:', response.data);
         alert("¡Publicación creada!");
+        setFormData({
+          titulo: "",
+          precio: "",
+          categoria: "",
+          descripcion: "",
+          stock: 1,
+        });
+        setImagenes([]);
+        setUrlImagen("");
       })
       .catch((err) => {
-       // console.error('Error al publicar:', err);
-      //  console.error('Detalles del error:', err.response?.data);
         alert("Error al publicar.");
       });
   };
@@ -87,19 +85,20 @@ function FormularioPublicacion() {
       <div className="imagenes-publicacion">
         <div className="imagen-y-miniaturas">
           <div className="zona-principal">
-            {imagen ? (
-              <>
-                <img src={imagen} alt="Principal" />
-                <button
-                  className="boton-eliminar"
-                  onClick={eliminarImagen}
-                >
-                  ×
-                </button>
-              </>
+            {imagenes[0] ? (
+              <img src={imagenes[0]} alt="Principal" />
             ) : (
               <div className="texto-overlay">AÑADIR FOTO</div>
             )}
+          </div>
+
+          <div className="miniaturas">
+            {imagenes.slice(1).map((img, index) => (
+              <div key={index} className="miniatura-wrapper">
+                <img src={img} alt={`Mini ${index + 1}`} className="miniatura" />
+                <button onClick={() => eliminarImagen(index + 1)} className="boton-eliminar-miniatura">×</button>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -116,9 +115,7 @@ function FormularioPublicacion() {
             Añadir
           </button>
         </div>
-        <p className="texto-info">
-          Añade 1 imagen usando URL de internet
-        </p>
+        <p className="texto-info">Añade hasta 4 imágenes usando URL</p>
       </div>
 
       <div className="formulario-container">
@@ -201,3 +198,4 @@ function FormularioPublicacion() {
 }
 
 export default FormularioPublicacion;
+

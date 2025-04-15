@@ -18,6 +18,7 @@
   max-width: 1200px;
   margin: 0 auto;
   background-color: #0a1c3d;
+  box-shadow: none;
 }
 
 .box .imagen-izquierda {
