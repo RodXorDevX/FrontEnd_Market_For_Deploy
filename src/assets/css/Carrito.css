@@ -64,6 +64,9 @@
     align-items: center;
     gap: 0.5rem;
   }
+
+  .carrito-cantidad button{
+background-color: gray;  }
   
   .carrito-precio {
     width: 80px;
@@ -126,6 +129,10 @@
       flex-direction: column-reverse;
       padding: 1rem;
       
+    }
+
+    .carrito-item-info h4{
+      font-size: 0.7rem;
     }
     
     .carrito-resumen-mobile {

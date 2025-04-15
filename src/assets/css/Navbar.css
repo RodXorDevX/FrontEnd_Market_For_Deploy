@@ -204,6 +204,7 @@
   display: flex;
   align-items: center;
   gap: 20px; /* Separación entre avatar y carrito */
+  padding-right: 5rem;
 }
 
 .avatar-container-mobile {
