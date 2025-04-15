@@ -57,7 +57,8 @@
   display: flex;
   align-items: flex-start;
   position: sticky;
-  margin-top: -1rem;
+  margin-top: 0rem;
+  text-align: start;
 }
 
 .tarjeta-compra{

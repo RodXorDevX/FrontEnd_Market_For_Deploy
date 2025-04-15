@@ -8,13 +8,15 @@
     flex: 1;
     background: #f0f0f0;
     padding: 1rem;
+    margin-bottom: 4rem;
+    
+    
 }
 
 .main-content h2 {
     color: #333;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
+    
+    text-align: start;
 }
 
 .publicaciones-grid {

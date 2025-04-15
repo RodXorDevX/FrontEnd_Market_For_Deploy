@@ -4,6 +4,7 @@ import axios from "axios";
 import { CarritoContext } from "../context/CarritoContext";
 import "../assets/css/DetallePublicacion.css";
 import { API_BACKEND_URL } from "../config";
+
 function DetallePublicacion() {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
@@ -119,3 +120,4 @@ function DetallePublicacion() {
 }
 
 export default DetallePublicacion;
+

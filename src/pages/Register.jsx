@@ -13,8 +13,8 @@ const Register = () => {
     nombre: '',
     email: '',
     password: '',
-    direccion: '',
-    avatar: ''  // Nuevo campo para almacenar el avatar seleccionado
+    direccion: '', // opcional
+    avatar: ''
   });
 
   const handleChange = (e) => {
@@ -33,13 +33,47 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validaciones
+    if (!form.nombre.trim()) {
+      alert("Debes ingresar un nombre");
+      return;
+    }
+
+    if (!form.email.trim()) {
+      alert("Debes escribir un correo electrónico");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      alert("Debes escribir un correo válido");
+      return;
+    }
+    
+
+    if (!form.direccion.trim()) {
+      alert("Debes escribir una dirección");
+      return;
+    }
+
+    if (!form.password.trim()) {
+      alert("Debes escribir una contraseña");
+      return;
+    }
+
+    if (!form.avatar) {
+      alert("Debes elegir un avatar");
+      return;
+    }
+
     try {
       const res = await fetch(`${API_BACKEND_URL}/usuarios/registro`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(form) // Aquí mandas el form con el avatar (nombre del avatar, no la URL)
+        body: JSON.stringify(form)
       });
 
       if (!res.ok) {
@@ -48,7 +82,6 @@ const Register = () => {
 
       const data = await res.json();
       // console.log('Usuario registrado:', data);
-      // Redirigir al login después del registro exitoso
       window.location.href = '/login';
     } catch (error) {
       console.error('Error:', error);
@@ -104,7 +137,6 @@ const Register = () => {
             className="input-field"
           />
 
-          {/* Opciones de Avatar */}
           <div className="avatar-selection">
             <label htmlFor="avatar">Selecciona un avatar:</label>
             <div className="avatar-options">
@@ -135,7 +167,6 @@ const Register = () => {
             </div>
           </div>
 
-          {/* Botón de registro */}
           <button type="button" onClick={handleSubmit} className="submit-btn">Registrarme</button>
 
           <p className="tienes-cuenta">

@@ -96,21 +96,23 @@
   
   /* Botón de eliminar */
   .boton-eliminar {
-    position: absolute;
-    top: 4px;
-    right: 6px;
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    line-height: 20px;
-    text-align: center;
-    color: #333;
-  }
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  font-size: 0.65rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  line-height: 14px;
+  text-align: center;
+  color: #333;
+  padding: 0;
+}
+
   
   .boton-eliminar:hover {
     background-color: #f00;

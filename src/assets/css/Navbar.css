@@ -86,6 +86,7 @@
 .user-nav a:hover, 
 .user-nav button:hover {
   color: #ffcc00;
+  background: none !important;
 }
 
 /* Estilo para avatar en escritorio */
@@ -106,7 +107,13 @@
 .cart-container {
   display: flex;
   align-items: center;
+  padding-right: 0em;
+  position: fixed;
+  top: 25px;
+  right: 20px;
+  z-index: 1000;
 }
+
 
 .cart-icon {
   width: 41px;
@@ -130,6 +137,10 @@
   border-radius: 10px;
   font-size: 12px;
   font-weight: bold;
+}
+
+.desktop-nav-right{
+  padding-right: 5rem;
 }
 
 /* Elementos móviles ocultos en escritorio */
@@ -185,6 +196,7 @@
 .hamburger-menu {
   cursor: pointer;
   z-index: 1001;
+  
 }
 
 /* Acciones de usuario móvil */
@@ -192,23 +204,31 @@
   display: flex;
   align-items: center;
   gap: 20px; /* Separación entre avatar y carrito */
+  
 }
 
 .avatar-container-mobile,
 .cart-container-mobile {
   display: flex;
   align-items: center;
+  padding-right: 1em;
 }
 
 /* Mobile responsive styles */
 @media screen and (max-width: 810px) {
   .navbar {
     padding: 0 1rem;
+    
   }
   
   /* Mostrar elementos móviles */
   .mobile-only {
     display: flex !important;
+  }
+
+  .hamburger-menu {
+    padding-left: 1rem;
+    
   }
   
   /* Ocultar elementos de escritorio */
@@ -241,6 +261,8 @@
     width: 36px;
     height: 36px;
   }
+
+ 
 }
 
 /* Asegurarse de resetear márgenes y padding */

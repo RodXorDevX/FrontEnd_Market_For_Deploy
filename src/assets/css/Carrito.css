@@ -10,18 +10,23 @@
   
   .carrito-main {
     flex: 1;
-    background: #d9d9d9;
+    background: #F5F5F5;
     padding: 2rem;
     display: flex;
     gap: 2rem;
+    flex-direction: row-reverse;
   }
   
   .carrito-productos {
     flex: 2;
+    padding-bottom: 3rem;
+    
+    
   }
   
   .carrito-productos h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    text-align: start;
   }
   
   .carrito-item {
@@ -31,6 +36,8 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
   }
   
   .carrito-item img {
@@ -116,8 +123,9 @@
     }
     
     .carrito-main {
-      flex-direction: column;
+      flex-direction: column-reverse;
       padding: 1rem;
+      
     }
     
     .carrito-resumen-mobile {
@@ -126,10 +134,19 @@
       background: white;
       padding: 1rem;
       border-radius: 8px;
+      padding-bottom: 4rem;
+      
+      
     }
     
     .carrito-item {
       width: 100%;
       box-sizing: border-box;
     }
+
+    .carrito-productos{
+      padding-bottom: 0.5rem;
+
+    }
+    
   }
