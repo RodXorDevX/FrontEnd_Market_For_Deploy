@@ -10,6 +10,8 @@ import avatar1 from '../assets/img/Register/icon1.png';
 import avatar2 from '../assets/img/Register/icon2.png';
 import avatar3 from '../assets/img/Register/icon3.png';
 import avatar4 from '../assets/img/Register/icon4.png';
+import avatar5 from '../assets/img/Register/icon5.png';
+import avatar6 from '../assets/img/Register/icon6.png';
 import defaultAvatar from '../assets/img/default-avatar.webp';
 
 // Mapeo de nombres a imágenes
@@ -17,7 +19,9 @@ const avatarMap = {
   avatar1,
   avatar2,
   avatar3,
-  avatar4
+  avatar4,
+  avatar5,
+  avatar6
 };
 
 function Navbar() {
