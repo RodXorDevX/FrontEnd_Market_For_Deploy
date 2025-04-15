@@ -209,6 +209,7 @@
 .avatar-container-mobile {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 /* Estilo flotante para el carrito en móvil - similar al de escritorio */
