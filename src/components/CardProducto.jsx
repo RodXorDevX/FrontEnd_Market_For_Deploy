@@ -4,10 +4,12 @@ import { CarritoContext } from "../context/CarritoContext";
 import axios from "axios";
 import { API_BACKEND_URL } from "../config";
 import "../assets/css/CardProducto.css";
+import { AuthContext } from "../context/AuthContext"; // <- se agrega sin romper
 
 function CardProducto({ producto }) {
   const { agregarAlCarrito, disminuirCantidad, carrito } =
     useContext(CarritoContext);
+  const { usuario } = useContext(AuthContext); // <- solo se usa esto
   const navigate = useNavigate();
   const [calificacion, setCalificacion] = useState(0);
 
@@ -20,7 +22,7 @@ function CardProducto({ producto }) {
         console.error("Error obteniendo calificación:", error);
       }
     };
-    
+
     if (producto?.id) {
       fetchCalificacion();
     }
@@ -33,11 +35,11 @@ function CardProducto({ producto }) {
 
   const renderEstrellas = () => {
     return [1, 2, 3, 4, 5].map((estrella) => (
-      <span 
-        key={estrella} 
-        className={`estrella ${estrella <= calificacion ? 'llena' : 'vacia'}`}
+      <span
+        key={estrella}
+        className={`estrella ${estrella <= calificacion ? "llena" : "vacia"}`}
       >
-        {estrella <= calificacion ? '★' : '☆'}
+        {estrella <= calificacion ? "★" : "☆"}
       </span>
     ));
   };
@@ -46,42 +48,52 @@ function CardProducto({ producto }) {
     <div className="producto">
       <div className="imagen-container">
         <img src={imagen || "https://via.placeholder.com/150"} alt={titulo} />
+      </div>
+
+      <div className="rating-container">{renderEstrellas()}</div>
+
+      <h4>{titulo}</h4>
+
+      <div className="acciones">
+        <p>${Number(precio).toLocaleString("es-CL")}</p>
+        <button
+          className="detalle-button"
+          onClick={() => navigate(`/publicacion/${id}`)}
+        >
+          Ver detalle
+        </button>
+        <div className="control-cantidad">
+          <button
+            onClick={() => {
+              if (!usuario) {
+                alert("Ingresa con tu cuenta para poder ver tu carrito");
+                return;
+              }
+              disminuirCantidad(id);
+            }}
+            disabled={cantidad === 0}
+          >
+            Quitar
+          </button>
+          <span>{cantidad}</span>
+          <button
+            onClick={() => {
+              if (!usuario) {
+                alert("Ingresa con tu cuenta para poder ver tu carrito");
+                return;
+              }
+              agregarAlCarrito({
+                ...producto,
+                vendedor_id: producto.usuario_id || producto.vendedor_id,
+              });
+            }}
+          >
+            Agregar
+          </button>
         </div>
-
-<div className="rating-container">{renderEstrellas()}</div>
-
-<h4>{titulo}</h4>
-
-<div className="acciones">
-  <p>${Number(precio).toLocaleString("es-CL")}</p>
-  <button
-    className="detalle-button"
-    onClick={() => navigate(`/publicacion/${id}`)}
-  >
-    Ver detalle
-  </button>
-  <div className="control-cantidad">
-    <button
-      onClick={() => disminuirCantidad(id)}
-      disabled={cantidad === 0}
-    >
-      Quitar
-    </button>
-    <span>{cantidad}</span>
-    <button
-      onClick={() =>
-        agregarAlCarrito({
-          ...producto,
-          vendedor_id: producto.usuario_id || producto.vendedor_id,
-        })
-      }
-    >
-      Agregar
-    </button>
-  </div>
-</div>
-</div>
-);
+      </div>
+    </div>
+  );
 }
 
 export default CardProducto;
