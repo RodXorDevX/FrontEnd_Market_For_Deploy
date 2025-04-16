@@ -85,8 +85,8 @@ function FormularioPublicacion() {
       })
       
       .catch((err) => {
-       // console.error('Error al publicar:', err);
-      //  console.error('Detalles del error:', err.response?.data);
+        console.error('Error al publicar:', err);
+        console.error('Detalles del error:', err.response?.data);
         alert("Error al publicar.");
       });
   };

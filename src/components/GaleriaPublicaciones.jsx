@@ -24,7 +24,7 @@ function GaleriaPublicaciones({ search }) {
         const res = await axios.get(`${API_BACKEND_URL}/productos`);
         const productosBackend = res.data.data || res.data;
 
-        console.log("✅ Productos recibidos del backend:", productosBackend);
+        //console.log("✅ Productos recibidos del backend:", productosBackend);
 
         setProductos(productosBackend);
       } catch (err) {
@@ -57,7 +57,7 @@ function GaleriaPublicaciones({ search }) {
       <div className="galeria-publicaciones">
         {productosFiltrados.length > 0 ? (
           productosFiltrados.map((item) => {
-            console.log("🖼 Renderizando producto:", item.titulo, item.id);
+            //console.log("🖼 Renderizando producto:", item.titulo, item.id);
             return <CardProducto key={item.id} producto={item} />;
           })
         ) : (
