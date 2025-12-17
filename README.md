@@ -2,6 +2,8 @@
 
 Frontend de la aplicación Marketplace Trends - Una plataforma de e-commerce moderna para comprar y vender productos.
 
+[![Deploy en Netlify](https://www.netlify.com/img/global/badges/netlify-color-accent.svg)](https://marketplace-trends.netlify.app)
+
 ## 🚀 Tecnologías
 
 - **React 18** - Biblioteca JavaScript para construir interfaces de usuario
@@ -96,9 +98,20 @@ Para probar la aplicación, puedes usar las siguientes cuentas de usuarios anima
 
 **Nota:** Todos los usuarios tienen la misma contraseña: `demo123`
 
+## 🚀 **Demo en Vivo**
+
+Puedes probar la aplicación directamente en producción haciendo clic aquí:
+
+[![Ver Demo en Vivo](https://img.shields.io/badge/Demo%20en%20Vivo-Visit%20Now-brightgreen?style=for-the-badge&logo=netlify)](https://marketplace-trends.netlify.app)
+
+**Usuarios de demostración disponibles:**
+- **Email:** `luki.perro@demo.com`
+- **Contraseña:** `demo123`
+- O cualquier otro usuario de la tabla de abajo
+
 ### 🧪 Scripts de Demo
 
-Para crear los datos de demostración, puedes usar los siguientes métodos:
+Para crear los datos de demostración localmente, puedes usar los siguientes métodos:
 
 #### Opción 1: Script de Node.js (local)
 ```bash
@@ -218,7 +231,9 @@ Para propósitos de desarrollo y demostración:
 ### Producción (Netlify)
 - Build estático optimizado
 - Variables de entorno configuradas
-- Dominio personalizado: `marketplace-trends.netlify.app`
+- 🌐 **URL en producción:** [https://marketplace-trends.netlify.app](https://marketplace-trends.netlify.app)
+- Integración con backend desplegado en Railway
+- Despliegue automático en cada push a main
 
 ### Desarrollo Local
 - Servidor de desarrollo con hot reload
