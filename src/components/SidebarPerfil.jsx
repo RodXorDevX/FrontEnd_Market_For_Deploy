@@ -3,26 +3,26 @@ import { FaUser, FaShoppingCart, FaClipboardList } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import defaultAvatar from '../assets/img/default-avatar.webp';
-import avatar1 from '../assets/img/Register/icon1.png';
-import avatar2 from '../assets/img/Register/icon2.png';
-import avatar3 from '../assets/img/Register/icon3.png';
-import avatar4 from '../assets/img/Register/icon4.png';
-import avatar5 from '../assets/img/Register/icon5.png';
-import avatar6 from '../assets/img/Register/icon6.png';
-import avatar7 from '../assets/img/Register/avatar7.svg'; // Oso
-import avatar8 from '../assets/img/Register/avatar8.svg'; // Ave
-import avatar9 from '../assets/img/Register/avatar9.svg'; // Delfín
-import avatar10 from '../assets/img/Register/avatar10.svg'; // Conejo
-import avatar11 from '../assets/img/Register/avatar11.svg'; // León
-import avatar12 from '../assets/img/Register/avatar12.svg'; // Zorro
-import avatar13 from '../assets/img/Register/avatar13.svg'; // Elefante
-import avatar14 from '../assets/img/Register/avatar14.svg'; // Tigre
-import avatar15 from '../assets/img/Register/avatar15.svg'; // Panda
-import avatar16 from '../assets/img/Register/avatar16.svg'; // Canguro
-import avatar17 from '../assets/img/Register/avatar17.svg'; // Tortuga
-import avatar18 from '../assets/img/Register/avatar18.svg'; // Hipopótamo
-import avatar19 from '../assets/img/Register/avatar19.svg'; // Suri (Alpaca)
-import avatar20 from '../assets/img/Register/avatar20.svg'; // Jirafa
+import avatar1 from '../assets/img/avatares/perro.png';
+import avatar2 from '../assets/img/avatares/gatito.png';
+import avatar3 from '../assets/img/avatares/panda.png';
+import avatar4 from '../assets/img/avatares/leon.png';
+import avatar5 from '../assets/img/avatares/elefante.png';
+import avatar6 from '../assets/img/avatares/caballo.png';
+import avatar7 from '../assets/img/avatares/tucan.png';
+import avatar8 from '../assets/img/avatares/pato.png';
+import avatar9 from '../assets/img/avatares/delfin.png';
+import avatar10 from '../assets/img/avatares/pinguino.png';
+import avatar11 from '../assets/img/avatares/tortuga.png';
+import avatar12 from '../assets/img/avatares/unicornio.png';
+import avatar13 from '../assets/img/avatares/rata.png';
+import avatar14 from '../assets/img/avatares/rana.png';
+import avatar15 from '../assets/img/avatares/mono.png';
+import avatar16 from '../assets/img/avatares/anaconda.png';
+import avatar17 from '../assets/img/avatares/medusa.png';
+import avatar18 from '../assets/img/avatares/erizo.png';
+import avatar19 from '../assets/img/avatares/abeja.png';
+import avatar20 from '../assets/img/avatares/pajaro.png';
 import '../assets/css/SidebarPerfil.css';
 
 // Mapeo de nombres a imágenes
