@@ -38,7 +38,7 @@ function MiPerfil() {
           const fetchedPublicaciones = response.data.data || response.data;
           // console.log("Publicaciones recibidas:", fetchedPublicaciones);
           // Nos aseguramos de que siempre establezcamos un array en el estado
-          setPublicaciones(Array.isArray(fetchedPublications) ? fetchedPublicaciones : []);
+          setPublicaciones(Array.isArray(fetchedPublicaciones) ? fetchedPublicaciones : []);
         })
         .catch(error => {
           console.error("Error al obtener publicaciones", error);
