@@ -1,33 +1,66 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo circular consistente -->
-  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+  <!-- Fondo circular claro -->
+  <circle cx="32" cy="32" r="30" fill="#FFE4E1" stroke="#DC143C" stroke-width="2"/>
 
-  <!-- Tortuga -->
-  <ellipse cx="32" cy="38" rx="20" ry="15" fill="#228B22"/>
-  <circle cx="32" cy="35" r="8" fill="#2E8B57"/>
-
-  <!-- Patrones del caparazón -->
-  <circle cx="25" cy="35" r="3" fill="#006400"/>
-  <circle cx="39" cy="35" r="3" fill="#006400"/>
-  <circle cx="32" cy="40" r="3" fill="#006400"/>
-  <circle cx="32" cy="30" r="2" fill="#006400"/>
+  <!-- Zorro rojo kawaii -->
+  <!-- Cuerpo -->
+  <ellipse cx="32" cy="38" rx="15" ry="12" fill="#FF6347" stroke="#DC143C" stroke-width="1.5"/>
+  <ellipse cx="32" cy="35" rx="13" ry="10" fill="#FF7F50" stroke="#DC143C" stroke-width="1.5"/>
 
   <!-- Cabeza -->
-  <circle cx="15" cy="38" r="8" fill="#228B22"/>
-  <circle cx="15" cy="35" r="6" fill="#32CD32"/>
+  <ellipse cx="32" cy="22" rx="11" ry="9" fill="#FF6347" stroke="#DC143C" stroke-width="1.5"/>
+
+  <!-- Orejas puntiagudas -->
+  <path d="M 22 15 L 18 5 L 26 12 Z" fill="#FF6347" stroke="#DC143C" stroke-width="1.5"/>
+  <path d="M 42 15 L 46 5 L 38 12 Z" fill="#FF6347" stroke="#DC143C" stroke-width="1.5"/>
+  <path d="M 22 10 L 20 7 L 23 9 Z" fill="#FFF" stroke="#DC143C" stroke-width="1"/>
+  <path d="M 42 10 L 44 7 L 41 9 Z" fill="#FFF" stroke="#DC143C" stroke-width="1"/>
+
+  <!-- Ojos grandes kawaii -->
+  <ellipse cx="27" cy="20" rx="3.5" ry="4.5" fill="#FFF" stroke="#DC143C" stroke-width="1.5"/>
+  <ellipse cx="37" cy="20" rx="3.5" ry="4.5" fill="#FFF" stroke="#DC143C" stroke-width="1.5"/>
+  <circle cx="28" cy="21" r="2" fill="#000"/>
+  <circle cx="36" cy="21" r="2" fill="#000"/>
+  <circle cx="29" cy="20" r="1" fill="#FFF"/>
+  <circle cx="35" cy="20" r="1" fill="#FFF"/>
+
+  <!-- Nariz -->
+  <ellipse cx="32" cy="25" rx="2" ry="1.5" fill="#000"/>
+
+  <!-- Boca sonriente -->
+  <path d="M 26 27 Q 32 31, 38 27" stroke="#000" stroke-width="1.5" fill="none"/>
+
+  <!-- Bigotes -->
+  <path d="M 18 22 L 12 20" stroke="#000" stroke-width="1.5"/>
+  <path d="M 18 24 L 12 24" stroke="#000" stroke-width="1.5"/>
+  <path d="M 46 22 L 52 20" stroke="#000" stroke-width="1.5"/>
+  <path d="M 46 24 L 52 24" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Cola grande y esponjosa -->
+  <ellipse cx="48" cy="32" rx="10" ry="8" fill="#FF6347" stroke="#DC143C" stroke-width="1.5"/>
+  <ellipse cx="52" cy="30" r="5" fill="#FFF" stroke="#DC143C" stroke-width="1.5"/>
+  <ellipse cx="50" cy="34" r="3" fill="#FFF" stroke="#DC143C" stroke-width="1.5"/>
 
   <!-- Patas -->
-  <ellipse cx="25" cy="48" rx="5" ry="8" fill="#228B22" stroke="#333" stroke-width="1"/>
-  <ellipse cx="39" cy="48" rx="5" ry="8" fill="#228B22" stroke="#333" stroke-width="1"/>
-  <ellipse cx="20" cy="45" rx="4" ry="6" fill="#228B22" stroke="#333" stroke-width="1"/>
-  <ellipse cx="44" cy="45" rx="4" ry="6" fill="#228B22" stroke="#333" stroke-width="1"/>
+  <ellipse cx="24" cy="48" rx="3" ry="5" fill="#FF6347" stroke="#DC143C" stroke-width="1.5"/>
+  <ellipse cx="40" cy="48" rx="3" ry="5" fill="#FF6347" stroke="#DC143C" stroke-width="1.5"/>
+  <ellipse cx="24" cy="49" rx="1.5" ry="1" fill="#000"/>
+  <ellipse cx="40" cy="49" rx="1.5" ry="1" fill="#000"/>
 
-  <!-- Ojos -->
-  <circle cx="13" cy="33" r="2" fill="#000"/>
-  <circle cx="17" cy="33" r="2" fill="#000"/>
-  <circle cx="13" cy="34" r="1" fill="#FFF"/>
-  <circle cx="17" cy="34" r="1" fill="#FFF"/>
+  <!-- Puntas blancas -->
+  <ellipse cx="48" cy="36" rx="6" ry="4" fill="#FFF" stroke="#DC143C" stroke-width="1"/>
+  <ellipse cx="24" cy="47" rx="1.5" ry="1" fill="#FFF"/>
+  <ellipse cx="40" cy="47" rx="1.5" ry="1" fill="#FFF"/>
 
-  <!-- Cola -->
-  <path d="M 50 40 Q 55 35, 52 30" stroke="#228B22" stroke-width="3" fill="none"/>
+  <!-- Hoja de trébol -->
+  <path d="M 10 35 C 9 34, 7 34, 7 36 C 7 37, 9 38, 10 39 C 11 38, 13 37, 13 36 C 13 34, 11 34, 10 35 Z"
+        fill="#90EE90" stroke="#228B22" stroke-width="1"/>
+  <path d="M 10 32 C 11 31, 13 31, 13 33 C 13 34, 11 35, 10 36 C 9 35, 7 34, 7 33 C 7 31, 9 31, 10 32 Z"
+        fill="#90EE90" stroke="#228B22" stroke-width="1"/>
+  <path d="M 13 33 C 12 32, 10 32, 10 34 C 10 35, 12 36, 13 37 C 14 36, 16 35, 16 34 C 16 32, 14 32, 13 33 Z"
+        fill="#90EE90" stroke="#228B22" stroke-width="1"/>
+
+  <!-- Mejillas rosadas -->
+  <ellipse cx="20" cy="23" rx="2.5" ry="2" fill="#FFB6C1" opacity="0.7"/>
+  <ellipse cx="44" cy="23" rx="2.5" ry="2" fill="#FFB6C1" opacity="0.7"/>
 </svg>

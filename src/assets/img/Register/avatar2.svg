@@ -1,0 +1,45 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular claro -->
+  <circle cx="32" cy="32" r="30" fill="#E6F3FF" stroke="#4169E1" stroke-width="2"/>
+
+  <!-- Perro kawaii -->
+  <!-- Cuerpo -->
+  <ellipse cx="32" cy="38" rx="16" ry="14" fill="#87CEEB" stroke="#4169E1" stroke-width="1.5"/>
+
+  <!-- Cabeza -->
+  <ellipse cx="32" cy="22" rx="13" ry="11" fill="#87CEEB" stroke="#4169E1" stroke-width="1.5"/>
+
+  <!-- Orejas largas -->
+  <ellipse cx="20" cy="15" rx="6" ry="10" fill="#87CEEB" stroke="#4169E1" stroke-width="1.5"/>
+  <ellipse cx="44" cy="15" rx="6" ry="10" fill="#87CEEB" stroke="#4169E1" stroke-width="1.5"/>
+  <ellipse cx="20" cy="15" rx="3" ry="6" fill="#B0E0E6"/>
+  <ellipse cx="44" cy="15" rx="3" ry="6" fill="#B0E0E6"/>
+
+  <!-- Ojos grandes kawaii -->
+  <ellipse cx="27" cy="20" rx="4" ry="5" fill="#FFF" stroke="#4169E1" stroke-width="1.5"/>
+  <ellipse cx="37" cy="20" rx="4" ry="5" fill="#FFF" stroke="#4169E1" stroke-width="1.5"/>
+  <circle cx="28" cy="21" r="2" fill="#000"/>
+  <circle cx="36" cy="21" r="2" fill="#000"/>
+  <circle cx="29" cy="20" r="1" fill="#FFF"/>
+  <circle cx="35" cy="20" r="1" fill="#FFF"/>
+
+  <!-- Nariz -->
+  <ellipse cx="32" cy="25" rx="3" ry="2" fill="#000"/>
+
+  <!-- Boca feliz -->
+  <path d="M 25 28 Q 32 33, 39 28" stroke="#000" stroke-width="1.5" fill="none"/>
+
+  <!-- Lengua -->
+  <path d="M 30 30 Q 32 32, 34 30" fill="#FF69B4" stroke="#FF1493" stroke-width="1"/>
+
+  <!-- Collar -->
+  <rect x="20" y="30" width="24" height="4" rx="2" fill="#FF69B4" stroke="#FF1493" stroke-width="1"/>
+  <circle cx="32" cy="32" r="2" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+
+  <!-- Patas -->
+  <ellipse cx="24" cy="48" rx="5" ry="3" fill="#87CEEB" stroke="#4169E1" stroke-width="1.5"/>
+  <ellipse cx="40" cy="48" rx="5" ry="3" fill="#87CEEB" stroke="#4169E1" stroke-width="1.5"/>
+
+  <!-- Cola -->
+  <path d="M 46 40 Q 52 35, 50 25" stroke="#87CEEB" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

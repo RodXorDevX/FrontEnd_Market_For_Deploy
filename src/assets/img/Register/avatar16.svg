@@ -1,31 +1,64 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo circular consistente -->
-  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+  <!-- Fondo circular claro -->
+  <circle cx="32" cy="32" r="30" fill="#F0FFF0" stroke="#90EE90" stroke-width="2"/>
 
-  <!-- Canguro -->
-  <ellipse cx="32" cy="40" rx="18" ry="15" fill="#CD853F"/>
-  <ellipse cx="32" cy="30" rx="12" ry="10" fill="#DEB887"/>
+  <!-- Hipopótamo kawaii -->
+  <!-- Cuerpo grande y redondo -->
+  <ellipse cx="32" cy="35" rx="18" ry="14" fill="#B0C4DE" stroke="#4682B4" stroke-width="1.5"/>
+  <ellipse cx="32" cy="32" rx="15" ry="12" fill="#ADD8E6" stroke="#4682B4" stroke-width="1.5"/>
 
-  <!-- Orejas grandes -->
-  <ellipse cx="22" cy="15" rx="8" ry="12" fill="#CD853F" stroke="#333" stroke-width="1"/>
-  <ellipse cx="42" cy="15" rx="8" ry="12" fill="#CD853F" stroke="#333" stroke-width="1"/>
+  <!-- Cabeza -->
+  <ellipse cx="32" cy="20" rx="12" ry="10" fill="#B0C4DE" stroke="#4682B4" stroke-width="1.5"/>
 
-  <!-- Cara -->
-  <circle cx="26" cy="28" r="2" fill="#000"/>
-  <circle cx="38" cy="28" r="2" fill="#000"/>
-  <ellipse cx="32" cy="35" rx="2" ry="1" fill="#000"/>
+  <!-- Orejas pequeñas -->
+  <circle cx="24" cy="15" r="3" fill="#B0C4DE" stroke="#4682B4" stroke-width="1.5"/>
+  <circle cx="40" cy="15" r="3" fill="#B0C4DE" stroke="#4682B4" stroke-width="1.5"/>
+  <circle cx="24" cy="15" r="1.5" fill="#FFB6C1"/>
+  <circle cx="40" cy="15" r="1.5" fill="#FFB6C1"/>
 
-  <!-- Nariz -->
-  <ellipse cx="32" cy="32" rx="2" ry="1" fill="#000"/>
+  <!-- Ojos grandes kawaii -->
+  <ellipse cx="27" cy="18" rx="3" ry="4" fill="#FFF" stroke="#4682B4" stroke-width="1.5"/>
+  <ellipse cx="37" cy="18" rx="3" ry="4" fill="#FFF" stroke="#4682B4" stroke-width="1.5"/>
+  <circle cx="27" cy="19" r="1.5" fill="#000"/>
+  <circle cx="37" cy="19" r="1.5" fill="#000"/>
+  <circle cx="27.5" cy="18.5" r="0.8" fill="#FFF"/>
+  <circle cx="36.5" cy="18.5" r="0.8" fill="#FFF"/>
 
-  <!-- Bolsa -->
-  <ellipse cx="32" cy="45" rx="8" ry="6" fill="#8B4513" stroke="#333" stroke-width="1"/>
+  <!-- Narices grandes -->
+  <ellipse cx="28" cy="23" rx="2.5" ry="2" fill="#000"/>
+  <ellipse cx="36" cy="23" rx="2.5" ry="2" fill="#000"/>
+  <circle cx="27" cy="22" r="1" fill="#FFB6C1"/>
+  <circle cx="29" cy="22" r="1" fill="#FFB6C1"/>
+  <circle cx="35" cy="22" r="1" fill="#FFB6C1"/>
+  <circle cx="37" cy="22" r="1" fill="#FFB6C1"/>
 
-  <!-- Cabezota en la bolsa -->
-  <circle cx="32" cy="45" r="4" fill="#F4A460"/>
-  <circle cx="30" cy="44" r="1" fill="#000"/>
-  <circle cx="34" cy="44" r="1" fill="#000"/>
+  <!-- Boca grande y feliz -->
+  <path d="M 24 26 Q 32 32, 40 26" stroke="#000" stroke-width="1.5" fill="none"/>
 
-  <!-- Cola -->
-  <path d="M 48 40 Q 55 35, 58 25" stroke="#CD853F" stroke-width="4" fill="none"/>
+  <!-- Patas -->
+  <ellipse cx="22" cy="46" rx="4" ry="8" fill="#B0C4DE" stroke="#4682B4" stroke-width="1.5"/>
+  <ellipse cx="32" cy="46" rx="4" ry="8" fill="#B0C4DE" stroke="#4682B4" stroke-width="1.5"/>
+  <ellipse cx="42" cy="46" rx="4" ry="8" fill="#B0C4DE" stroke="#4682B4" stroke-width="1.5"/>
+
+  <!-- Pequeñas uñas -->
+  <ellipse cx="22" cy="52" rx="2" ry="1" fill="#000"/>
+  <ellipse cx="32" cy="52" rx="2" ry="1" fill="#000"/>
+  <ellipse cx="42" cy="52" rx="2" ry="1" fill="#000"/>
+
+  <!-- Corazón flotante -->
+  <path d="M 15 15 C 14 14, 12 14, 12 16 C 12 17, 14 18, 15 19 C 16 18, 18 17, 18 16 C 18 14, 16 14, 15 15 Z"
+        fill="#FF69B4" stroke="#FF1493" stroke-width="1"/>
+
+  <!-- Gotas de agua -->
+  <ellipse cx="48" cy="25" rx="2" ry="3" fill="#87CEEB" stroke="#4682B4" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="50" cy="18" rx="1.5" ry="2" fill="#87CEEB" stroke="#4682B4" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="46" cy="12" rx="1" ry="1.5" fill="#87CEEB" stroke="#4682B4" stroke-width="1" opacity="0.3"/>
+
+  <!-- Estrella kawaii -->
+  <path d="M 10 35 L 10.5 36 L 11.5 36 L 10.5 37 L 11 38 L 10 37 L 9 38 L 9.5 37 L 8.5 36 L 9.5 36 Z"
+        fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+
+  <!-- Mejillas rosadas -->
+  <ellipse cx="18" cy="20" rx="3" ry="2" fill="#FFB6C1" opacity="0.6"/>
+  <ellipse cx="46" cy="20" rx="3" ry="2" fill="#FFB6C1" opacity="0.6"/>
 </svg>

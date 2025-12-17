@@ -1,33 +1,70 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo circular consistente -->
-  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+  <!-- Fondo circular claro -->
+  <circle cx="32" cy="32" r="30" fill="#E6E6FA" stroke="#9370DB" stroke-width="2"/>
 
-  <!-- Panda -->
-  <circle cx="32" cy="35" r="15" fill="#FFF"/>
-  <circle cx="32" cy="30" r="12" fill="#F5F5F5"/>
+  <!-- Suri/Alpaca kawaii -->
+  <!-- Cuerpo -->
+  <ellipse cx="32" cy="38" rx="16" ry="12" fill="#FFF8DC" stroke="#DEB887" stroke-width="1.5"/>
+
+  <!-- Cuello -->
+  <ellipse cx="32" cy="22" rx="10" ry="12" fill="#FFF8DC" stroke="#DEB887" stroke-width="1.5"/>
+
+  <!-- Cabeza -->
+  <ellipse cx="32" cy="12" rx="8" ry="7" fill="#FFF8DC" stroke="#DEB887" stroke-width="1.5"/>
+
+  <!-- Lana texturizada (pelo esponjoso) -->
+  <circle cx="25" cy="10" r="3" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="39" cy="10" r="3" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="32" cy="6" r="2.5" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="28" cy="15" r="2.5" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="36" cy="15" r="2.5" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="24" cy="20" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="40" cy="20" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="30" cy="25" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="34" cy="25" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="26" cy="30" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="38" cy="30" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="25" cy="35" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="39" cy="35" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
+  <circle cx="32" cy="40" r="2" fill="#FFF" stroke="#DEB887" stroke-width="1"/>
 
   <!-- Orejas -->
-  <circle cx="22" cy="15" r="8" fill="#000" stroke="#333" stroke-width="1"/>
-  <circle cx="42" cy="15" r="8" fill="#000" stroke="#333" stroke-width="1"/>
+  <ellipse cx="26" cy="5" rx="2" ry="4" fill="#FFF8DC" stroke="#DEB887" stroke-width="1.5"/>
+  <ellipse cx="38" cy="5" rx="2" ry="4" fill="#FFF8DC" stroke="#DEB887" stroke-width="1.5"/>
+  <ellipse cx="26" cy="5" rx="1" ry="2" fill="#FFB6C1"/>
+  <ellipse cx="38" cy="5" rx="1" ry="2" fill="#FFB6C1"/>
 
-  <!-- Parches alrededor de los ojos -->
-  <ellipse cx="25" cy="28" rx="6" ry="8" fill="#000"/>
-  <ellipse cx="39" cy="28" rx="6" ry="8" fill="#000"/>
-
-  <!-- Ojos -->
-  <circle cx="26" cy="29" r="2" fill="#FFF"/>
-  <circle cx="38" cy="29" r="2" fill="#FFF"/>
-  <circle cx="26" cy="30" r="1" fill="#000"/>
-  <circle cx="38" cy="30" r="1" fill="#000"/>
+  <!-- Ojos grandes kawaii -->
+  <ellipse cx="28" cy="10" rx="2.5" ry="3" fill="#FFF" stroke="#DEB887" stroke-width="1.5"/>
+  <ellipse cx="36" cy="10" rx="2.5" ry="3" fill="#FFF" stroke="#DEB887" stroke-width="1.5"/>
+  <circle cx="28" cy="11" r="1.2" fill="#000"/>
+  <circle cx="36" cy="11" r="1.2" fill="#000"/>
+  <circle cx="28.5" cy="10.5" r="0.6" fill="#FFF"/>
+  <circle cx="35.5" cy="10.5" r="0.6" fill="#FFF"/>
 
   <!-- Nariz -->
-  <ellipse cx="32" cy="35" rx="3" ry="2" fill="#000"/>
+  <ellipse cx="32" cy="14" rx="1.5" ry="1" fill="#000"/>
 
-  <!-- Boca -->
-  <path d="M 32 37 Q 28 40, 25 37" stroke="#000" stroke-width="1" fill="none"/>
-  <path d="M 32 37 Q 36 40, 39 37" stroke="#000" stroke-width="1" fill="none"/>
+  <!-- Boca feliz -->
+  <path d="M 28 16 Q 32 18, 36 16" stroke="#000" stroke-width="1.5" fill="none"/>
 
-  <!-- Brazos negros -->
-  <ellipse cx="18" cy="35" rx="6" ry="10" fill="#000" stroke="#333" stroke-width="1"/>
-  <ellipse cx="46" cy="35" rx="6" ry="10" fill="#000" stroke="#333" stroke-width="1"/>
+  <!-- Patas -->
+  <ellipse cx="24" cy="48" rx="3" ry="5" fill="#FFF8DC" stroke="#DEB887" stroke-width="1.5"/>
+  <ellipse cx="32" cy="48" rx="3" ry="5" fill="#FFF8DC" stroke="#DEB887" stroke-width="1.5"/>
+  <ellipse cx="40" cy="48" rx="3" ry="5" fill="#FFF8DC" stroke="#DEB887" stroke-width="1.5"/>
+
+  <!-- Moño con lazo -->
+  <circle cx="32" cy="2" r="2" fill="#FF69B4" stroke="#FF1493" stroke-width="1.5"/>
+  <path d="M 30 2 Q 28 0, 26 2" stroke="#FF69B4" stroke-width="2" fill="none"/>
+  <path d="M 34 2 Q 36 0, 38 2" stroke="#FF69B4" stroke-width="2" fill="none"/>
+
+  <!-- Corazones en la lana -->
+  <path d="M 20 25 C 19 24, 17 24, 17 26 C 17 27, 19 28, 20 29 C 21 28, 23 27, 23 26 C 23 24, 21 24, 20 25 Z"
+        fill="#FFB6C1" stroke="#FF1493" stroke-width="1"/>
+  <path d="M 44 35 C 43 34, 41 34, 41 36 C 41 37, 43 38, 44 39 C 45 38, 47 37, 47 36 C 47 34, 45 34, 44 35 Z"
+        fill="#FFB6C1" stroke="#FF1493" stroke-width="1"/>
+
+  <!-- Mejillas rosadas -->
+  <ellipse cx="22" cy="12" rx="2" ry="1.5" fill="#FFB6C1" opacity="0.6"/>
+  <ellipse cx="42" cy="12" rx="2" ry="1.5" fill="#FFB6C1" opacity="0.6"/>
 </svg>

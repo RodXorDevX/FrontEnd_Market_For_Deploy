@@ -1,29 +1,75 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo circular consistente -->
-  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+  <!-- Fondo circular claro -->
+  <circle cx="32" cy="32" r="30" fill="#F0FFFF" stroke="#87CEEB" stroke-width="2"/>
 
-  <!-- Tigre -->
-  <ellipse cx="32" cy="35" rx="18" ry="15" fill="#FF8C00"/>
-  <ellipse cx="32" cy="30" rx="12" ry="10" fill="#FFA500"/>
+  <!-- Jirafa kawaii -->
+  <!-- Cuello largo -->
+  <ellipse cx="32" cy="25" rx="8" ry="20" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
+  <ellipse cx="32" cy="20" rx="5" ry="16" fill="#FFA500" stroke="#FF8C00" stroke-width="1.5"/>
 
-  <!-- Rayas negras -->
-  <path d="M 15 25 L 20 30" stroke="#000" stroke-width="3"/>
-  <path d="M 20 20 L 25 25" stroke="#000" stroke-width="3"/>
-  <path d="M 25 35 L 30 40" stroke="#000" stroke-width="3"/>
-  <path d="M 44 25 L 49 30" stroke="#000" stroke-width="3"/>
-  <path d="M 39 20 L 44 25" stroke="#000" stroke-width="3"/>
-  <path d="M 34 35 L 39 40" stroke="#000" stroke-width="3"/>
+  <!-- Manchas en el cuello -->
+  <circle cx="28" cy="15" r="2" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="36" cy="15" r="2" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="30" cy="22" r="1.5" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="34" cy="22" r="1.5" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="32" cy="28" r="1.8" fill="#8B4513" stroke="#654321" stroke-width="1"/>
 
-  <!-- Cara -->
-  <circle cx="26" cy="28" r="2" fill="#FFF"/>
-  <circle cx="38" cy="28" r="2" fill="#FFF"/>
-  <circle cx="26" cy="29" r="1" fill="#000"/>
-  <circle cx="38" cy="29" r="1" fill="#000"/>
-  <ellipse cx="32" cy="35" rx="2" ry="1" fill="#000"/>
+  <!-- Cabeza -->
+  <ellipse cx="32" cy="8" rx="7" ry="6" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
 
-  <!-- Bigotes -->
-  <path d="M 20 30 L 10 28" stroke="#000" stroke-width="1"/>
-  <path d="M 20 32 L 10 34" stroke="#000" stroke-width="1"/>
-  <path d="M 44 30 L 54 28" stroke="#000" stroke-width="1"/>
-  <path d="M 44 32 L 54 34" stroke="#000" stroke-width="1"/>
+  <!-- Orejas -->
+  <ellipse cx="28" cy="3" rx="2" ry="4" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
+  <ellipse cx="36" cy="3" rx="2" ry="4" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
+  <ellipse cx="28" cy="3" rx="1" ry="2" fill="#FFB6C1"/>
+  <ellipse cx="36" cy="3" rx="1" ry="2" fill="#FFB6C1"/>
+
+  <!-- Cuernecitos -->
+  <path d="M 26 0 L 25 -3" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 38 0 L 39 -3" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="25" cy="-3" r="1" fill="#8B4513"/>
+  <circle cx="39" cy="-3" r="1" fill="#8B4513"/>
+
+  <!-- Ojos grandes kawaii -->
+  <ellipse cx="29" cy="7" rx="2.5" ry="3" fill="#FFF" stroke="#FFA500" stroke-width="1.5"/>
+  <ellipse cx="35" cy="7" rx="2.5" ry="3" fill="#FFF" stroke="#FFA500" stroke-width="1.5"/>
+  <circle cx="29" cy="8" r="1.2" fill="#000"/>
+  <circle cx="35" cy="8" r="1.2" fill="#000"/>
+  <circle cx="29.5" cy="7.5" r="0.6" fill="#FFF"/>
+  <circle cx="34.5" cy="7.5" r="0.6" fill="#FFF"/>
+
+  <!-- Nariz -->
+  <ellipse cx="32" cy="11" rx="1.5" ry="1" fill="#000"/>
+
+  <!-- Boca feliz -->
+  <path d="M 29 13 Q 32 15, 35 13" stroke="#000" stroke-width="1.5" fill="none"/>
+
+  <!-- Cuerpo -->
+  <ellipse cx="32" cy="45" rx="14" ry="10" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
+
+  <!-- Manchas en el cuerpo -->
+  <circle cx="25" cy="44" r="2.5" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="39" cy="44" r="2.5" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="32" cy="42" r="2" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="28" cy="47" r="1.5" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <circle cx="36" cy="47" r="1.5" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+
+  <!-- Patas -->
+  <ellipse cx="26" cy="52" rx="3" ry="6" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
+  <ellipse cx="32" cy="52" rx="3" ry="6" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
+  <ellipse cx="38" cy="52" rx="3" ry="6" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
+
+  <!-- Moño kawaii -->
+  <circle cx="32" cy="-6" r="2" fill="#FF69B4" stroke="#FF1493" stroke-width="1.5"/>
+  <circle cx="30" cy="-5" r="1" fill="#FFB6C1" stroke="#FF1493" stroke-width="1"/>
+  <circle cx="34" cy="-5" r="1" fill="#FFB6C1" stroke="#FF1493" stroke-width="1"/>
+
+  <!-- Estrellas decorativas -->
+  <path d="M 15 20 L 15.5 21 L 16.5 21 L 15.5 22 L 16 23 L 15 22 L 14 23 L 14.5 22 L 13.5 21 L 14.5 21 Z"
+        fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+  <path d="M 48 25 L 48.3 25.8 L 49.2 25.8 L 48.3 26.5 L 48.7 27.3 L 48 26.5 L 47.3 27.3 L 47.7 26.5 L 46.8 25.8 L 47.7 25.8 Z"
+        fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+
+  <!-- Mejillas rosadas -->
+  <ellipse cx="24" cy="9" rx="2" ry="1.5" fill="#FFB6C1" opacity="0.6"/>
+  <ellipse cx="40" cy="9" rx="2" ry="1.5" fill="#FFB6C1" opacity="0.6"/>
 </svg>

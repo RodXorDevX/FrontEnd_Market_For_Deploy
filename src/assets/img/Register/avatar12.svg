@@ -1,24 +1,71 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo circular consistente -->
-  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+  <!-- Fondo circular claro -->
+  <circle cx="32" cy="32" r="30" fill="#FFEFD5" stroke="#FFA500" stroke-width="2"/>
 
-  <!-- Zorro -->
-  <ellipse cx="32" cy="35" rx="18" ry="15" fill="#FF6347"/>
-  <ellipse cx="32" cy="30" rx="12" ry="10" fill="#FF8C69"/>
+  <!-- Tigre kawaii -->
+  <!-- Cuerpo -->
+  <ellipse cx="32" cy="38" rx="16" ry="12" fill="#FFA500" stroke="#FF8C00" stroke-width="1.5"/>
+  <ellipse cx="32" cy="35" rx="14" ry="10" fill="#FFB347" stroke="#FF8C00" stroke-width="1.5"/>
 
-  <!-- Orejas puntiagudas -->
-  <path d="M 20 20 L 15 5 L 25 15 Z" fill="#FF6347" stroke="#333" stroke-width="1"/>
-  <path d="M 44 20 L 49 5 L 39 15 Z" fill="#FF6347" stroke="#333" stroke-width="1"/>
-  <path d="M 20 15 L 17 8 L 22 12 Z" fill="#FFB6C1"/>
-  <path d="M 44 15 L 47 8 L 42 12 Z" fill="#FFB6C1"/>
+  <!-- Rayas negras -->
+  <path d="M 20 30 L 24 35" stroke="#000" stroke-width="2.5"/>
+  <path d="M 40 30 L 44 35" stroke="#000" stroke-width="2.5"/>
+  <path d="M 22 35 L 26 40" stroke="#000" stroke-width="2.5"/>
+  <path d="M 38 35 L 42 40" stroke="#000" stroke-width="2.5"/>
+  <path d="M 25 28 L 27 32" stroke="#000" stroke-width="2"/>
+  <path d="M 37 28 L 39 32" stroke="#000" stroke-width="2"/>
 
-  <!-- Características de la cara -->
-  <circle cx="26" cy="28" r="2" fill="#000"/>
-  <circle cx="38" cy="28" r="2" fill="#000"/>
-  <ellipse cx="32" cy="35" rx="2" ry="1" fill="#000"/>
-  <path d="M 25 40 Q 32 45, 39 40" stroke="#FFF" stroke-width="2" fill="none"/>
+  <!-- Cabeza -->
+  <ellipse cx="32" cy="22" rx="12" ry="10" fill="#FFA500" stroke="#FF8C00" stroke-width="1.5"/>
 
-  <!-- Cola -->
-  <path d="M 50 40 Q 58 35, 55 25" stroke="#FF6347" stroke-width="4" fill="none"/>
-  <circle cx="55" cy="25" r="4" fill="#FFF"/>
+  <!-- Orejas -->
+  <ellipse cx="24" cy="15" rx="5" ry="7" fill="#FFA500" stroke="#FF8C00" stroke-width="1.5"/>
+  <ellipse cx="40" cy="15" rx="5" ry="7" fill="#FFA500" stroke="#FF8C00" stroke-width="1.5"/>
+  <ellipse cx="24" cy="15" rx="2" ry="4" fill="#000"/>
+  <ellipse cx="40" cy="15" rx="2" ry="4" fill="#000"/>
+
+  <!-- Rayas en la cara -->
+  <path d="M 18 18 L 20 22" stroke="#000" stroke-width="2"/>
+  <path d="M 46 18 L 44 22" stroke="#000" stroke-width="2"/>
+
+  <!-- Ojos grandes kawaii -->
+  <ellipse cx="27" cy="20" rx="3.5" ry="4.5" fill="#FFF" stroke="#000" stroke-width="1.5"/>
+  <ellipse cx="37" cy="20" rx="3.5" ry="4.5" fill="#FFF" stroke="#000" stroke-width="1.5"/>
+  <circle cx="28" cy="21" r="2" fill="#000"/>
+  <circle cx="36" cy="21" r="2" fill="#000"/>
+  <circle cx="29" cy="20" r="1" fill="#FFF"/>
+  <circle cx="35" cy="20" r="1" fill="#FFF"/>
+
+  <!-- Nariz -->
+  <ellipse cx="32" cy="25" rx="2.5" ry="2" fill="#000"/>
+
+  <!-- Boca con colmillos -->
+  <path d="M 27 27 Q 32 31, 37 27" stroke="#000" stroke-width="1.5" fill="none"/>
+  <path d="M 28 29 L 27 31" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 36 29 L 37 31" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Bigotes -->
+  <path d="M 18 24 L 12 22" stroke="#000" stroke-width="1.5"/>
+  <path d="M 18 26 L 12 26" stroke="#000" stroke-width="1.5"/>
+  <path d="M 46 24 L 52 22" stroke="#000" stroke-width="1.5"/>
+  <path d="M 46 26 L 52 26" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Patas -->
+  <ellipse cx="24" cy="48" rx="4" ry="6" fill="#FFA500" stroke="#FF8C00" stroke-width="1.5"/>
+  <ellipse cx="40" cy="48" rx="4" ry="6" fill="#FFA500" stroke="#FF8C00" stroke-width="1.5"/>
+  <ellipse cx="24" cy="49" rx="2" ry="2" fill="#000"/>
+  <ellipse cx="40" cy="49" rx="2" ry="2" fill="#000"/>
+
+  <!-- Cola con rayas -->
+  <ellipse cx="48" cy="35" rx="8" ry="4" fill="#FFA500" stroke="#FF8C00" stroke-width="1.5"/>
+  <path d="M 50 33 L 54 35" stroke="#000" stroke-width="2"/>
+  <path d="M 50 37 L 54 35" stroke="#000" stroke-width="2"/>
+
+  <!-- Corona kawaii -->
+  <path d="M 32 8 L 30 4 L 31 6 L 29 2 L 31 4 L 32 0 L 33 4 L 35 2 L 33 6 L 34 4 L 32 8 Z"
+        fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
+
+  <!-- Mejillas rosadas -->
+  <ellipse cx="20" cy="23" rx="2.5" ry="2" fill="#FFB6C1" opacity="0.7"/>
+  <ellipse cx="44" cy="23" rx="2.5" ry="2" fill="#FFB6C1" opacity="0.7"/>
 </svg>

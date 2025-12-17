@@ -1,0 +1,43 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular claro -->
+  <circle cx="32" cy="32" r="30" fill="#FFE4E1" stroke="#FF69B4" stroke-width="2"/>
+
+  <!-- Gato kawaii -->
+  <!-- Cuerpo -->
+  <ellipse cx="32" cy="35" rx="18" ry="15" fill="#FFC0CB" stroke="#FF1493" stroke-width="1.5"/>
+
+  <!-- Cabeza -->
+  <ellipse cx="32" cy="22" rx="14" ry="12" fill="#FFC0CB" stroke="#FF1493" stroke-width="1.5"/>
+
+  <!-- Orejas -->
+  <path d="M 20 15 L 18 8 L 24 12 Z" fill="#FFC0CB" stroke="#FF1493" stroke-width="1.5"/>
+  <path d="M 44 15 L 46 8 L 40 12 Z" fill="#FFC0CB" stroke="#FF1493" stroke-width="1.5"/>
+  <path d="M 20 12 L 19 9 L 22 11 Z" fill="#FFB6C1"/>
+  <path d="M 44 12 L 45 9 L 42 11 Z" fill="#FFB6C1"/>
+
+  <!-- Ojos grandes kawaii -->
+  <ellipse cx="26" cy="20" rx="4" ry="5" fill="#FFF" stroke="#FF1493" stroke-width="1.5"/>
+  <ellipse cx="38" cy="20" rx="4" ry="5" fill="#FFF" stroke="#FF1493" stroke-width="1.5"/>
+  <circle cx="27" cy="21" r="2" fill="#000"/>
+  <circle cx="37" cy="21" r="2" fill="#000"/>
+  <circle cx="28" cy="20" r="1" fill="#FFF"/>
+  <circle cx="36" cy="20" r="1" fill="#FFF"/>
+
+  <!-- Nariz y boca -->
+  <path d="M 32 25 L 30 27 L 32 28 L 34 27 Z" fill="#FF1493"/>
+  <path d="M 25 30 Q 32 35, 39 30" stroke="#FF1493" stroke-width="1.5" fill="none"/>
+
+  <!-- Bigotes -->
+  <path d="M 15 22 L 8 20" stroke="#FF1493" stroke-width="1.5"/>
+  <path d="M 15 25 L 8 25" stroke="#FF1493" stroke-width="1.5"/>
+  <path d="M 49 22 L 56 20" stroke="#FF1493" stroke-width="1.5"/>
+  <path d="M 49 25 L 56 25" stroke="#FF1493" stroke-width="1.5"/>
+
+  <!-- Pies -->
+  <ellipse cx="25" cy="47" rx="6" ry="4" fill="#FFC0CB" stroke="#FF1493" stroke-width="1.5"/>
+  <ellipse cx="39" cy="47" rx="6" ry="4" fill="#FFC0CB" stroke="#FF1493" stroke-width="1.5"/>
+
+  <!-- Cola -->
+  <path d="M 48 35 Q 55 30, 52 20" stroke="#FFC0CB" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="52" cy="20" r="3" fill="#FFC0CB" stroke="#FF1493" stroke-width="1.5"/>
+</svg>
