@@ -8,6 +8,10 @@ import avatar3 from '../assets/img/Register/icon3.png';
 import avatar4 from '../assets/img/Register/icon4.png';
 import avatar5 from '../assets/img/Register/icon5.png';
 import avatar6 from '../assets/img/Register/icon6.png';
+import avatar7 from '../assets/img/Register/avatar7.svg'; // Oso
+import avatar8 from '../assets/img/Register/avatar8.svg'; // Ave
+import avatar9 from '../assets/img/Register/avatar9.svg'; // Delfín
+import avatar10 from '../assets/img/Register/avatar10.svg'; // Conejo
 
 import api from "../api";
 
@@ -181,6 +185,30 @@ const Register = () => {
                 alt="Avatar 6"
                 className={`avatar-option ${form.avatar === 'avatar6' ? 'selected' : ''}`}
                 onClick={() => handleAvatarSelect('avatar6')}
+              />
+              <img
+                src={avatar7}
+                alt="Oso"
+                className={`avatar-option ${form.avatar === 'avatar7' ? 'selected' : ''}`}
+                onClick={() => handleAvatarSelect('avatar7')}
+              />
+              <img
+                src={avatar8}
+                alt="Ave"
+                className={`avatar-option ${form.avatar === 'avatar8' ? 'selected' : ''}`}
+                onClick={() => handleAvatarSelect('avatar8')}
+              />
+              <img
+                src={avatar9}
+                alt="Delfín"
+                className={`avatar-option ${form.avatar === 'avatar9' ? 'selected' : ''}`}
+                onClick={() => handleAvatarSelect('avatar9')}
+              />
+              <img
+                src={avatar10}
+                alt="Conejo"
+                className={`avatar-option ${form.avatar === 'avatar10' ? 'selected' : ''}`}
+                onClick={() => handleAvatarSelect('avatar10')}
               />
             </div>
           </div>

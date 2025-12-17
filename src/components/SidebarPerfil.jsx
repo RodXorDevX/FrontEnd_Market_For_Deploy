@@ -9,6 +9,10 @@ import avatar3 from '../assets/img/Register/icon3.png';
 import avatar4 from '../assets/img/Register/icon4.png';
 import avatar5 from '../assets/img/Register/icon5.png';
 import avatar6 from '../assets/img/Register/icon6.png';
+import avatar7 from '../assets/img/Register/avatar7.svg'; // Oso
+import avatar8 from '../assets/img/Register/avatar8.svg'; // Ave
+import avatar9 from '../assets/img/Register/avatar9.svg'; // Delfín
+import avatar10 from '../assets/img/Register/avatar10.svg'; // Conejo
 import '../assets/css/SidebarPerfil.css';
 
 // Mapeo de nombres a imágenes
@@ -18,7 +22,11 @@ const avatarMap = {
   avatar3,
   avatar4,
   avatar5,
-  avatar6
+  avatar6,
+  avatar7,
+  avatar8,
+  avatar9,
+  avatar10
 };
 
 function SidebarPerfil() {
