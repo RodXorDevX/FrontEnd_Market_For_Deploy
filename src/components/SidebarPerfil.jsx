@@ -13,6 +13,16 @@ import avatar7 from '../assets/img/Register/avatar7.svg'; // Oso
 import avatar8 from '../assets/img/Register/avatar8.svg'; // Ave
 import avatar9 from '../assets/img/Register/avatar9.svg'; // Delfín
 import avatar10 from '../assets/img/Register/avatar10.svg'; // Conejo
+import avatar11 from '../assets/img/Register/avatar11.svg'; // León
+import avatar12 from '../assets/img/Register/avatar12.svg'; // Zorro
+import avatar13 from '../assets/img/Register/avatar13.svg'; // Elefante
+import avatar14 from '../assets/img/Register/avatar14.svg'; // Tigre
+import avatar15 from '../assets/img/Register/avatar15.svg'; // Panda
+import avatar16 from '../assets/img/Register/avatar16.svg'; // Canguro
+import avatar17 from '../assets/img/Register/avatar17.svg'; // Tortuga
+import avatar18 from '../assets/img/Register/avatar18.svg'; // Hipopótamo
+import avatar19 from '../assets/img/Register/avatar19.svg'; // Suri (Alpaca)
+import avatar20 from '../assets/img/Register/avatar20.svg'; // Jirafa
 import '../assets/css/SidebarPerfil.css';
 
 // Mapeo de nombres a imágenes
@@ -26,7 +36,17 @@ const avatarMap = {
   avatar7,
   avatar8,
   avatar9,
-  avatar10
+  avatar10,
+  avatar11,
+  avatar12,
+  avatar13,
+  avatar14,
+  avatar15,
+  avatar16,
+  avatar17,
+  avatar18,
+  avatar19,
+  avatar20
 };
 
 function SidebarPerfil() {

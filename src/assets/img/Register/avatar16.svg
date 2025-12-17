@@ -1,0 +1,31 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular consistente -->
+  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+
+  <!-- Canguro -->
+  <ellipse cx="32" cy="40" rx="18" ry="15" fill="#CD853F"/>
+  <ellipse cx="32" cy="30" rx="12" ry="10" fill="#DEB887"/>
+
+  <!-- Orejas grandes -->
+  <ellipse cx="22" cy="15" rx="8" ry="12" fill="#CD853F" stroke="#333" stroke-width="1"/>
+  <ellipse cx="42" cy="15" rx="8" ry="12" fill="#CD853F" stroke="#333" stroke-width="1"/>
+
+  <!-- Cara -->
+  <circle cx="26" cy="28" r="2" fill="#000"/>
+  <circle cx="38" cy="28" r="2" fill="#000"/>
+  <ellipse cx="32" cy="35" rx="2" ry="1" fill="#000"/>
+
+  <!-- Nariz -->
+  <ellipse cx="32" cy="32" rx="2" ry="1" fill="#000"/>
+
+  <!-- Bolsa -->
+  <ellipse cx="32" cy="45" rx="8" ry="6" fill="#8B4513" stroke="#333" stroke-width="1"/>
+
+  <!-- Cabezota en la bolsa -->
+  <circle cx="32" cy="45" r="4" fill="#F4A460"/>
+  <circle cx="30" cy="44" r="1" fill="#000"/>
+  <circle cx="34" cy="44" r="1" fill="#000"/>
+
+  <!-- Cola -->
+  <path d="M 48 40 Q 55 35, 58 25" stroke="#CD853F" stroke-width="4" fill="none"/>
+</svg>

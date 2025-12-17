@@ -12,6 +12,16 @@ import avatar7 from '../assets/img/Register/avatar7.svg'; // Oso
 import avatar8 from '../assets/img/Register/avatar8.svg'; // Ave
 import avatar9 from '../assets/img/Register/avatar9.svg'; // Delfín
 import avatar10 from '../assets/img/Register/avatar10.svg'; // Conejo
+import avatar11 from '../assets/img/Register/avatar11.svg'; // León
+import avatar12 from '../assets/img/Register/avatar12.svg'; // Zorro
+import avatar13 from '../assets/img/Register/avatar13.svg'; // Elefante
+import avatar14 from '../assets/img/Register/avatar14.svg'; // Tigre
+import avatar15 from '../assets/img/Register/avatar15.svg'; // Panda
+import avatar16 from '../assets/img/Register/avatar16.svg'; // Canguro
+import avatar17 from '../assets/img/Register/avatar17.svg'; // Tortuga
+import avatar18 from '../assets/img/Register/avatar18.svg'; // Hipopótamo
+import avatar19 from '../assets/img/Register/avatar19.svg'; // Suri (Alpaca)
+import avatar20 from '../assets/img/Register/avatar20.svg'; // Jirafa
 
 import api from "../api";
 
@@ -23,6 +33,7 @@ const Register = () => {
     direccion: '', // opcional
     avatar: ''
   });
+  const [showMoreAvatars, setShowMoreAvatars] = useState(false);
 
   const handleChange = (e) => {
     setForm({
@@ -211,6 +222,83 @@ const Register = () => {
                 onClick={() => handleAvatarSelect('avatar10')}
               />
             </div>
+
+            {/* Botón para mostrar más avatares */}
+            <div className="avatar-toggle">
+              <button
+                type="button"
+                className="avatar-toggle-btn"
+                onClick={() => setShowMoreAvatars(!showMoreAvatars)}
+              >
+                {showMoreAvatars ? '− Mostrar menos' : '+ Mostrar más avatares'}
+              </button>
+            </div>
+
+            {/* Avatares adicionales (expandidos) */}
+            {showMoreAvatars && (
+              <div className="avatar-options expanded">
+                <img
+                  src={avatar11}
+                  alt="León"
+                  className={`avatar-option ${form.avatar === 'avatar11' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar11')}
+                />
+                <img
+                  src={avatar12}
+                  alt="Zorro"
+                  className={`avatar-option ${form.avatar === 'avatar12' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar12')}
+                />
+                <img
+                  src={avatar13}
+                  alt="Elefante"
+                  className={`avatar-option ${form.avatar === 'avatar13' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar13')}
+                />
+                <img
+                  src={avatar14}
+                  alt="Tigre"
+                  className={`avatar-option ${form.avatar === 'avatar14' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar14')}
+                />
+                <img
+                  src={avatar15}
+                  alt="Panda"
+                  className={`avatar-option ${form.avatar === 'avatar15' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar15')}
+                />
+                <img
+                  src={avatar16}
+                  alt="Canguro"
+                  className={`avatar-option ${form.avatar === 'avatar16' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar16')}
+                />
+                <img
+                  src={avatar17}
+                  alt="Tortuga"
+                  className={`avatar-option ${form.avatar === 'avatar17' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar17')}
+                />
+                <img
+                  src={avatar18}
+                  alt="Hipopótamo"
+                  className={`avatar-option ${form.avatar === 'avatar18' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar18')}
+                />
+                <img
+                  src={avatar19}
+                  alt="Suri"
+                  className={`avatar-option ${form.avatar === 'avatar19' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar19')}
+                />
+                <img
+                  src={avatar20}
+                  alt="Jirafa"
+                  className={`avatar-option ${form.avatar === 'avatar20' ? 'selected' : ''}`}
+                  onClick={() => handleAvatarSelect('avatar20')}
+                />
+              </div>
+            )}
           </div>
 
           <button type="button" onClick={handleSubmit} className="submit-btn">Registrarme</button>

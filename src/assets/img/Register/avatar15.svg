@@ -1,0 +1,33 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular consistente -->
+  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+
+  <!-- Panda -->
+  <circle cx="32" cy="35" r="15" fill="#FFF"/>
+  <circle cx="32" cy="30" r="12" fill="#F5F5F5"/>
+
+  <!-- Orejas -->
+  <circle cx="22" cy="15" r="8" fill="#000" stroke="#333" stroke-width="1"/>
+  <circle cx="42" cy="15" r="8" fill="#000" stroke="#333" stroke-width="1"/>
+
+  <!-- Parches alrededor de los ojos -->
+  <ellipse cx="25" cy="28" rx="6" ry="8" fill="#000"/>
+  <ellipse cx="39" cy="28" rx="6" ry="8" fill="#000"/>
+
+  <!-- Ojos -->
+  <circle cx="26" cy="29" r="2" fill="#FFF"/>
+  <circle cx="38" cy="29" r="2" fill="#FFF"/>
+  <circle cx="26" cy="30" r="1" fill="#000"/>
+  <circle cx="38" cy="30" r="1" fill="#000"/>
+
+  <!-- Nariz -->
+  <ellipse cx="32" cy="35" rx="3" ry="2" fill="#000"/>
+
+  <!-- Boca -->
+  <path d="M 32 37 Q 28 40, 25 37" stroke="#000" stroke-width="1" fill="none"/>
+  <path d="M 32 37 Q 36 40, 39 37" stroke="#000" stroke-width="1" fill="none"/>
+
+  <!-- Brazos negros -->
+  <ellipse cx="18" cy="35" rx="6" ry="10" fill="#000" stroke="#333" stroke-width="1"/>
+  <ellipse cx="46" cy="35" rx="6" ry="10" fill="#000" stroke="#333" stroke-width="1"/>
+</svg>
