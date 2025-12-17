@@ -250,13 +250,10 @@ La aplicación se integra con el backend a través de:
 
 Este proyecto está bajo la Licencia MIT.
 
-## 👥 Contribuyentes
-
-- RodrigoCQ4 - Desarrollador principal
 
 ## 📧 Contacto
 
-Para soporte o preguntas, contactar a: [tu-email@ejemplo.com]
+Para soporte o preguntas, contactar a: [rodxordevx@gmail.com]
 
 ## 🚀 Build y Producción
 
