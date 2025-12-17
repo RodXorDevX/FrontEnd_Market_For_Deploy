@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import SidebarPerfil from "../components/SidebarPerfil";
 import { AuthContext } from "../context/AuthContext";
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 import "../assets/css/pedidos.css";
 
 export default function MisPedidos() {
@@ -15,9 +15,9 @@ export default function MisPedidos() {
     if (!usuario) return;
     const vendedorId = usuario.usuario.id;
 
-    fetch(`${API_BACKEND_URL}/pedidos?vendedor_id=${vendedorId}`)
-      .then((response) => response.json())
-      .then((data) => {
+    api.get(`/pedidos?vendedor_id=${vendedorId}`)
+      .then((response) => {
+        const data = response.data;
         if (Array.isArray(data)) {
           setPedidos(data);
         } else {
@@ -33,17 +33,9 @@ export default function MisPedidos() {
 
   const cambiarEstado = async (id, nuevoEstado) => {
     try {
-      const response = await fetch(`${API_BACKEND_URL}/pedidos/${id}/estado`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ estado: nuevoEstado }),
-      });
+      const response = await api.put(`/pedidos/${id}/estado`, { estado: nuevoEstado });
 
-      if (!response.ok) throw new Error("Error al actualizar estado");
-
-      const data = await response.json();
+      const data = response.data;
 
       // Actualiza el pedido localmente
       setPedidos((prev) =>
