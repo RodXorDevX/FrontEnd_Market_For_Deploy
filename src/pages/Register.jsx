@@ -100,48 +100,60 @@ const Register = () => {
         </div>
         <div className="registro">
           <h1 className="text-wrapper-2">REGISTRO</h1>
+          <label htmlFor="nombre" className="form-label">Nombre completo</label>
           <input
             type="text"
+            id="nombre"
             name="nombre"
             placeholder="Nombre completo"
             value={form.nombre}
             onChange={handleChange}
             required
             className="input-field"
+            autoComplete="name"
           />
 
+          <label htmlFor="email" className="form-label">Correo electrónico</label>
           <input
             type="email"
+            id="email"
             name="email"
             placeholder="Correo electrónico"
             value={form.email}
             onChange={handleChange}
             required
             className="input-field"
+            autoComplete="email"
           />
 
+          <label htmlFor="password" className="form-label">Contraseña</label>
           <input
             type="password"
+            id="password"
             name="password"
             placeholder="Contraseña"
             value={form.password}
             onChange={handleChange}
             required
             className="input-field"
+            autoComplete="new-password"
           />
 
+          <label htmlFor="direccion" className="form-label">Dirección</label>
           <input
             type="text"
+            id="direccion"
             name="direccion"
             placeholder="Dirección"
             value={form.direccion}
             onChange={handleChange}
             required
             className="input-field"
+            autoComplete="street-address"
           />
 
           <div className="avatar-selection">
-            <label htmlFor="avatar">Selecciona un avatar:</label>
+            <legend>Selecciona un avatar:</legend>
             <div className="avatar-options">
               <img
                 src={avatar1}
