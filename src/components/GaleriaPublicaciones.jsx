@@ -8,14 +8,6 @@ function GaleriaPublicaciones({ search }) {
   const [productos, setProductos] = useState([]);
   const [categoriaActual, setCategoriaActual] = useState("all");
 
-  // Mapeo simple (sin tilde para evitar problemas)
-  const mapCategoriaIdToNombre = {
-    1: "hombre",
-    2: "mujer",
-    3: "accesorios",
-    4: "tecnologia"  // <-- sin tilde, como se guarda en el backend
-  };
-
   // Obtener productos al cargar
   useEffect(() => {
     const fetchProductos = async () => {
@@ -40,12 +32,11 @@ function GaleriaPublicaciones({ search }) {
 
   const productosFiltrados = productos.filter((item) => {
     const titulo = item.titulo || "";
-    const categoriaTexto = mapCategoriaIdToNombre[item.categoria_id] || "";
 
     const matchesSearch = normalizarTexto(titulo).includes(normalizarTexto(search));
     const matchesCategory =
       categoriaActual === "all" ||
-      normalizarTexto(categoriaTexto) === normalizarTexto(categoriaActual);
+      item.categoria_id.toString() === categoriaActual;
 
     return matchesSearch && matchesCategory;
   });

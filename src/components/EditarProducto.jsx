@@ -9,7 +9,7 @@ function EditarProducto() {
     titulo: "",
     descripcion: "",
     precio: "",
-    categoria: "",
+    categoria_id: "", // Cambiar de categoria a categoria_id para consistencia
     stock: "",
     imagen: ""
   });
@@ -81,7 +81,7 @@ function EditarProducto() {
         </div>
         <div className="form-group">
           <label htmlFor="categoria">Categoría:</label>
-          <select id="categoria" name="categoria_id" value={producto.categoria} onChange={handleChange} required>
+          <select id="categoria" name="categoria_id" value={producto.categoria_id} onChange={handleChange} required>
             <option value="">Selecciona una categoría</option>
             {categorias.map((categoria) => (
               <option key={categoria.id} value={categoria.id}>{categoria.nombre}</option>

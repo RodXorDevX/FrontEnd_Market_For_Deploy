@@ -1,18 +1,46 @@
 import "../assets/css/FormularioPublicacion.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import api from "../api";
 
 function FormularioPublicacion() {
   const [imagen, setImagen] = useState("");
   const [urlImagen, setUrlImagen] = useState("");
+  const [categorias, setCategorias] = useState([]);
 
   const [formData, setFormData] = useState({
     titulo: "",
     precio: "",
-    categoria: "",     
+    categoria: "",
     descripcion: "",
     stock: 1,
   });
+
+  useEffect(() => {
+    // Cargar categorías desde la API
+    const cargarCategorias = async () => {
+      try {
+        const response = await api.get('/categorias');
+        setCategorias(response.data);
+      } catch (error) {
+        console.error('Error al cargar categorías:', error);
+        // Si hay error, usar categorías por defecto
+        setCategorias([
+          { id: 1, nombre: "Electrónica" },
+          { id: 2, nombre: "Ropa y Accesorios" },
+          { id: 3, nombre: "Hogar y Jardín" },
+          { id: 4, nombre: "Deportes" },
+          { id: 5, nombre: "Libros" },
+          { id: 6, nombre: "Juguetes" },
+          { id: 7, nombre: "Salud y Belleza" },
+          { id: 8, nombre: "Automotriz" },
+          { id: 9, nombre: "Alimentos" },
+          { id: 10, nombre: "Otros" }
+        ]);
+      }
+    };
+
+    cargarCategorias();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,18 +73,14 @@ function FormularioPublicacion() {
     //console.log('Token:', token ? 'Presente' : 'Ausente');
    // console.log('User ID:', userId);
   
-    const mapCategoria = {
-      hombre: 1,
-      mujer: 2,
-      accesorios: 3,
-      tecnologia: 4,
-    };
+    // El formData.categoria ahora contiene el ID directamente de la base de datos
+    // No necesitas mapear, usa el valor directamente
   
     const productoFinal = {
       titulo: formData.titulo,
       descripcion: formData.descripcion,
       precio: parseFloat(formData.precio),
-      categoria_id: mapCategoria[formData.categoria],      
+      categoria_id: parseInt(formData.categoria), // Ahora usa el ID directamente
       stock: parseInt(formData.stock),
       imagen: imagen || null,
       vendedor_id: parseInt(userId),
@@ -174,10 +198,11 @@ function FormularioPublicacion() {
               onChange={handleChange}
             >
               <option value="">Selecciona categoría</option>
-              <option value="hombre">Ropa de Hombre</option>
-              <option value="mujer">Ropa de Mujer</option>
-              <option value="accesorios">Accesorios</option>
-              <option value="tecnologia">Tecnología</option>
+              {categorias.map((categoria) => (
+                <option key={categoria.id} value={categoria.id}>
+                  {categoria.nombre}
+                </option>
+              ))}
             </select>
           </div>
 
