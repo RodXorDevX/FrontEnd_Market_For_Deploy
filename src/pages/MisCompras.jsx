@@ -2,8 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import SidebarPerfil from "../components/SidebarPerfil";
 import { AuthContext } from "../context/AuthContext";
-import { API_BACKEND_URL } from "../config";
-import axios from "axios";
+import api from "../api";
 import "../assets/css/MisCompras.css";
 
 const EstrellasCalificacion = ({ calificacion, onCalificar, productoId }) => {
@@ -40,8 +39,8 @@ const MisCompras = () => {
         ? Math.round((calificacionActual + nuevaCalificacion) / 2)
         : nuevaCalificacion;
       
-      await axios.put(`${API_BACKEND_URL}/productos/${productoId}`, { 
-        calificacion: promedio 
+      await api.put(`/productos/${productoId}`, {
+        calificacion: promedio
       }, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -64,9 +63,9 @@ const MisCompras = () => {
       if (!usuario?.usuario?.id) return;
 
       try {
-        const response = await fetch(`${API_BACKEND_URL}/pedidos?usuario_id=${usuario.usuario.id}`)
+        const response = await api.get(`/pedidos?usuario_id=${usuario.usuario.id}`)
 
-        const data = await response.json();
+        const data = response.data;
 
         // Agrupar productos por compra
         const comprasAgrupadas = {};

@@ -1,7 +1,6 @@
 import "../assets/css/FormularioPublicacion.css";
-import axios from "axios";
 import { useState } from "react";
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 
 function FormularioPublicacion() {
   const [imagen, setImagen] = useState("");
@@ -65,8 +64,8 @@ function FormularioPublicacion() {
     
    // console.log('Producto a enviar:', productoFinal);
   
-    axios
-      .post(`${API_BACKEND_URL}/productos`, productoFinal, {
+    api
+      .post('/productos', productoFinal, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -83,7 +82,7 @@ function FormularioPublicacion() {
         setUrlImagen("");
         alert("¡Publicación creada!");
       })
-      
+
       .catch((err) => {
         console.error('Error al publicar:', err);
         console.error('Detalles del error:', err.response?.data);

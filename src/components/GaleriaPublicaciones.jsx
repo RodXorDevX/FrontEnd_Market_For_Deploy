@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import CardProducto from "./CardProducto";
 import MenuCategorias from "./MenuCategorias";
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 import "../assets/css/GaleriaPublicaciones.css";
 
 function GaleriaPublicaciones({ search }) {
@@ -21,7 +20,7 @@ function GaleriaPublicaciones({ search }) {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const res = await axios.get(`${API_BACKEND_URL}/productos`);
+        const res = await api.get('/productos');
         const productosBackend = res.data.data || res.data;
 
         //console.log("✅ Productos recibidos del backend:", productosBackend);
