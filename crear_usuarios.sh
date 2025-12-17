@@ -1,7 +1,7 @@
 #!/bin/bash
 # CURL Commands para crear usuarios via API
 
-API_BASE="https://backendmarketfordeploy-production-52ee.up.railway.app"
+API_BASE="https://back-end-market-for-deploy.vercel.app"
 
 # Crear usuario 1: Luki Perro
 curl -X POST "$API_BASE/usuarios/registro" \

@@ -125,7 +125,7 @@ node script-crear-productos.cjs
 
 #### Opción 2: Script de Curl (producción)
 ```bash
-# Ejecutar script que crea usuarios en el backend desplegado
+# Ejecutar script que crea usuarios en el backend desplegado en Vercel
 bash crear_usuarios.sh
 
 # Para crear productos, usar crear-catalogo-variado.cjs
@@ -134,7 +134,7 @@ node crear-catalogo-variado.cjs
 
 **Nota:**
 - Los scripts de Node.js son para desarrollo local
-- El script de Bash funciona con el backend desplegado en Railway
+- El script de Bash funciona con el backend desplegado en Vercel
 
 ## 📱 Funcionalidades
 
@@ -232,7 +232,7 @@ Para propósitos de desarrollo y demostración:
 - Build estático optimizado
 - Variables de entorno configuradas
 - 🌐 **URL en producción:** [https://marketplace-trends.netlify.app](https://marketplace-trends.netlify.app)
-- Integración con backend desplegado en Railway
+- Integración con backend desplegado en Vercel
 - Despliegue automático en cada push a main
 
 ### Desarrollo Local
