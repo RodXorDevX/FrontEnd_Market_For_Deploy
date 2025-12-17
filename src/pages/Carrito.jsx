@@ -3,9 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { CarritoContext } from "../context/CarritoContext";
 import SidebarPerfil from "../components/SidebarPerfil";
 import "../assets/css/Carrito.css";
-import axios from "axios";
+import api from "../api";
 import { AuthContext } from "../context/AuthContext";
-import { API_BACKEND_URL } from "../config";
 
 function Carrito({}) {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -26,7 +25,7 @@ function Carrito({}) {
       // First update stock for all products
       await Promise.all(
         carrito.map(async (item) => {
-          await axios.put(`${API_BACKEND_URL}/productos/${item.id}`, {
+          await api.put(`/productos/${item.id}`, {
             ...item,
             stock: (item.stock || item.cantidad_disponible) - item.cantidad,
           });
@@ -34,10 +33,7 @@ function Carrito({}) {
       );
 
       // Then create the order
-      const response = await fetch(`${API_BACKEND_URL}/pedidos/crear`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await api.post('/pedidos/crear', {
         },
         body: JSON.stringify({
           usuario_id: usuario?.usuario?.id,

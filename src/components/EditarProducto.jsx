@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 import '../assets/css/EditarProducto.css';
 
 function EditarProducto() {
@@ -21,7 +20,7 @@ function EditarProducto() {
   useEffect(() => {
     const fetchProducto = async () => {
       try {
-        const response = await axios.get(`${API_BACKEND_URL}/productos/${id}`);
+        const response = await api.get(`/productos/${id}`);
         setProducto(response.data);
       } catch (error) {
         console.error("Error al obtener el producto:", error);
@@ -34,7 +33,7 @@ function EditarProducto() {
   useEffect(() => {
     const fetchCategorias = async () => {
       try {
-        const response = await axios.get(`${API_BACKEND_URL}/categorias`);
+        const response = await api.get('/categorias');
         setCategorias(response.data);
       } catch (error) {
         console.error("Error al obtener categorías:", error);
@@ -52,7 +51,7 @@ function EditarProducto() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${API_BACKEND_URL}/productos/${id}`, producto);
+      await api.put(`/productos/${id}`, producto);
       alert("Producto actualizado con éxito");
       navigate("/perfil"); // Redirigir a la página MiPerfil
     } catch (error) {

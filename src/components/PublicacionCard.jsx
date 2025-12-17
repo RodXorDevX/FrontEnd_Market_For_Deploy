@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import "../assets/css/PublicacionCard.css";
 import defaultImage from "../assets/img/Default_Product.png";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 
 function PublicacionCard({ publicacion, onDelete }) {
   const [error, setError] = useState(null);
@@ -20,7 +19,7 @@ function PublicacionCard({ publicacion, onDelete }) {
 
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`${API_BACKEND_URL}/productos/${publicacion.id}`);
+      const res = await api.delete(`/productos/${publicacion.id}`);
       alert("Publicación eliminada con éxito");
       onDelete(publicacion.id); // Llama a la función para actualizar el estado en MiPerfil
     } catch (err) {
