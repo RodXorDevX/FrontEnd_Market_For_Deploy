@@ -1,4 +1,4 @@
-import '../assets/css/Register.css'; 
+import '../assets/css/Register.css';
 import { Link } from "react-router-dom";
 import registerImg from '../assets/img/Register/Sale_image.jpg';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ import avatar4 from '../assets/img/Register/icon4.png';
 import avatar5 from '../assets/img/Register/icon5.png';
 import avatar6 from '../assets/img/Register/icon6.png';
 
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -71,24 +71,13 @@ const Register = () => {
     }
 
     try {
-      const res = await fetch(`${API_BACKEND_URL}/usuarios/registro`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(form)
-      });
+      const res = await api.post('/usuarios/registro', form);
 
-      if (!res.ok) {
-        throw new Error('Error en el registro');
-      }
-
-      const data = await res.json();
-      // console.log('Usuario registrado:', data);
+      console.log('Usuario registrado:', res.data);
       window.location.href = '/login';
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error al registrar usuario');
+      console.error('Error en el registro:', error);
+      alert('Error al registrar usuario. Por favor, intenta de nuevo.');
     }
   };
 

@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CarritoContext } from "../context/CarritoContext";
-import axios from "axios";
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 import "../assets/css/CardProducto.css";
 import { AuthContext } from "../context/AuthContext"; // <- se agrega sin romper
 
@@ -14,19 +13,23 @@ function CardProducto({ producto }) {
   const [calificacion, setCalificacion] = useState(0);
 
   useEffect(() => {
-    const fetchCalificacion = async () => {
-      try {
-        const response = await axios.get(`${API_BACKEND_URL}/productos/${producto.id}`);
-        setCalificacion(response.data.calificacion || 0);
-      } catch (error) {
-        console.error("Error obteniendo calificación:", error);
-      }
-    };
+    // Usar la calificación del producto si ya existe, sino hacer petición
+    if (producto?.calificacion) {
+      setCalificacion(parseFloat(producto.calificacion));
+    } else if (producto?.id) {
+      const fetchCalificacion = async () => {
+        try {
+          const response = await api.get(`/productos/${producto.id}`);
+          setCalificacion(response.data.calificacion || 0);
+        } catch (error) {
+          console.error("Error obteniendo calificación:", error);
+          setCalificacion(0); // Default a 0 si hay error
+        }
+      };
 
-    if (producto?.id) {
       fetchCalificacion();
     }
-  }, [producto.id]);
+  }, [producto.id, producto.calificacion]);
 
   if (!producto?.id) return null;
 
