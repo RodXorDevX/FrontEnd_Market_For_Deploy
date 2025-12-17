@@ -1,12 +1,37 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="32" cy="36" rx="20" ry="22" fill="#FFF" stroke="#DDD" stroke-width="2"/>
-<ellipse cx="20" cy="25" rx="12" ry="15" fill="#FFF" stroke="#DDD" stroke-width="2"/>
-<ellipse cx="44" cy="25" rx="12" ry="15" fill="#FFF" stroke="#DDD" stroke-width="2"/>
-<circle cx="15" cy="18" r="8" fill="#FFB6C1" stroke="#FF69B4" stroke-width="2"/>
-<circle cx="49" cy="18" r="8" fill="#FFB6C1" stroke="#FF69B4" stroke-width="2"/>
-<circle cx="32" cy="42" rx="10" ry="8" fill="#FFB6C1" stroke="#FF69B4" stroke-width="2"/>
-<circle cx="26" cy="36" r="2" fill="#000"/>
-<circle cx="38" cy="36" r="2" fill="#000"/>
-<circle cx="24" cy="28" r="1" fill="#000"/>
-<circle cx="40" cy="28" r="1" fill="#000"/>
+  <!-- Fondo circular consistente -->
+  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+
+  <!-- Cuerpo del conejo -->
+  <ellipse cx="32" cy="38" rx="18" ry="15" fill="#F5F5DC" stroke="#333" stroke-width="1"/>
+  <ellipse cx="32" cy="32" rx="12" ry="10" fill="#FFF"/>
+
+  <!-- Orejas -->
+  <ellipse cx="25" cy="8" rx="6" ry="20" fill="#F5F5DC" stroke="#333" stroke-width="1"/>
+  <ellipse cx="39" cy="8" rx="6" ry="20" fill="#F5F5DC" stroke="#333" stroke-width="1"/>
+  <ellipse cx="25" cy="8" rx="3" ry="12" fill="#FFB6C1"/>
+  <ellipse cx="39" cy="8" rx="3" ry="12" fill="#FFB6C1"/>
+
+  <!-- Nariz -->
+  <ellipse cx="32" cy="32" rx="3" ry="2" fill="#FFB6C1"/>
+  <ellipse cx="32" cy="30" rx="2" ry="1" fill="#FF69B4"/>
+
+  <!-- Ojos -->
+  <circle cx="26" cy="28" r="3" fill="#FFF"/>
+  <circle cx="38" cy="28" r="3" fill="#FFF"/>
+  <circle cx="26" cy="29" r="2" fill="#000"/>
+  <circle cx="38" cy="29" r="2" fill="#000"/>
+
+  <!-- Bigotes -->
+  <path d="M 20 30 L 10 28" stroke="#000" stroke-width="1"/>
+  <path d="M 20 32 L 10 32" stroke="#000" stroke-width="1"/>
+  <path d="M 44 30 L 54 28" stroke="#000" stroke-width="1"/>
+  <path d="M 44 32 L 54 32" stroke="#000" stroke-width="1"/>
+
+  <!-- Cola de algodón -->
+  <circle cx="50" cy="40" r="8" fill="#FFF" stroke="#333" stroke-width="1"/>
+
+  <!-- Dientes -->
+  <rect x="30" y="35" width="2" height="3" fill="#FFF" stroke="#333" stroke-width="0.5"/>
+  <rect x="32" y="35" width="2" height="3" fill="#FFF" stroke="#333" stroke-width="0.5"/>
 </svg>

@@ -1,10 +1,28 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="32" cy="32" rx="28" ry="20" fill="#4682B4" stroke="#1E90FF" stroke-width="2"/>
-<path d="M 10 32 Q 15 28, 20 30 Q 25 26, 30 28 Q 32 26, 34 28 Q 39 26, 44 30 Q 49 28, 54 32" stroke="#FFF" stroke-width="2" fill="none"/>
-<ellipse cx="20" cy="28" rx="8" ry="12" fill="#4682B4" stroke="#1E90FF" stroke-width="2"/>
-<ellipse cx="44" cy="28" rx="8" ry="12" fill="#4682B4" stroke="#1E90FF" stroke-width="2"/>
-<circle cx="28" cy="30" r="2" fill="#000"/>
-<circle cx="36" cy="30" r="2" fill="#000"/>
-<circle cx="32" cy="40" r="3" fill="#000"/>
-<path d="M 32 40 Q 28 42, 26 40" stroke="#000" stroke-width="1" fill="none"/>
+  <!-- Fondo circular consistente -->
+  <circle cx="32" cy="32" r="30" fill="#F0F0F0" stroke="#333" stroke-width="2"/>
+
+  <!-- Delfín -->
+  <ellipse cx="32" cy="32" rx="25" ry="12" fill="#00CED1" stroke="#333" stroke-width="1"/>
+  <ellipse cx="32" cy="28" rx="15" ry="10" fill="#48D1CC"/>
+
+  <!-- Aleta dorsal -->
+  <path d="M 32 20 L 28 10 L 36 10 Z" fill="#008B8B" stroke="#333" stroke-width="1"/>
+
+  <!-- Aletas laterales -->
+  <ellipse cx="22" cy="32" rx="6" ry="10" fill="#00CED1" stroke="#333" stroke-width="1" transform="rotate(-30 22 32)"/>
+  <ellipse cx="42" cy="32" rx="6" ry="10" fill="#00CED1" stroke="#333" stroke-width="1" transform="rotate(30 42 32)"/>
+
+  <!-- Cola -->
+  <path d="M 55 32 L 62 25 L 62 39 Z" fill="#00CED1" stroke="#333" stroke-width="1"/>
+
+  <!-- Boca -->
+  <path d="M 18 30 Q 15 32, 18 34" stroke="#000" stroke-width="2" fill="none"/>
+
+  <!-- Ojos -->
+  <circle cx="22" cy="28" r="3" fill="#FFF"/>
+  <circle cx="22" cy="29" r="2" fill="#000"/>
+
+  <!-- Detalles -->
+  <ellipse cx="38" cy="30" rx="4" ry="2" fill="#87CEEB"/>
 </svg>
