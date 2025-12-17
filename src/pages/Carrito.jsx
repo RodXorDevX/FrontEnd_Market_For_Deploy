@@ -34,20 +34,17 @@ function Carrito({}) {
 
       // Then create the order
       const response = await api.post('/pedidos/crear', {
-        },
-        body: JSON.stringify({
           usuario_id: usuario?.usuario?.id,
           carrito: carrito.map((item) => ({
             producto_id: item.id,
             cantidad: item.cantidad,
             precio: item.precio,
             vendedor_id: item.vendedor_id,
-          })),
-        }),
+          }))
       });
 
-      if (!response.ok) throw new Error("Error al crear el pedido");
-      const data = await response.json();
+      // axios no tiene response.ok, lo maneja con try/catch
+      console.log("Pedido creado:", response.data);
       // console.log(data);
 
       setShowSuccessMessage(true);
