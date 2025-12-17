@@ -41,7 +41,7 @@ FrontEnd_Market_For_Deploy/
 │   ├── config.js       # Variables de configuración
 │   ├── App.jsx         # Componente principal
 │   └── main.jsx        # Punto de entrada
-├── .env.example        # Ejemplo de variables de entorno
+├── .env.example        # Ejemplo de variables de entorno (excluido por seguridad)
 ├── .gitignore          # Archivos ignorados por Git
 ├── package.json        # Dependencias y scripts
 ├── vite.config.js      # Configuración de Vite
@@ -52,7 +52,7 @@ FrontEnd_Market_For_Deploy/
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/RodrigoCQ4/FrontEnd_Market_For_Deploy.git
+   git clone https://github.com/RodXorDevX/FrontEnd_Market_For_Deploy.git
    cd FrontEnd_Market_For_Deploy
    ```
 
@@ -62,10 +62,7 @@ FrontEnd_Market_For_Deploy/
    ```
 
 3. **Configurar variables de entorno:**
-   ```bash
-   cp .env.example .env
-   ```
-   Editar el archivo `.env` con la URL de tu backend:
+   Crear un archivo `.env` con la URL de tu backend:
    ```env
    VITE_API_URL=http://localhost:3000
    ```
@@ -79,6 +76,39 @@ FrontEnd_Market_For_Deploy/
    ```
    http://localhost:5173
    ```
+
+## 🐾 Usuarios de Demostración
+
+Para probar la aplicación, puedes usar las siguientes cuentas de usuarios animales:
+
+| Usuario | Email | Contraseña | Dirección |
+|---------|-------|------------|-----------|
+| León León | leon@animales.com | password123 | Sabana África 123 |
+| Tigre Tigre | tigre@animales.com | password123 | Selva Tropical 456 |
+| Oso Oso | oso@animales.com | password123 | Bosque Norte 789 |
+| Lobo Lobo | lobo@animales.com | password123 | Montañas Rocosas 101 |
+| Águila Águila | aguila@animales.com | password123 | Monte Alto 202 |
+| Tortuga Tortuga | tortuga@animales.com | password123 | Océano Pacífico 303 |
+| Zorro Zorro | zorro@animales.com | password123 | Bosque Secreto 404 |
+| Conejo Conejo | conejo@animales.com | password123 | Campo Verde 505 |
+| Jirafa Jirafa | jirafa@animales.com | password123 | Savana Central 606 |
+| Mono Mono | mono@animales.com | password123 | Árbol Gigante 707 |
+
+**Nota:** Todos los usuarios tienen la misma contraseña: `password123`
+
+### 🧪 Scripts de Demo
+
+Para crear los datos de demostración (usuarios y productos), puedes ejecutar:
+
+```bash
+# Script para crear los 10 usuarios animales
+node script-crear-usuarios.cjs
+
+# Script para crear 100 productos (10 por cada animal)
+node script-crear-productos.cjs
+```
+
+**Nota:** Estos scripts deben ejecutarse con el backend corriendo en `http://localhost:3000`
 
 ## 📱 Funcionalidades
 
