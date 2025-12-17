@@ -83,24 +83,26 @@ Para probar la aplicación, puedes usar las siguientes cuentas de usuarios anima
 
 | Usuario | Email | Contraseña | Dirección |
 |---------|-------|------------|-----------|
-| León León | leon@animales.com | password123 | Sabana África 123 |
-| Tigre Tigre | tigre@animales.com | password123 | Selva Tropical 456 |
-| Oso Oso | oso@animales.com | password123 | Bosque Norte 789 |
-| Lobo Lobo | lobo@animales.com | password123 | Montañas Rocosas 101 |
-| Águila Águila | aguila@animales.com | password123 | Monte Alto 202 |
-| Tortuga Tortuga | tortuga@animales.com | password123 | Océano Pacífico 303 |
-| Zorro Zorro | zorro@animales.com | password123 | Bosque Secreto 404 |
-| Conejo Conejo | conejo@animales.com | password123 | Campo Verde 505 |
-| Jirafa Jirafa | jirafa@animales.com | password123 | Savana Central 606 |
-| Mono Mono | mono@animales.com | password123 | Árbol Gigante 707 |
+| Luki Perro | luki.perro@demo.com | demo123 | Calle del Can 123, Ciudad Mascota |
+| Minu Gatita | minu.gatita@demo.com | demo123 | Avenida Gaturra 456, Barrio Felino |
+| Pandi Panda | pandi.panda@demo.com | demo123 | Bosque de Bambú 789, Valle Panda |
+| Leo León | leo.leon@demo.com | demo123 | Savana Central 321, Reino Animal |
+| Dumbo Elefante | dumbo.elefante@demo.com | demo123 | Ruta del Elefante 654, Tierra de Gigantes |
+| Spirit Caballo | spirit.caballo@demo.com | demo123 | Pradera Dorada 987, Llanuras Libres |
+| Tucán Tico | tucan.tico@demo.com | demo123 | Selva Tropical 147, Paraíso Verde |
+| Pato Lucas | pato.lucas@demo.com | demo123 | Lago Azul 258, Hábitat Acuático |
+| Flip Delfín | flip.delfin@demo.com | demo123 | Océano Pacífico 369, Bahía Marina |
+| Polo Pingüino | polo.pinguino@demo.com | demo123 | Antártida 741, Polo Sur |
 
-**Nota:** Todos los usuarios tienen la misma contraseña: `password123`
+**Nota:** Todos los usuarios tienen la misma contraseña: `demo123`
 
 ### 🧪 Scripts de Demo
 
-Para crear los datos de demostración (usuarios y productos), puedes ejecutar:
+Para crear los datos de demostración, puedes usar los siguientes métodos:
 
+#### Opción 1: Script de Node.js (local)
 ```bash
+# Asegúrate de tener el backend corriendo en http://localhost:3000
 # Script para crear los 10 usuarios animales
 node script-crear-usuarios.cjs
 
@@ -108,7 +110,18 @@ node script-crear-usuarios.cjs
 node script-crear-productos.cjs
 ```
 
-**Nota:** Estos scripts deben ejecutarse con el backend corriendo en `http://localhost:3000`
+#### Opción 2: Script de Curl (producción)
+```bash
+# Ejecutar script que crea usuarios en el backend desplegado
+bash crear_usuarios.sh
+
+# Para crear productos, usar crear-catalogo-variado.cjs
+node crear-catalogo-variado.cjs
+```
+
+**Nota:**
+- Los scripts de Node.js son para desarrollo local
+- El script de Bash funciona con el backend desplegado en Railway
 
 ## 📱 Funcionalidades
 
