@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 import "../assets/css/Login.css";
 import loginImg from "../assets/img/Register/LoginPic.jpg";
 
@@ -13,38 +13,31 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const response = await fetch(`${API_BACKEND_URL}/usuarios/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password })
-      });
+      const response = await api.post('/usuarios/login', { email, password });
 
-      if (!response.ok) {
-        throw new Error('Credenciales inválidas');
-      }
-
-      const userData = await response.json();
-      
       // Crear objeto con el formato esperado por el contexto
       const datosUsuario = {
-        token: userData.token, // ← token real que viene del backend
-        usuario: userData.usuario // ← objeto usuario completo
+        token: response.data.token, // ← token real que viene del backend
+        usuario: response.data.usuario // ← objeto usuario completo
       };
-      
 
       login(datosUsuario);
 
-      localStorage.setItem("token", userData.token);
-      localStorage.setItem("userId", userData.usuario.id);
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("userId", response.data.usuario.id);
 
       navigate("/perfil");
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error en el inicio de sesión');
+      console.error('Error en el login:', error);
+      if (error.response?.status === 401) {
+        alert('Credenciales inválidas. Por favor, verifica tu email y contraseña.');
+      } else if (error.code === 'ERR_NETWORK') {
+        alert('Error de conexión. Por favor, intenta más tarde.');
+      } else {
+        alert('Error en el inicio de sesión. Por favor, intenta de nuevo.');
+      }
     }
   };
 
