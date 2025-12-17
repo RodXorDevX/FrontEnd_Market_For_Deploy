@@ -80,7 +80,7 @@
     text-align: left;
     margin: 0;
     font-size: 0.7rem;
-    color: #666;
+    color: #b8b8b8;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,13 +98,65 @@
     margin: 0;
     padding: 0;
     line-height: 1.2;
-    color: #4a4a4a; /* Nuevo color intermedio */
+    color: #ffffff; /* Blanco para mejor contraste */
     text-decoration: none;
     transition: color 0.3s;
+    font-weight: 500; /* Un poco más grueso para mejor legibilidad */
 }
 
 .developers a:hover {
-    color: #2d2d2d; /* Color hover más oscuro */
+    color: #ffc107; /* Amarillo consistente con otros elementos */
+    text-decoration: underline; /* Subrayado en hover para mejor UX */
+}
+
+/* Animación de onda/flotación para los iconos */
+@keyframes wave-float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-3px) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    display: inline-block;
+    animation: wave-float 3s ease-in-out infinite;
+}
+
+/* Diferentes retrasos para cada icono para crear el efecto de onda */
+.social-links div:nth-child(1) a {
+    animation-delay: 0s;
+}
+
+.social-links div:nth-child(2) a {
+    animation-delay: 0.2s;
+}
+
+.social-links div:nth-child(3) a {
+    animation-delay: 0.4s;
+}
+
+.social-links div:nth-child(4) a {
+    animation-delay: 0.6s;
+}
+
+.social-links div:nth-child(5) a {
+    animation-delay: 0.8s;
+}
+
+.social-links a:hover {
+    color: #ffc107;
+    animation-play-state: paused; /* Pausar la animación al hacer hover */
 }
 
 /* Añadir padding-bottom al contenido principal para evitar que el footer lo tape */

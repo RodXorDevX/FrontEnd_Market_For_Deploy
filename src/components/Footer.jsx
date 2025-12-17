@@ -1,5 +1,5 @@
 import '../assets/css/Footer.css';
-import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa';
 // Importa los iconos de las redes sociales
 function Footer() {
     return (
@@ -26,6 +26,12 @@ function Footer() {
                             </a></div>
                             <div><a href="https://www.instagram.com/" aria-label="Instagram">
                                 <FaInstagram />
+                            </a></div>
+                            <div><a href="https://www.youtube.com/" aria-label="YouTube">
+                                <FaYoutube />
+                            </a></div>
+                            <div><a href="https://www.tiktok.com/" aria-label="TikTok">
+                                <FaTiktok />
                             </a></div>
                         </div>
                     </div>

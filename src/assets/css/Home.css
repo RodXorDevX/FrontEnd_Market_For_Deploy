@@ -115,6 +115,11 @@
     margin-right: 20px;
 }
 
+.gallery-icon svg {
+    transform-origin: top center;
+    animation: pendulum-swing 5s ease-in-out infinite;
+}
+
 .gallery-icon img {
     width: 80px;
     height: 80px;
@@ -180,4 +185,29 @@
   .search-input {
     padding: 10px 15px;
   }
+}
+
+/* Animación de péndulo para el icono de galería */
+@keyframes pendulum-swing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(-15deg);
+    }
+    30% {
+        transform: rotate(12deg);
+    }
+    45% {
+        transform: rotate(-18deg);
+    }
+    60% {
+        transform: rotate(15deg);
+    }
+    75% {
+        transform: rotate(-12deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
 }
