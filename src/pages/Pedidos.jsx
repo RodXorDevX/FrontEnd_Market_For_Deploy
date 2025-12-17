@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import SidebarPerfil from "../components/SidebarPerfil";
 import { AuthContext } from "../context/AuthContext";
-import { API_BACKEND_URL } from "../config";
+import api from "../api";
 import "../assets/css/Pedidos.css";
 
 export default function MisPedidos() {
@@ -15,9 +15,9 @@ export default function MisPedidos() {
     if (!usuario) return;
     const vendedorId = usuario.usuario.id;
 
-    fetch(`${API_BACKEND_URL}/pedidos?vendedor_id=${vendedorId}`)
-      .then((res) => res.json())
-      .then((data) => {
+    api.get(`/pedidos?vendedor_id=${vendedorId}`)
+      .then((response) => {
+        const data = response.data;
         if (Array.isArray(data)) {
           setPedidos(data);
         } else {
@@ -40,25 +40,17 @@ export default function MisPedidos() {
 
   const handleStatusChange = async (pedidoId, nuevoEstado) => {
     try {
-      const res = await fetch(`${API_BACKEND_URL}/pedidos/${pedidoId}/estado`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ estado: nuevoEstado }),
+      const { data } = await api.put(`/pedidos/${pedidoId}/estado`, {
+        estado: nuevoEstado
       });
-  
-      const data = await res.json();
-  
-      if (!res.ok) {
-        throw new Error(data.error || "Error al actualizar estado");
-      }
-  
+
       // Actualiza el estado en frontend
       setPedidos((prev) =>
         prev.map((pedido) =>
           pedido.id === pedidoId ? { ...pedido, status: data.status } : pedido
         )
       );
-  
+
       // Oculta opciones luego del cambio
       setMostrarOpciones((prev) => ({ ...prev, [pedidoId]: false }));
     } catch (error) {

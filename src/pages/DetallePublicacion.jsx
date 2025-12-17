@@ -1,10 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import axios from "axios";
 import { CarritoContext } from "../context/CarritoContext";
 import { AuthContext } from "../context/AuthContext";
+import api from "../api";
 import "../assets/css/DetallePublicacion.css";
-import { API_BACKEND_URL } from "../config";
 
 function DetallePublicacion() {
   const { id } = useParams();
@@ -23,8 +22,8 @@ function DetallePublicacion() {
   };
 
   useEffect(() => {
-    axios
-      .get(`${API_BACKEND_URL}/productos/${id}`)
+    api
+      .get(`/productos/${id}`)
       .then((res) => {
         const productoData = res.data.data || res.data;
         setProducto(productoData);

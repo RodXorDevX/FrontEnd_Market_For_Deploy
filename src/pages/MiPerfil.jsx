@@ -1,11 +1,10 @@
 // --- INICIO DEL ARCHIVO MiPerfil.jsx ---
 
 import { useEffect, useState, useContext } from "react";
-import axios from "axios";
 import SidebarPerfil from "../components/SidebarPerfil";
 import PublicacionCard from "../components/PublicacionCard";
-import { AuthContext } from "../context/AuthContext"; // Asegúrate que la ruta sea correcta
-import { API_BACKEND_URL } from "../config";
+import { AuthContext } from "../context/AuthContext";
+import api from "../api";
 import "../assets/css/MiPerfil.css";
 
 function MiPerfil() {
@@ -29,7 +28,7 @@ function MiPerfil() {
 
       // console.log(`Buscando publicaciones para el user ID: ${userId}`);
 
-      axios.get(`${API_BACKEND_URL}/productos`, { // Endpoint correcto para obtener productos
+      api.get(`/productos`, { // Endpoint correcto para obtener productos
         params: {
           vendedor_id: userId // Filtramos por el ID del vendedor (usuario logueado)
         }
@@ -39,7 +38,7 @@ function MiPerfil() {
           const fetchedPublicaciones = response.data.data || response.data;
           // console.log("Publicaciones recibidas:", fetchedPublicaciones);
           // Nos aseguramos de que siempre establezcamos un array en el estado
-          setPublicaciones(Array.isArray(fetchedPublicaciones) ? fetchedPublicaciones : []);
+          setPublicaciones(Array.isArray(fetchedPublications) ? fetchedPublicaciones : []);
         })
         .catch(error => {
           console.error("Error al obtener publicaciones", error);
